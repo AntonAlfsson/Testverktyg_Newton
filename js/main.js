@@ -6,11 +6,12 @@ function start(){
     console.log('Hello and welcome!');
 }
 
-function checked(id){ // funktion för att kontrollera checkbox
-if($("#" + id).is(':checked'))
-    return true;
-else
-    return false;
-}
 
+$(document).on('click', 'input[type=radio]', function(){
+    
+    var el = $(this).val(); // tar emot 1 till 4 
+    
+    console.log('hej du har klickat på mig! ' + el);
 
+    
+});
