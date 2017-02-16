@@ -1,0 +1,41 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Sätt lika hög höjd här */
+  margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Som här */
+  height: 60px;
+  background-color: blue;
+
+}
+
+/*För att ta ta bort rundade hörn. Kommer ligga på alla
+element. Går att justera senare om nödvändigt. */
+* {
+  border-radius: 0 !important;
+}
+
+/*För stående mobil vy. Anpassat efter Iphone 6.*/
+@media screen and (max-width: 667px) and (max-height: 375px) {
+  body {margin-bottom:120px;}
+  footer {height:120px;}
+
+  .dropdown-menu {
+    
+  }
+
+}
+
+/*För desktop vy.*/
+@media screen and (max-width: 1365px) and (max-height: 767px) {
+
+}
