@@ -20,7 +20,7 @@ footer {
 
 /*För att ta ta bort rundade hörn. Kommer ligga på alla
 element. Går att justera senare om nödvändigt. */
-* {
+.navbar {
   border-radius: 0 !important;
 }
 
@@ -30,7 +30,7 @@ element. Går att justera senare om nödvändigt. */
   footer {height:120px;}
 
   .dropdown-menu {
-    
+
   }
 
 }
