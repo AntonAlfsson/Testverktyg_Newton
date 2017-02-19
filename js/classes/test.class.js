@@ -9,13 +9,13 @@ class Test extends Base {
     // Just an example of how to run a query
     this.db.all((data)=>{
       console.log('Result of the query "all"',data);
-      this.runAnotherQuery();
+      //this.runAnotherQuery();
     });
   }
 
   runAnotherQuery(){
     // Just an example of how to run a query
-    this.db.byFullName(['Kalle','Anka'],(data)=>{
+    this.db.byFullName(['Kalle Anka'],(data)=>{
       console.log('Result of the query "byFullName"',data);
       this.runAThirdQuery();
     });
@@ -24,9 +24,7 @@ class Test extends Base {
   runAThirdQuery(){
     // Just an example of how to run a query
     this.db.newStudent({
-        firstName:'Anna',
-        lastName:'Andersson',
-        course:5
+        firstName:'Anna Andersson'
       },(data)=>{
       console.log('Result of the query "newStudent"',data);
     });
@@ -42,14 +40,14 @@ class Test extends Base {
     //
     return {
       all: `
-        select * from students 
+        select * from Person 
       `,
       byFullName: `
-        select * from students
-        where firstName = ? && lastName = ?
+        select * from Person
+        where Name = ?
       `,
       newStudent: `
-        INSERT INTO students SET ?
+        INSERT INTO Person SET ?
       `
     }
   }
