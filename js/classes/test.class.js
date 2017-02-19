@@ -4,18 +4,19 @@ class Test extends Base {
     super();
     this.runAQuery();
   }
+    
 
   runAQuery(){
     // Just an example of how to run a query
     this.db.all((data)=>{
       console.log('Result of the query "all"',data);
-      //this.runAnotherQuery();
+      this.runAnotherQuery();
     });
   }
 
   runAnotherQuery(){
     // Just an example of how to run a query
-    this.db.byFullName(['Kalle Anka'],(data)=>{
+    this.db.byFullName(['Anton Alfsson'],(data)=>{
       console.log('Result of the query "byFullName"',data);
       this.runAThirdQuery();
     });
@@ -24,7 +25,11 @@ class Test extends Base {
   runAThirdQuery(){
     // Just an example of how to run a query
     this.db.newStudent({
-        firstName:'Anna Andersson'
+        pNr:'198909144263',
+        Name:'Anna Andersson',
+        roll:'Student',
+        lösen:'1234',
+        klass:'sysjm2'
       },(data)=>{
       console.log('Result of the query "newStudent"',data);
     });
