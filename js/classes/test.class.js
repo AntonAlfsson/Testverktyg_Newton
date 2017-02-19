@@ -4,6 +4,7 @@ class Test extends Base {
     super();
     this.runAQuery();
   }
+    
 
   runAQuery(){
     // Just an example of how to run a query
@@ -15,7 +16,7 @@ class Test extends Base {
 
   runAnotherQuery(){
     // Just an example of how to run a query
-    this.db.byFullName(['Kalle','Anka'],(data)=>{
+    this.db.byFullName(['Anton Alfsson'],(data)=>{
       console.log('Result of the query "byFullName"',data);
       this.runAThirdQuery();
     });
@@ -24,9 +25,11 @@ class Test extends Base {
   runAThirdQuery(){
     // Just an example of how to run a query
     this.db.newStudent({
-        firstName:'Anna',
-        lastName:'Andersson',
-        course:5
+        pNr:'198909144263',
+        Name:'Anna Andersson',
+        roll:'Student',
+        lösen:'1234',
+        klass:'sysjm2'
       },(data)=>{
       console.log('Result of the query "newStudent"',data);
     });
@@ -42,14 +45,14 @@ class Test extends Base {
     //
     return {
       all: `
-        select * from students 
+        select * from Person 
       `,
       byFullName: `
-        select * from students
-        where firstName = ? && lastName = ?
+        select * from Person
+        where Name = ?
       `,
       newStudent: `
-        INSERT INTO students SET ?
+        INSERT INTO Person SET ?
       `
     }
   }
