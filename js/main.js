@@ -1,4 +1,7 @@
-new Test();
+
+
+
+new Person().getAllByName();
 
 $(start);
 
