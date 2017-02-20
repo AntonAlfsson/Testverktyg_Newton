@@ -2,31 +2,29 @@ class Person extends Base {
     
     constructor(){
         super();
+        this.getAllByName();
     }
     
     
-    getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev
+    getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev 
+        
         this.db.allByName({  
         },(data)=>{
-         var personer = [];
+            $('.inloggning').empty();
            for(var i = 0; i < data.length; i++){
-            //   personer[i] = data[i].roll + ' ' + data[i].Name;
-               
-            $('.inloggning').append('<li><a href="#">' + data[i].roll + ' ' + data[i].Name + '</a></li>');
-               
-           }
-            
+              
+            $('.inloggning').append('<li><a href="#">' + data[i].roll + ' ' + data[i].Name + '</a></li>');   
+           }     
         });
     }
     
     
-    
-    addStudent(pNr, Name, lösen, klass){
-        
+
+    addStudent(pNr, name, lösen, klass){   
     // Just an example of how to run a query
     this.db.newPerson({
         pNr: pNr,
-        Name: Name,
+        Name: name,
         roll:'Student',
         lösen: lösen,
         klass: klass
@@ -35,11 +33,11 @@ class Person extends Base {
     });
   }
     
-    addTeacher(pNr, Name, lösen){
+    addTeacher(pNr, name, lösen){
     // Just an example of how to run a query
     this.db.newPerson({
         pNr: pNr,
-        Name: Name,
+        Name: name,
         roll:'Lärare',
         lösen: lösen
       },(data)=>{
@@ -67,6 +65,4 @@ class Person extends Base {
     `
     }
   }
-    
-    
 }

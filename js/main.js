@@ -3,7 +3,9 @@ $(start);
 
 function start(){
     console.log('Hello and welcome!');
-    new Person().getAllByName();
+    var arr = [];
+    new Person();
+    
 }
 
 

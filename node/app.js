@@ -36,7 +36,9 @@ class App {
     server.use(this.express.static(basePath));
 
     // Start the web server at port 3000
-    server.listen(3000);
+    server.listen(3000, function(){
+        console.log('Server listening on port 3000');
+    });
 
   }
 
