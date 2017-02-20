@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema testverktyg
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema testverktyg
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `testverktyg` DEFAULT CHARACTER SET utf8 ;
+USE `testverktyg` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Test`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Test` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Test` (
   `idTest` INT NOT NULL,
   `Title` VARCHAR(45) NOT NULL,
   `start` DATETIME NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Person`
+-- Table `testverktyg`.`Person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Person` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `pNr` VARCHAR(12) NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `roll` VARCHAR(45) NOT NULL,
@@ -43,9 +43,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Response`
+-- Table `testverktyg`.`Response`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Response` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Response` (
   `idResponse` INT NOT NULL AUTO_INCREMENT,
   `response` VARCHAR(45) NOT NULL,
   `Person_pNr` VARCHAR(12) NOT NULL,
@@ -53,16 +53,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Response` (
   INDEX `fk_Response_Person1_idx` (`Person_pNr` ASC),
   CONSTRAINT `fk_Response_Person1`
     FOREIGN KEY (`Person_pNr`)
-    REFERENCES `mydb`.`Person` (`pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Question`
+-- Table `testverktyg`.`Question`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Question` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Question` (
   `idQuestion` INT NOT NULL AUTO_INCREMENT,
   `Title` VARCHAR(45) NOT NULL,
   `HTML-element` MEDIUMTEXT NULL,
@@ -75,21 +75,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Question` (
   INDEX `fk_Question_Response1_idx` (`Response_idResponse` ASC),
   CONSTRAINT `fk_Question_Test`
     FOREIGN KEY (`Test_idTest`)
-    REFERENCES `mydb`.`Test` (`idTest`)
+    REFERENCES `testverktyg`.`Test` (`idTest`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Question_Response1`
     FOREIGN KEY (`Response_idResponse`)
-    REFERENCES `mydb`.`Response` (`idResponse`)
+    REFERENCES `testverktyg`.`Response` (`idResponse`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Option`
+-- Table `testverktyg`.`Option`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Option` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Option` (
   `idOption` INT NOT NULL AUTO_INCREMENT,
   `options` VARCHAR(45) NOT NULL,
   `trueFalse` TINYINT(1) NOT NULL,
@@ -98,16 +98,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Option` (
   INDEX `fk_Option_Question1_idx` (`Question_idQuestion` ASC),
   CONSTRAINT `fk_Option_Question1`
     FOREIGN KEY (`Question_idQuestion`)
-    REFERENCES `mydb`.`Question` (`idQuestion`)
+    REFERENCES `testverktyg`.`Question` (`idQuestion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Test_has_Person`
+-- Table `testverktyg`.`Test_has_Person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Test_has_Person` (
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Test_has_Person` (
   `Test_idTest` INT NOT NULL,
   `Person_pNr` VARCHAR(12) NOT NULL,
   PRIMARY KEY (`Test_idTest`, `Person_pNr`),
@@ -115,12 +115,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Test_has_Person` (
   INDEX `fk_Test_has_Person_Test1_idx` (`Test_idTest` ASC),
   CONSTRAINT `fk_Test_has_Person_Test1`
     FOREIGN KEY (`Test_idTest`)
-    REFERENCES `mydb`.`Test` (`idTest`)
+    REFERENCES `testverktyg`.`Test` (`idTest`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Test_has_Person_Person1`
     FOREIGN KEY (`Person_pNr`)
-    REFERENCES `mydb`.`Person` (`pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
