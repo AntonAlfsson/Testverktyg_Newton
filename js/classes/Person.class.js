@@ -5,11 +5,17 @@ class Person extends Base {
     }
     
     
-    getAllByName(){ //
-        this.db.allByName({
-            
+    getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev
+        this.db.allByName({  
         },(data)=>{
-            console.log(data);
+         var personer = [];
+           for(var i = 0; i < data.length; i++){
+            //   personer[i] = data[i].roll + ' ' + data[i].Name;
+               
+            $('.inloggning').append('<li><a href="#">' + data[i].roll + ' ' + data[i].Name + '</a></li>');
+               
+           }
+            
         });
     }
     
@@ -39,7 +45,7 @@ class Person extends Base {
       },(data)=>{
       console.log('Result of the query "newTeacher"',data);
     });
-  }
+    }
     
 
     static get sqlQueries(){
@@ -56,7 +62,8 @@ class Person extends Base {
         INSERT INTO Person SET ?
       `,
       allByName: `
-        select Name from Person
+        select Name, roll from Person
+        order by roll
     `
     }
   }

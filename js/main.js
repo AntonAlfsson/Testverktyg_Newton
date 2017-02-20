@@ -1,13 +1,9 @@
-
-
-
-new Person().getAllByName();
-
 $(start);
 
 
 function start(){
     console.log('Hello and welcome!');
+    new Person().getAllByName();
 }
 
 
