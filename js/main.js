@@ -1,10 +1,11 @@
-new Test();
-
 $(start);
 
 
 function start(){
     console.log('Hello and welcome!');
+    var arr = [];
+    new Person();
+    
 }
 
 
