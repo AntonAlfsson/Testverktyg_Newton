@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        
         <link rel="stylesheet" href="css/libs/cerulean.bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrapTricks.css">
         <link rel="stylesheet" href="css/main.css">
@@ -13,10 +14,13 @@
         <script src="js/libs/bootstrap.min.js"></script>
         <script src="js/simpleTemplating.js"></script>
         <script src="js/main.js"></script> 
-        <script src="template/Fragor.html"></script>
-        <script src="template/test-resultat.html"></script>
+        <!-- templates -->
+        <script src="template/Fragor.html" id="Fragor"></script>
+        <script src="template/testresultat.html" id="test-result"></script>
         <script src="template/navbar.html"></script>
         <script src="template/footer.html"></script>
+        <script src="template/start.html" id="start"></script>
+        
         <title>Testsidan</title>
     </head>
 
@@ -24,7 +28,11 @@
         
       <div template="navbar"></div>
     <!--<div template="Fragor"></div>-->
-    <div template="Fragor"></div>
+        
+        <div template="start" id="start"></div>
+        <div template="Fragor" id="Fragor"></div>
+        <div template="testresultat" id="testresultat"></div>
+    
       <div template="footer"></div>
 
 
