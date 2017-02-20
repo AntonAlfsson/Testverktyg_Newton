@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         
+        <!-- Stylesheet -->
         <link rel="stylesheet" href="css/libs/cerulean.bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrapTricks.css">
         <link rel="stylesheet" href="css/main.css">
+        
         <!-- scripts -->
         <script src="js/libs/jquery.js"></script>
         <script src="js/classes/base.class.js"></script>
@@ -18,7 +20,9 @@
         <script src="js/libs/bootstrap.min.js"></script>
         <script src="js/simpleTemplating.js"></script>
         <script src="js/main.js"></script> 
+        
         <!-- templates -->
+        <script src="template/reportBootstrapSize.html"></script> <!-- Glöm ej att ta bort innan inlämning -->
         <script src="template/Fragor.html" id="Fragor"></script>
         <script src="template/testresultat.html" id="test-result"></script>
         <script src="template/navbar.html"></script>
@@ -31,13 +35,16 @@
     <body>
         
       <div template="navbar"></div>
-    <!--<div template="Fragor"></div>-->
         
+        <!--         Simple Templating         -->
         <div template="start" id="start"></div>
         <div template="Fragor" id="Fragor"></div>
         <div template="testresultat" id="testresultat"></div>
+        <!---------------------------------------------------->
     
       <div template="footer"></div>
+        
+        <div template="reportBootstrapSize"></div> <!-- Glöm ej att ta bort innan inlämning -->
 
 
     </body>
