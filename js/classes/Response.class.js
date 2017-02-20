@@ -1,22 +1,22 @@
-class Respons extends Base {
+class Response extends Base {
     
     constructor(){
         super();
-        this.getAllByRespons();
+        this.getAllByResponse();
     }
 
     static get sqlQueries(){
 
     return {
       all: `
-        select * from Respons 
+        select * from Response 
       `,
       byPerson_pNr: `
-        select * from Respons
+        select * from Response
         where Person_pNr = ?
       `,
-      newRespons: `
-        INSERT INTO Respons SET ?
+      newResponse: `
+        INSERT INTO Response SET ?
       `
     }
   }
