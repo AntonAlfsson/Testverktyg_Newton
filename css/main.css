@@ -16,8 +16,16 @@ footer {
   width: 100%;
   /* Som här */
   height: 60px;
-  background-color: blue;
 
+
+}
+
+h5 {
+  text-align: center;
+}
+
+.top-buffer {
+  margin-top: 20%;
 }
 
 /*För att ta ta bort rundade hörn. Kommer ligga på alla
@@ -27,12 +35,9 @@ element. Går att justera senare om nödvändigt. */
 }
 
 /*För stående mobil vy. Anpassat efter Iphone 6.*/
-@media screen and (max-width: 667px) and (max-height: 375px) {
-  body {margin-bottom:120px;}
-  footer {height:120px;}
-
-  .dropdown-menu {
-
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .top-buffer {
+    margin-top: 32% !important;
   }
 
 }
