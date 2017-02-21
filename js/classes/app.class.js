@@ -2,8 +2,8 @@ class App {
 
   constructor(){
       
-      var start = new start();
-      var Fragor = new Fragor();
+      var sp = new start();
+      var fj = new Fragor();
       //var testresultat = new testresultat();
 
     // Development tool
@@ -11,9 +11,6 @@ class App {
     //var testDataGen = new TestDataGenerator();
       
     new navbar().display('body');
-      
-      
-    new router();
       
       
     new footer().display('body');

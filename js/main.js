@@ -17,7 +17,7 @@ $(document).on('click', 'input[type=radio]', function(){
 
     
 });
-
+/*
 // Update the count down every 1 second 
 var x = setInterval(function() { 
  
@@ -43,3 +43,4 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "Tiden är slut!"; 
   } 
 }, 1000); 
+*/

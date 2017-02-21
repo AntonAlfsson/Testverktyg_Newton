@@ -32,6 +32,7 @@ window.load = `
     testresultat.class.js
     Person.class.js
     test-data-generator.class.js
+    teacherprofile.class.js
 
 
   js/classes/example/
@@ -53,6 +54,7 @@ window.load = `
     navbar.html
     start.html
     testresultat.html
+    teacherprofile.html
 
 
   js/main.js
