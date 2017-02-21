@@ -8,12 +8,11 @@ class App {
     new navbar().display('body');
       
       
-      
-       new Fragor().display('body');
+    new start().display('body');  
       
       
     new footer().display('body');
     
-
-  }
+  } 
+    
 }

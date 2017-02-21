@@ -1,17 +1,14 @@
 new App();
 
-/*
-$(start);
+$(go);
 
 
-function start(){
+function go(){
     console.log('Hello and welcome!');
-    var arr = [];
     new Person();
     
 }
 
-*/
 $(document).on('click', 'input[type=radio]', function(){
     
     var el = $(this).val(); // tar emot 1 till 4 

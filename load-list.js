@@ -24,13 +24,6 @@ window.load = `
   js/classes/
     bootstrap-size.js
     modal.class.js
-    organism.class.js  
-    pet.class.js
-    pet-owner.class.js
-    pet-list.class.js
-    pet-owner-list.class.js
-    pet-owner-view.class.js
-    test-data-generator.class.js
     app.class.js
     footer.class.js
     Fragor.class.js
@@ -38,6 +31,17 @@ window.load = `
     start.class.js
     testresultat.class.js
     Person.class.js
+
+  js/classes/example/
+    organism.class.js  
+    pet.class.js
+    pet-owner.class.js
+    pet-list.class.js
+    pet-owner-list.class.js
+    pet-owner-view.class.js
+    test-data-generator.class.js
+
+
 
   templates/
     bootstrap-size.html
