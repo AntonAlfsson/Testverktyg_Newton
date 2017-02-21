@@ -2,8 +2,8 @@ class TestDataGenerator extends Base {
 
   constructor(){
     super();
-    this.dropPetowners(()=>{
-      this.generatePetOwners();
+    this.dropUsers(()=>{
+      this.generateUsers();
     });
 
   }
@@ -16,12 +16,20 @@ class TestDataGenerator extends Base {
     var diff = max - min;
     return min + Math.round(0.5 + Math.random()*diff);
   }
+    
+    randomRoll(){
+        while(true){
+        var i = 1 + Math.round(0.5 + Math.random()*2);
+            console.log(i);
+        }
+        return 'Student';
+    }
 
-  dropPetowners(callback){
-    this.db.dropPetowners(callback);
+  dropUsers(callback){
+    this.db.dropUsers(callback);
   }
 
-  generatePetOwners(howMany = 10){
+  generateUsers(howMany = 10){
 
     // Some data to seed from
     var firstNames = [
@@ -33,16 +41,16 @@ class TestDataGenerator extends Base {
       'Efraimsdotter', 'Knutsson', 'Khwaja', 'Malm', 'Frisk'
     ];
 
-    // Create a new list of petowners
-    var list = new PetOwnerList();
+    // Create a new list of users
+    var list = new userList();
     for(var i = 0; i < howMany; i++){
       list.push({
-        firstName: this.randomItemFromArray(firstNames),
-        lastName: this.randomItemFromArray(lastNames),
-        birthDate: 
-          this.randomNum(1920,2010) + '-' +
-          this.randomNum(1,12) + '-' + 
-          this.randomNum(0,28)
+        pNr: this.randomNum(1920,2010) +
+          this.randomNum(1,12) +
+          this.randomNum(0,28),   
+        Name: this.randomItemFromArray(firstNames) + ' ' + this.randomItemFromArray(lastNames),  
+        //roll: this.randomRoll()
+
       });
     }
 
@@ -61,8 +69,8 @@ class TestDataGenerator extends Base {
 
   static get sqlQueries(){
     return {
-      dropPetowners: `
-        DROP TABLE IF EXISTS petowners 
+      dropUsers: `
+        DROP TABLE IF EXISTS Person 
       `
     }
   }
