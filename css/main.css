@@ -4,10 +4,12 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Sätt lika hög höjd här */
   margin-bottom: 60px;
 }
+
 footer {
   position: absolute;
   bottom: 0;

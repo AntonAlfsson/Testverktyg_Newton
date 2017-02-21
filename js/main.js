@@ -1,3 +1,6 @@
+new App();
+
+/*
 $(start);
 
 
@@ -8,7 +11,7 @@ function start(){
     
 }
 
-
+*/
 $(document).on('click', 'input[type=radio]', function(){
     
     var el = $(this).val(); // tar emot 1 till 4 
