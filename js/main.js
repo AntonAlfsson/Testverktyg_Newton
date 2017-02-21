@@ -14,12 +14,12 @@ $(document).on('click', 'input[type=radio]', function(){
     var el = $(this).val(); // tar emot 1 till 4 
     
     console.log('hej du har klickat på mig! ' + el);
+    
+    });
 // Hittade lite kod för en timer, kanske något man kan använda sig utav senare.
 // Set the date we're counting down to
 var countDownDate = new Date("Feb 20, 2017 17:00:00").getTime();
 
-    
-});
 // Update the count down every 1 second
 var x = setInterval(function() {
 
