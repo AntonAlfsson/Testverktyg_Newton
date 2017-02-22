@@ -1,7 +1,17 @@
 class Person extends Base {
     
-    constructor(){
-        super();
+    static defaultPropertyValues(){
+    return {
+      pNr: '199105231320',
+      Name: 'Jon Doe',
+      roll: 'Student',
+      klass: 'SYSJM2',
+      lösen: '1234'
+    }
+  }
+     
+    constructor(propertyValues){
+        super(propertyValues);
         this.getAllByName();
         this.fillStudentList();
     }
@@ -23,6 +33,7 @@ class Person extends Base {
     }
     
     fillStudentList(){
+        console.log('hej');
         var n;
         $('.student-list').empty();
         this.db.allStudents({
@@ -38,6 +49,20 @@ class Person extends Base {
         });
     }
     
+    insertInDb(callback){
+        this.db.newPerson({
+        pNr: this.pNr,
+        Name: this.Name,
+        roll: this.roll,
+        lösen: this.lösen,
+        klass: this.klass
+    },callback);
+  }
+    
+    get name(){
+        return this.Name;
+    }
+    
     
 
     static get sqlQueries(){
@@ -49,7 +74,10 @@ class Person extends Base {
     `,
         allStudents:`
         select pNr, Name, roll, klass from Person
-    `
+    `,
+        newPerson: `
+        INSERT Person SET ?
+`
     }
   }
 }
