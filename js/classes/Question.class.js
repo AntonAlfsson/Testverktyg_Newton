@@ -10,7 +10,7 @@ class Question extends Base {
           this.db.byTitle({  
           },(data)=>{
             console.log("nu går jag in i metoden getAllByTitle")
-            $('.question-head').html(data[0]);  
+            $('.question-head').html('' + data[0].title);  
             console.log(data[1].title);
               
               
