@@ -9,10 +9,12 @@ class QuestionOption extends Base {
           
           this.db.byOptions({  
           },(data)=>{
-            console.log("nu går jag in i metoden getAllByOption")
-            $('#option1').html('' + data[0].options);  
-            //console.log(data[0].options);
-                        
+            console.log("nu går jag in i metoden getAllByOption");
+            $('#option1').html(data[0].options);  
+            console.log(data[1].options);
+              
+              
+              //$('.question-head').html("Ny text");            
           });
 
    
