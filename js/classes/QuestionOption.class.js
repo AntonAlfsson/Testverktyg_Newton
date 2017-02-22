@@ -5,14 +5,13 @@ class QuestionOption extends Base {
         this.getAllByQuestionOption();
     }
 
-    getAllByQuestionOption(){ // metod för att hämta Options från tabellen Option
+    getAllByQuestionOption(){ // metod för att hämta QuestionOptions från tabellen QuestionOption
           
           this.db.all({  
           },(data)=>{
-            console.log("nu går jag in i metoden getAllByQuestionOption")
-            //$('#option1').html('Hej hej');  
-            $('#option1').html('' + data[0].QuestionOption);  
-            console.log(data[0]);
+            $('#option1').html('' + data[0].QuestionOption);
+            $('#option2').html('' + data[1].QuestionOption);  
+            $('#option3').html('' + data[2].QuestionOption);  
                         
           });
 
