@@ -13,9 +13,9 @@ class Person extends Base {
             $('.inloggning').empty();
            for(var i = 0; i < data.length; i++){
             if(data[i].roll == 'Student'){
-            $('.inloggning').append('<li><a href="#Fragor">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
+            $('.inloggning').append('<li><a href="/Fragor">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
             }else{
-               $('.inloggning').append('<li><a href="#testresultat">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
+               $('.inloggning').append('<li><a href="/teacherprofile">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
             }
            }     
         });

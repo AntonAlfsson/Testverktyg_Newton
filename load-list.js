@@ -27,10 +27,14 @@ window.load = `
     app.class.js
     footer.class.js
     Fragor.class.js
+    Question.class.js
     navbar.class.js
     start.class.js
     testresultat.class.js
     Person.class.js
+    test-data-generator.class.js
+    teacherprofile.class.js
+
 
   js/classes/example/
     organism.class.js  
@@ -39,7 +43,7 @@ window.load = `
     pet-list.class.js
     pet-owner-list.class.js
     pet-owner-view.class.js
-    test-data-generator.class.js
+    
 
 
 
@@ -51,6 +55,7 @@ window.load = `
     navbar.html
     start.html
     testresultat.html
+    teacherprofile.html
 
 
   js/main.js

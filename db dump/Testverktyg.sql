@@ -18,7 +18,7 @@ CREATE SCHEMA IF NOT EXISTS `testverktyg` DEFAULT CHARACTER SET utf8 ;
 USE `testverktyg` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Test`
+-- Table `testverktyg`.`Test`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Test` (
   `idTest` INT NOT NULL,

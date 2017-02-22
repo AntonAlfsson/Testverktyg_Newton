@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html> 
-	<head>
-		<meta charset="utf-8">
-		<title>Bootsrap basic</title>
-
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="css/bootstrap-theme.min.css">
-
-	</head> 
-
-
+teacherprofile.addTemplate('default', function(){return `
 <div class="container">
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
@@ -62,7 +48,7 @@
                       <tr>
                         <td>Email</td>
                         <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
+                      
                         <td>Phone Number</td>
                         <td>123-4567-890</td>
                            
@@ -93,8 +79,8 @@
 
 </div>
 </div>
-
-
+</div>
+<div class="container">
 <div class = "row"> 
 
 <div class = "col-lg-6">   
@@ -109,8 +95,7 @@
 </div>
 
 <div class = "col-lg-6">
-</div>
-<h2> Tests</h2>
+<h2 > Tests</h2>
 <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default">Add Test</button>
   <button type="button" class="btn btn-default">Delete Test</button>
@@ -213,10 +198,5 @@
     </table>
         </div>
 
-</div>
-
-<script src="js/jquery-3.1.1.min.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    </div></div>
+`});
