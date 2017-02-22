@@ -12,16 +12,15 @@ class teacherprofile extends Base {
       this.db.tName({
       },(data)=>{
         $('.teacherName').empty();
-        $('.teacherName').html('test');
+        $('.teacherName').html("test");
+        console.log('test');
         for(var i = 0; i < data.length; i++){
 
           console.log(data[i]);
 
           $('.teacherName').html('test');
 
-          if(data[i].Name == 'Per Persson'){
-            $('.panel-title').append('test');
-          }
+
 
         }
       });
