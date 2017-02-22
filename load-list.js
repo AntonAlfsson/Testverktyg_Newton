@@ -59,6 +59,7 @@ window.load = `
     start.html
     testresultat.html
     teacherprofile.html
+    Person.html
 
 
   js/main.js

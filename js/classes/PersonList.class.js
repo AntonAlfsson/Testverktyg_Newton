@@ -1,8 +1,7 @@
 class PersonList extends List {
 
   constructor(items){
-    super(Person,items);
-    this.getAllByName();  
+    super(Person,items);  
   }
 
   writeToDb(callback){
@@ -19,6 +18,7 @@ class PersonList extends List {
   readAllFromDb(callback){
     this.db.readAll((data)=>{
       this.push.apply(this,data);
+        this.getAllByName();
       callback();
     });
   }
@@ -36,7 +36,6 @@ class PersonList extends List {
             }
            }     
         });
-     
     }
     
         fillStudentList(){
