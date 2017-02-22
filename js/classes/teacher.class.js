@@ -17,7 +17,7 @@ class teacher extends Base {
                 if(data[i].roll == 'Student'){ 
                     this.n = data[i].Name;
                     
-                    $('.student-list').append('<tr><td><input type="checkbox" name="myTextEditBox" value="checked"/></td><td>' + data[i].pNr + '</td><td>' + this.n.substr(0, this.n.indexOf(' ')) + '</td<td>' + this.n.substr(this.n.indexOf(' '), this.n.length) + '</td><td>johncarter@mail.com</td></tr>');
+                    $('.student-list').append('<tr><td><input type="radio" name="myTextEditBox"></td><td>' + data[i].pNr + '</td><td>' + this.n.substr(0, this.n.indexOf(' ')) + '</td><td>' + this.n.substr(this.n.indexOf(' '), this.n.length) + '</td><td>default@mail.com</td></tr>');
                  }
             }
             
