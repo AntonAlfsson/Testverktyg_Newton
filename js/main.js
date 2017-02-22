@@ -1,10 +1,9 @@
-new App();
-
 $(go);
 
 
 function go(){
     console.log('Hello and welcome!');
+    new App();
     new Person();
     
 }

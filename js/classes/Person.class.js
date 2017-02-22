@@ -21,6 +21,7 @@ class Person extends Base {
         });
     }
     
+    
 
     static get sqlQueries(){
 

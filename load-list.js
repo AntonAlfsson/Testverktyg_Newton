@@ -34,6 +34,7 @@ window.load = `
     Person.class.js
     test-data-generator.class.js
     teacherprofile.class.js
+    teacher.class.js
 
 
   js/classes/example/
