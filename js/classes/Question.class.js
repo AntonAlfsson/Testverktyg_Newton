@@ -1,27 +1,45 @@
 class Question extends Base {
     
-    constructor(){
-        super();
-        this.getAllByType();
-    }
+      constructor(){
+          super();
+          this.getAllByTitle();
+      }
 
-    static get sqlQueries(){
+      getAllByTitle(){ // metod för att hämta Title från tabellen Question
+          
+          this.db.byTitle({  
+          },(data)=>{
+            console.log("nu går jag in i metoden getAllByTitle")
+            $('.question-head').html(data[1].title);  
+            console.log(data[2].title);
+              
+              
+              //$('.question-head').html("Ny text");            
+          });
 
-    return {
-      all: `
-        select * from Question 
-      `,
-      byTitle: `
-        select * from Question
-        where Title = ?
-      `,
-      newQuestion: `
-        INSERT INTO Question SET ?
-      `,
-      allByType: `
-        select Title, type from Question
-        order by type
-    `
+          //start here
+
+       
+
+      }
+      
+
+      static get sqlQueries(){
+
+      return {
+        all: `
+          select * from question 
+        `,
+        byTitle: `
+          select title from question
+        `,
+        newQuestion: `
+          INSERT INTO Question SET ?
+        `,
+        allByType: `
+          select Title, type from Question
+          order by type
+      `
+      }
     }
   }
-}

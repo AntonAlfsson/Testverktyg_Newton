@@ -2,7 +2,7 @@ class teacherprofile extends Base {
 
     constructor(propertyValues){
         super(propertyValues);
-        this.getTName();
+        //this.getTName();
     }
 
     //Detta är ett test att sätta en namn
@@ -13,10 +13,9 @@ class teacherprofile extends Base {
       },(data)=>{
         $('.teacherName').empty();
         $('.teacherName').html("test");
-        console.log('test');
         for(var i = 0; i < data.length; i++){
 
-          console.log(data[i]);
+          
 
           $('.teacherName').html('test');
 
@@ -28,12 +27,16 @@ class teacherprofile extends Base {
 
 
 
+
       static get sqlQueries(){
 
         return {
           tName: `
             select Name from Person
-          `
+          `,
+        allStudents:`
+        select pNr, Name, roll, klass from Person
+    `
         }
       }
     }
