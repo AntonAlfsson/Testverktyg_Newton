@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Question` (
   `img` MEDIUMTEXT NULL DEFAULT NULL,
   `type` VARCHAR(45) NOT NULL,
   `Test_idTest` INT(11) NOT NULL,
+  `Question` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`idQuestion`),
   INDEX `fk_Question_Test_idx` (`Test_idTest` ASC),
   CONSTRAINT `fk_Question_Test`
@@ -80,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `roll` VARCHAR(45) NOT NULL,
   `lösen` VARCHAR(45) NULL DEFAULT NULL,
   `klass` VARCHAR(45) NULL DEFAULT NULL,
+  `img` MEDIUMTEXT NULL,
   PRIMARY KEY (`pNr`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
