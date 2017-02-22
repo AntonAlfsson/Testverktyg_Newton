@@ -7,13 +7,20 @@ class Question extends Base {
 
       getAllByTitle(){ // metod för att hämta Title från tabellen Question
           
-          this.db.all({  
+          this.db.byTitle({  
           },(data)=>{
             console.log("nu går jag in i metoden getAllByTitle")
-              $('.question-head').empty();
-              //$('.question-head').html(data.title);
+            $('.question-head').html(data[1].title);  
+            console.log(data[2].title);
+              
+              
               //$('.question-head').html("Ny text");            
           });
+
+          //start here
+
+       
+
       }
       
 
@@ -21,11 +28,10 @@ class Question extends Base {
 
       return {
         all: `
-          select * from Question 
+          select * from question 
         `,
         byTitle: `
-          select * from Question
-          where Title = ?
+          select title from question
         `,
         newQuestion: `
           INSERT INTO Question SET ?

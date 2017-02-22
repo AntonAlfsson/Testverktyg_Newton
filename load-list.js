@@ -28,6 +28,7 @@ window.load = `
     footer.class.js
     Fragor.class.js
     Question.class.js
+    QuestionOption.class.js
     navbar.class.js
     start.class.js
     testresultat.class.js
