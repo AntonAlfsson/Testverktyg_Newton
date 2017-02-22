@@ -6,18 +6,24 @@ class Question extends Base {
       }
 
       getAllByTitle(){ // metod för att hämta Title från tabellen Question
-          
+          console.log("nu går jag in i metoden getAllByTitle")
+
           this.db.byTitle({  
-          },(data)=>{
-            console.log("nu går jag in i metoden getAllByTitle")
+          },(data)=>{          
             $('.question-head').html('' + data[0].title);  
             console.log(data[1].title);
               
-              
-              //$('.question-head').html("Ny text");            
+
+                         
           });
 
-          //start here
+          this.db.byQuestion({
+          },(data)=>{
+            $('.question').html('' + data[0].question);
+
+
+          });
+
 
        
 
@@ -33,6 +39,9 @@ class Question extends Base {
         byTitle: `
           select title from question
         `,
+        byQuestion: `
+          select question from question
+          `,
         newQuestion: `
           INSERT INTO Question SET ?
         `,
