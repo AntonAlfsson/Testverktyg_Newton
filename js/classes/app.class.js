@@ -2,18 +2,22 @@ class App {
 
   constructor(){
       
-      this.start();
-    
+      
+      
+      new dataGenerator((teacherprofile)=>{
+      this.start(teacherprofile);
+      });
+  
   } 
     
-    start(){
+    start(teacherprofile){
         
         this.navbar = new navbar();
         this.footer = new footer();    
         this.startPage = new start();
         this.testresultat = new testresultat();
         this.Fragor = new Fragor();
-        this.teacherprofile = new teacherprofile();
+        this.teacherprofile = teacherprofile;
         
         this.navbar.display('body');
         this.footer.display('body');
