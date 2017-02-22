@@ -2,7 +2,7 @@ class teacherprofile extends Base {
 
     constructor(propertyValues){
         super(propertyValues);
-        //this.getTName();
+        new teacher();
     }
 
     //Detta är ett test att sätta en namn
