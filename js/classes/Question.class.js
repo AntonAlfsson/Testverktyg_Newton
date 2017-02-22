@@ -11,7 +11,7 @@ class Question extends Base {
           },(data)=>{
             console.log("nu går jag in i metoden getAllByTitle")
               $('.question-head').empty();
-              $('.question-head').html(data[1].title);
+              //$('.question-head').html(data.title);
               //$('.question-head').html("Ny text");            
           });
       }
