@@ -1,4 +1,4 @@
-class Option extends Base {
+class QuestionOption extends Base {
     
     constructor(){
         super();
