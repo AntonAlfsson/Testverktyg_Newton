@@ -1,6 +1,13 @@
 class navbar extends Base {
-    
-    constructor(propertyValues){
-        super(propertyValues);
+
+  defaultPropertyValues(){
+    return {
+      personList: new PersonList()
     }
+  }
+
+  constructor(propertyValues = {}){
+    super(propertyValues);
+  }
+  
 }

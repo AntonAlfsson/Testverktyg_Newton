@@ -2,22 +2,19 @@ class App {
 
   constructor(){
       
-      
-      
-      new dataGenerator((teacherprofile)=>{
-      this.start(teacherprofile);
+      new dataGenerator((navbar)=>{
+      this.start(navbar);
       });
-  
   } 
     
-    start(teacherprofile){
+    start(navbar){
         
-        this.navbar = new navbar();
+        this.navbar = navbar;
         this.footer = new footer();    
         this.startPage = new start();
         this.testresultat = new testresultat();
         this.Fragor = new Fragor();
-        this.teacherprofile = teacherprofile;
+        this.teacherprofile = new teacherprofile();
         
         this.navbar.display('body');
         this.footer.display('body');
@@ -25,8 +22,8 @@ class App {
         
         var router = new Router({
           '/': ()=>{ this.showPage(this.startPage); },
-          '/teacherprofile': ()=> { this.showPage(this.teacherprofile); },
-          '/Fragor': ()=> { this.showPage(this.Fragor); },
+          '/Teacher': ()=> { this.showPage(this.teacherprofile); },
+          '/Student': ()=> { this.showPage(this.Fragor); },
           '/testresultat': ()=> { this.showPage(this.testresultat); }
         });
       

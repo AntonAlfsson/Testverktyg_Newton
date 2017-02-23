@@ -16,9 +16,9 @@ class PersonList extends List {
   }
 
   readAllFromDb(callback){
-    this.db.readAll((data)=>{
+    this.db.readAllStudents((data)=>{
       this.push.apply(this,data);
-        this.getAllByName();
+        //this.getAllByName();
       callback();
     });
   }
@@ -38,21 +38,6 @@ class PersonList extends List {
         });
     }
     
-        fillStudentList(){
-        var n;
-        $('.student-list').empty();
-        this.db.allStudents({
-        },(data)=>{
-            for(let i = 0; i < data.length; i++){
-                if(data[i].roll == 'Student'){ 
-                    this.n = data[i].Name;
-                    
-                    $('.student-list').append('<tr><td><input type="radio" name="myTextEditBox"></td><td>' + data[i].pNr + '</td><td>' + this.n.substr(0, this.n.indexOf(' ')) + '</td><td>' + this.n.substr(this.n.indexOf(' '), this.n.length) + '</td><td>default@mail.com</td></tr>');
-                 }
-            }
-            
-        });
-    }
 
   static get sqlQueries(){
     return {
@@ -63,7 +48,7 @@ class PersonList extends List {
         select Name, roll from Person
         order by roll
     `,
-      readAll: `
+      readAllStudents: `
         SELECT * FROM Person
       `
     }

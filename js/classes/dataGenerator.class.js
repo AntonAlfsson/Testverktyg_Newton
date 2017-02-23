@@ -9,14 +9,14 @@ class dataGenerator extends Base {
     generateUsers(){
         var list = new PersonList();
         
-        list.readAllFromDb(()=>{
+        list.readAllFromDb(()=>{ // läser in personer från db
             console.log('Read from db', list);
             
-            var theteacherprofile = new teacherprofile({
+            var theNavbar = new navbar({
             personList: list
           });
 
-          this.callback(theteacherprofile);
+          this.callback(theNavbar);
         });
     }
     
