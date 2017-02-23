@@ -35,7 +35,7 @@ window.load = `
     Person.class.js
     test-data-generator.class.js
     teacherprofile.class.js
-    teacher.class.js
+    
 
 
   js/classes/example/
@@ -45,7 +45,7 @@ window.load = `
     pet-list.class.js
     pet-owner-list.class.js
     pet-owner-view.class.js
-    
+
 
 
 
