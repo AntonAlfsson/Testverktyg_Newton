@@ -1,34 +1,50 @@
 class Person extends Base {
     
-    constructor(){
-        super();
-        this.getAllByName();
+    static defaultPropertyValues(){
+    return {
+      pNr: '199105231320',
+      Name: 'Jon Doe',
+      roll: 'Student',
+      klass: 'SYSJM2',
+      lösen: '1234'
+    }
+  }
+     
+    constructor(propertyValues){
+        super(propertyValues);
+        if(this.Student_id == null){
+            this.roll = 'Teacher'
+        }else{
+            this.roll = 'Student'
+        }
     }
     
+    insertInDb(callback){
+        this.db.newPerson({
+        pNr: this.pNr,
+        Name: this.Name,
+        roll: this.roll,
+        lösen: this.lösen,
+        klass: this.klass
+    },callback);
+  }
     
-    getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev 
-        
-        this.db.allByName({  
-        },(data)=>{
-            $('.inloggning').empty();
-           for(var i = 0; i < data.length; i++){
-            if(data[i].roll == 'Student'){
-            $('.inloggning').append('<li><a href="/Fragor">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }else{
-               $('.inloggning').append('<li><a href="/teacherprofile">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }
-           }     
-        });
+    get name(){
+        return this.Name;
     }
+    
+    getroll(){
+        return this.roll;
+    }
+    
     
 
     static get sqlQueries(){
 
     return {
-      allByName: `
-        select Name, roll from Person
-        order by roll
-    `
+        newPerson: `
+        INSERT Person SET ?
+`
     }
   }
 }

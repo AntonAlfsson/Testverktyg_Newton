@@ -1,13 +1,4 @@
-new App();
-
-$(go);
-
-
-function go(){
-    console.log('Hello and welcome!');
-    new Person();
-    
-}
+$(()=>{new App()});
 
 $(document).on('click', 'input[type=radio]', function(){
     

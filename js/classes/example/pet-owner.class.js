@@ -1,4 +1,4 @@
-class PetOwner extends Organism {
+class User extends Organism {
 
   static defaultPropertyValues(){
     return {
