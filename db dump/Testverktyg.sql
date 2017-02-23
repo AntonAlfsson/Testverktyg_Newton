@@ -27,6 +27,15 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Student` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `Student` (`id`,`klass`) VALUES (1,'Sysjm2');
+INSERT INTO `Student` (`id`,`klass`) VALUES (2,'Sysjm2');
+INSERT INTO `Student` (`id`,`klass`) VALUES (3,'Sysjm2');
+INSERT INTO `Student` (`id`,`klass`) VALUES (4,'Sysjm1');
+INSERT INTO `Student` (`id`,`klass`) VALUES (5,'Sysjm1');
+INSERT INTO `Student` (`id`,`klass`) VALUES (6,'Sysjm1');
+INSERT INTO `Student` (`id`,`klass`) VALUES (7,'Sysjm1');
+INSERT INTO `Student` (`id`,`klass`) VALUES (8,'Sysjm1');
+
 
 -- -----------------------------------------------------
 -- Table `testverktyg`.`Teacher`
@@ -36,6 +45,9 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher` (
   PRIMARY KEY (`idTeacher`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `Teacher` (`idTeacher`) VALUES (1);
+INSERT INTO `Teacher` (`idTeacher`) VALUES (2);
 
 
 -- -----------------------------------------------------
@@ -63,6 +75,17 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('196412083434','Johanna Andersson',NULL,NULL,1);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('197801147878','Carl Hamilton','1234',NULL,2);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('198804045678','Isabelle Larsson','1234',2,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199204011234','Alexandra Karlsson',NULL,7,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199306177898','Andreas Persson',NULL,6,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199410026789','Hanna Jepsson',NULL,4,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199411146787','Alexande Lundgren',NULL,5,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199412093456','Rasmus Karlsson','1234',1,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199502253456','Hampus Persson',NULL,3,NULL);
+
+
 
 -- -----------------------------------------------------
 -- Table `testverktyg`.`Test`
@@ -75,6 +98,9 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Test` (
   PRIMARY KEY (`idTest`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03-03 00:00:00','2017-03-23 00:00:00');
+
 
 
 -- -----------------------------------------------------
@@ -99,6 +125,10 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('198804045678',1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('199204011234',1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('199306177898',1);
+
 
 -- -----------------------------------------------------
 -- Table `testverktyg`.`Question`
@@ -122,6 +152,12 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (1,'Question 1','What is the diameter of the moon?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Quesiton 2','What is 4+5?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Quesiton 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
+
+
 
 -- -----------------------------------------------------
 -- Table `testverktyg`.`QuestionOption`
@@ -141,6 +177,20 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`QuestionOption` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 13
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (1,'The moon is full',1,1);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (2,'The diameter equals 3 476 km',2,1);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (3,'It\'s not possible to know',1,1);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (4,'9',2,2);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (5,'11',1,2);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (6,'22',1,2);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (7,'3',1,3);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (8,'0',1,3);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (9,'8',2,3);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (10,'Australia',2,4);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (11,'Russia',1,4);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (12,'USA',1,4);
+
 
 
 -- -----------------------------------------------------
@@ -184,6 +234,14 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher_has_Student` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,1);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,2);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,3);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,4);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,5);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,6);
+INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,7);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
