@@ -2,13 +2,14 @@ class App {
 
   constructor(){
       
-      this.start();
-    
+      new dataGenerator((navbar)=>{
+      this.start(navbar);
+      });
   } 
     
-    start(){
+    start(navbar){
         
-        this.navbar = new navbar();
+        this.navbar = navbar;
         this.footer = new footer();    
         this.startPage = new start();
         this.testresultat = new testresultat();
@@ -21,8 +22,8 @@ class App {
         
         var router = new Router({
           '/': ()=>{ this.showPage(this.startPage); },
-          '/teacherprofile': ()=> { this.showPage(this.teacherprofile); },
-          '/Fragor': ()=> { this.showPage(this.Fragor); },
+          '/Teacher': ()=> { this.showPage(this.teacherprofile); },
+          '/Student': ()=> { this.showPage(this.Fragor); },
           '/testresultat': ()=> { this.showPage(this.testresultat); }
         });
       

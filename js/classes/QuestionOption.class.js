@@ -2,19 +2,17 @@ class QuestionOption extends Base {
     
     constructor(){
         super();
-        this.getAllByOption();
+        this.getAllByQuestionOption();
     }
 
-    getAllByOption(){ // metod för att hämta Options från tabellen Option
+    getAllByQuestionOption(){ // metod för att hämta QuestionOptions från tabellen QuestionOption
           
-          this.db.byOptions({  
+          this.db.all({  
           },(data)=>{
-            console.log("nu går jag in i metoden getAllByOption");
-            $('#option1').html(data[0].options);  
-            console.log(data[1].options);
-              
-              
-              //$('.question-head').html("Ny text");            
+            $('#option1').html('' + data[0].QuestionOption);
+            $('#option2').html('' + data[1].QuestionOption);  
+            $('#option3').html('' + data[2].QuestionOption);  
+                        
           });
 
    
@@ -25,23 +23,19 @@ class QuestionOption extends Base {
 
     return {
       all: `
-        select * from Option 
+        select * from QuestionOption
       `,
 
-      byOptions: `
-        select options from option 
+      byQuestionOption: `
+        select QuestionOption from QuestionOption
       `,
       bytrueFalse: `
-        select * from Option
+        select * from QuestionOption
         where trueFalse = ?
       `,
       newOption: `
-        INSERT INTO Option SET ?
-      `,
-      allByQuestion_idQuestion: `
-        select Options, trueFalse from Option
-        order by Question_idQuestion
-    `
+        INSERT INTO QuestionOption SET ?
+      `
     }
   }
 }
