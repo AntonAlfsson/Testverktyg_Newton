@@ -1,7 +1,7 @@
 window.load = `
 
   css/libs/
-    cerulean.bootstrap.min.css
+    sandstone.bootstrap.min.css
     bootstrap-tricks.css
 
   css/main.css
@@ -20,7 +20,7 @@ window.load = `
     base.class.js
     list.class.js
     router.class.js
-  
+
   js/classes/
     bootstrap-size.js
     modal.class.js
@@ -35,10 +35,12 @@ window.load = `
     Person.class.js
     test-data-generator.class.js
     teacherprofile.class.js
+    PersonList.class.js
+    dataGenerator.class.js
 
 
   js/classes/example/
-    organism.class.js  
+    organism.class.js
     pet.class.js
     pet-owner.class.js
     pet-list.class.js
@@ -50,13 +52,14 @@ window.load = `
 
   templates/
     bootstrap-size.html
-    modal.html
-    footer.html
-    Fragor.html
     navbar.html
+    footer.html
+    modal.html
+    Fragor.html
     start.html
     testresultat.html
     teacherprofile.html
+    Person.html
 
 
   js/main.js

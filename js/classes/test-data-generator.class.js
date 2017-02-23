@@ -1,32 +1,38 @@
 class TestDataGenerator extends Base {
 
-  constructor(){
+  constructor(callback){
     super();
-    this.dropUsers(()=>{
+    this.callback = callback;
       this.generateUsers();
-    });
-
+  /*  this.dropTables(()=>{
+      this.generateUsers();
+    });*/
   }
-
-  randomItemFromArray(arr){
+    
+randomItemFromArray(arr){
     return arr[Math.floor(Math.random()*arr.length)];
   }
 
   randomNum(min,max){
     var diff = max - min;
-    return min + Math.round(0.5 + Math.random()*diff);
+    return min + Math.round(0.5 + Math.random()*(diff+1)) - 1;
   }
     
     randomRoll(){
-        while(true){
-        var i = 1 + Math.round(0.5 + Math.random()*2);
-            console.log(i);
+        var roll = 1 + Math.round(0.5 + Math.random()*(1+1)) - 1;
+        
+        if(roll == 1){
+            return 'Student';
+        }else{
+            return 'Lärare';
         }
-        return 'Student';
+        
     }
 
-  dropUsers(callback){
-    this.db.dropUsers(callback);
+  dropTables(callback){
+    this.db.dropUsers(()=>{
+        
+    });
   }
 
   generateUsers(howMany = 10){
@@ -41,39 +47,30 @@ class TestDataGenerator extends Base {
       'Efraimsdotter', 'Knutsson', 'Khwaja', 'Malm', 'Frisk'
     ];
 
-    // Create a new list of users
-    var list = new userList();
     for(var i = 0; i < howMany; i++){
-      list.push({
-        pNr: this.randomNum(1920,2010) +
-          this.randomNum(1,12) +
-          this.randomNum(0,28),   
-        Name: this.randomItemFromArray(firstNames) + ' ' + this.randomItemFromArray(lastNames),  
-        //roll: this.randomRoll()
-
-      });
+        this.db.addUser({
+            pNr: '' + this.randomNum(1920,2010) + 
+                this.randomNum(1,12) + 
+                this.randomNum(1,28) + 
+                this.randomNum(2020,4040),
+            Name: this.randomItemFromArray(firstNames) + ' ' + this.randomItemFromArray(lastNames),
+            roll: this.randomRoll()
+        });
     }
 
-    // Write the list to DB
-    list.writeToDb(()=>{
-
-      console.log("Written to DB!",list);
-      // Now read it back into a list to confirm
-      var listFromDb = new PetOwnerList();
-      listFromDb.readAllFromDb(()=>{
-        console.log("Read from DB",listFromDb);
-      });
-
-    });
   }
+
+
 
   static get sqlQueries(){
     return {
       dropUsers: `
         DROP TABLE IF EXISTS Person 
-      `
-    }
+      `,
+      addUser:`
+         INSERT INTO Person (pNr, Name, roll) VALUES ("?", "?", "?")   
+    `
   }
 
-
+}
 }
