@@ -12,6 +12,11 @@ class Person extends Base {
      
     constructor(propertyValues){
         super(propertyValues);
+        if(this.Student_id == null){
+            this.roll = 'Teacher'
+        }else{
+            this.roll = 'Student'
+        }
     }
     
     insertInDb(callback){
@@ -26,6 +31,10 @@ class Person extends Base {
     
     get name(){
         return this.Name;
+    }
+    
+    getroll(){
+        return this.roll;
     }
     
     

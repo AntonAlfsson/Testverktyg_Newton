@@ -16,13 +16,14 @@ class PersonList extends List {
   }
 
   readAllFromDb(callback){
-    this.db.readAllStudents((data)=>{
+    this.db.readAll((data)=>{
       this.push.apply(this,data);
         //this.getAllByName();
       callback();
     });
   }
-    
+ 
+/*
  getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev 
         
         this.db.allByName({  
@@ -37,6 +38,7 @@ class PersonList extends List {
            }     
         });
     }
+    */
     
 
   static get sqlQueries(){
@@ -48,7 +50,7 @@ class PersonList extends List {
         select Name, roll from Person
         order by roll
     `,
-      readAllStudents: `
+      readAll: `
         SELECT * FROM Person
       `
     }
