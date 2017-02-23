@@ -35,6 +35,7 @@ window.load = `
     Person.class.js
     test-data-generator.class.js
     teacherprofile.class.js
+    studentprofile.class.js
     PersonList.class.js
     dataGenerator.class.js
 
@@ -59,6 +60,7 @@ window.load = `
     start.html
     testresultat.html
     teacherprofile.html
+    studentprofile.html
     Person.html
 
 
