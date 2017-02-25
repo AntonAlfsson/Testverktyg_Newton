@@ -31,6 +31,7 @@ window.load = `
     QuestionOption.class.js
     navbar.class.js
     start.class.js
+    Test.class.js
     testresultat.class.js
     Person.class.js
     test-data-generator.class.js
