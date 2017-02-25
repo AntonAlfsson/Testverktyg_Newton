@@ -7,6 +7,7 @@ class JqueryDomEvents extends Array {
       'blur',
       'change',
       'click',
+      'data-click',
       'contextmenu',
       'dblclick',
       'error',
