@@ -31,10 +31,12 @@ window.load = `
     QuestionOption.class.js
     navbar.class.js
     start.class.js
+    Test.class.js
     testresultat.class.js
     Person.class.js
     test-data-generator.class.js
     teacherprofile.class.js
+    studentprofile.class.js
     PersonList.class.js
     dataGenerator.class.js
 
@@ -59,6 +61,7 @@ window.load = `
     start.html
     testresultat.html
     teacherprofile.html
+    studentprofile.html
     Person.html
 
 
