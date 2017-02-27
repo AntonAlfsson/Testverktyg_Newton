@@ -10,6 +10,7 @@ class Question extends Base {
         next() {
           
           var counter = 0; 
+          var anothercounter =0; 
             
           this.db.byTitle({  
           },(data)=>{     
@@ -19,7 +20,7 @@ class Question extends Base {
                       
             counter = (counter + 1)%data.length;
             console.log(data[counter].title);
-            $('.question-head').html('' + data[counter].title);  
+            $('.question-head').html(''+data[counter].title);  
               
                                   
           });
@@ -46,8 +47,11 @@ class Question extends Base {
             //console.log(data[].title);     
             
           $('#nextbutton').click(function() {
-                      
-          $('.question').html('' + data[counter].question);  
+             
+             anothercounter = (anothercounter+3)%data.length;         
+            $('#option1').html('' + data[anothercounter].QuestionOption);
+            $('#option2').html('' + data[anothercounter+1].QuestionOption);  
+            $('#option3').html('' + data[anothercounter+2].QuestionOption); 
               
                                   
           });
