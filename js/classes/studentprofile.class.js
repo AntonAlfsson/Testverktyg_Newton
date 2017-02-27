@@ -2,6 +2,7 @@ class studentprofile extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
+        this.tests = new TestList();
         console.log('studentprofile propertyValues', propertyValues);
         if(propertyValues.pNr){
           this.readOneByPnrFromDb(propertyValues.pNr, callback);

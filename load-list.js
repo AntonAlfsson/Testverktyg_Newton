@@ -34,6 +34,7 @@ window.load = `
     navbar.class.js
     start.class.js
     Test.class.js
+    TestList.class.js
     testresultat.class.js
     Person.class.js
     test-data-generator.class.js
@@ -53,6 +54,7 @@ window.load = `
     testresultat.html
     teacherprofile.html
     studentprofile.html
+    test.html
     Person.html
 
 `;
