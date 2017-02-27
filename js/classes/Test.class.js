@@ -10,6 +10,7 @@ class Test extends Base {
       
           this.db.byTitle({  
           },(data)=>{
+            $('.test-list').empty();
           for (var i = 0; i<data.length; i++){          
             $('.test-list').prepend('<tr><td>'+ data[i].title + 
               '</td><td>' + data[i].start + '</td><td>' + data[i].stop + 
