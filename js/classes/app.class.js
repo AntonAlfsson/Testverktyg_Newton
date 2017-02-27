@@ -20,8 +20,6 @@ class App {
         this.startPage = new start();
         this.testresultat = new testresultat();
         this.Fragor = new Fragor();
-        //this.teacherprofile = new teacherprofile();
-        //this.studentprofile = new studentprofile();
         
         
         this.navbar.display('body');

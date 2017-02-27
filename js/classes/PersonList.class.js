@@ -21,10 +21,10 @@ class PersonList extends List {
       callback();
     });
   }
-    readAllStudentsFromDb(callback){
-        this.db.readAllStudentsFromDb((data)=>{
+    teacherStudent(pNr, callback){
+        this.db.teacherStudent([pNr], (data)=>{
             this.push.apply(this,data);
-      callback();
+            callback && callback(this);
     });
   }
     
@@ -34,20 +34,23 @@ class PersonList extends List {
 
     
 
-  static get sqlQueries(){
-    return {
-    allStudents:`
-        select pNr, Name, roll, klass from Person
+      static get sqlQueries(){
+        return {
+        allStudents:`
+            select pNr, Name, roll, klass from Person
+        `,
+        allByName: `
+            select Name, roll from Person
+            order by roll
+        `,
+          readAll: `
+            SELECT * FROM Person
+          `,
+            readAllStudentsFromDb: `
+            SELECT*FROM Person JOIN Student ON pNr=Person_pNr JOIN Teacher_has_Student ON Person_pNr=Student_Person_pNr AND Teacher_Person_pNr='${this.pNr}'
     `,
-    allByName: `
-        select Name, roll from Person
-        order by roll
-    `,
-      readAll: `
-        SELECT * FROM Person
-      `,
-        readAllStudentsFromDb: `
-        SELECT*FROM Person JOIN Student ON pNr=Person_pNr JOIN Teacher_has_Student ON Person_pNr=Student_Person_pNr AND Teacher_Person_pNr='${this.pNr}'
+            teacherStudent:`
+            select*from Person inner join Person_has_Person on pNr=Person_pNr1 and Person_pNr=?
 `
     }
   }

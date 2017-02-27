@@ -2,10 +2,16 @@ class teacherprofile extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
+        
+        var studentList = new PersonList();
+        
         console.log('teacherprofile propertyValues', propertyValues);
+        
         if(propertyValues.pNr){
+            studentList.teacherStudent(propertyValues.pNr, callback);
+            console.log(studentList);
           this.readOneByPnrFromDb(propertyValues.pNr, callback);
-        }   
+        }
     }
     
     readOneByPnrFromDb(pNr, callback){
