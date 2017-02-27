@@ -104,29 +104,9 @@ studentprofile.addTemplate('default', function(){return `
 
           <tbody class="test-list">
               <tr>
-                  <td>Intro Test</td>
-                  <td>3 mars</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
-              <tr>
-                  <td>HTML5</td>
-                  <td>25 april</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
-              <tr>
-                  <td>Java</td>
-                  <td>25 januari</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
+              <td></td>
+              ${this.tests.display()}          
+              </tr>             
           </tbody>
       </table>
       </div>
