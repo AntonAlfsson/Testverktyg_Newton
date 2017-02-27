@@ -24,7 +24,7 @@ class App {
         var router = new Router({
           '/': ()=>{ this.showPage(this.startPage); },
           '/Teacher': ()=> { this.showPage(this.teacherprofile); },
-          '/Student': ()=> { this.showPage(this.Fragor); },
+          '/Student': ()=> { this.showPage(this.studentprofile); },
           '/testresultat': ()=> { this.showPage(this.testresultat); },
           '/Fragor': ()=> { this.showPage(this.Fragor); }
         });
