@@ -4,19 +4,11 @@ class Person extends Base {
     return {
       pNr: '199105231320',
       Name: 'Jon Doe',
-      roll: 'Student',
-      klass: 'SYSJM2',
-      lösen: '1234'
     }
   }
      
     constructor(propertyValues){
         super(propertyValues);
-        if(this.Student_id == null){
-            this.roll = 'Teacher'
-        }else{
-            this.roll = 'Student'
-        }
     }
     
     insertInDb(callback){
@@ -33,12 +25,6 @@ class Person extends Base {
         return this.Name;
     }
     
-    getroll(){
-        return this.roll;
-    }
-    
-    
-
     static get sqlQueries(){
 
     return {

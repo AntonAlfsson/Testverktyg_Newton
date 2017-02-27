@@ -1,7 +1,7 @@
 class PersonList extends List {
 
   constructor(items){
-    super(Person,items);  
+    super(Person,items); 
   }
 
   writeToDb(callback){
@@ -18,27 +18,20 @@ class PersonList extends List {
   readAllFromDb(callback){
     this.db.readAll((data)=>{
       this.push.apply(this,data);
-        //this.getAllByName();
       callback();
     });
   }
- 
-/*
- getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev 
-        
-        this.db.allByName({  
-        },(data)=>{
-            $('.inloggning').empty();
-           for(var i = 0; i < data.length; i++){
-            if(data[i].roll == 'Student'){
-            $('.inloggning').append('<li><a href="/Fragor">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }else{
-               $('.inloggning').append('<li><a href="/teacherprofile">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }
-           }     
-        });
+    readAllStudentsFromDb(callback){
+        this.db.readAllStudentsFromDb((data)=>{
+            this.push.apply(this,data);
+      callback();
+    });
+  }
+    
+    setPnr(pnr){
+        this.pNr=pnr;
     }
-    */
+
     
 
   static get sqlQueries(){
@@ -52,7 +45,10 @@ class PersonList extends List {
     `,
       readAll: `
         SELECT * FROM Person
-      `
+      `,
+        readAllStudentsFromDb: `
+        SELECT*FROM Person JOIN Student ON pNr=Person_pNr JOIN Teacher_has_Student ON Person_pNr=Student_Person_pNr AND Teacher_Person_pNr='${this.pNr}'
+`
     }
   }
 
