@@ -88,19 +88,20 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `country` VARCHAR(45) NULL DEFAULT NULL,
   `department` VARCHAR(45) NULL DEFAULT NULL,
   `img` MEDIUMTEXT NULL,
+  `bio` LONGTEXT NULL,
   PRIMARY KEY (`pNr`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('196412083434','Johanna Andersson', NULL,'Teacher');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('197801147878','Carl Hamilton','1234','Teacher');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('198804045678','Isabelle Larsson','1234','Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199204011234','Alexandra Karlsson',NULL,'Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199306177898','Andreas Persson',NULL,'Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199410026789','Hanna Jepsson',NULL,'Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199411146787','Alexande Lundgren',NULL,'Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199412093456','Rasmus Karlsson','1234','Student');
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199502253456','Hampus Persson',NULL,'Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('196412083434','Johanna Andersson',NULL,'Teacher','2010-12-08','Female','Johanna.Andersson@Newton.org','0728777633','Sweden','Java Development','http://www.mat.univie.ac.at/~jmichor/images/Portrait_Michor.jpg','Maecenas dictum dictum eros, et fringilla quam viverra ac. Ut pharetra sapien augue, eget blandit arcu auctor quis. Nullam ultricies dapibus justo, et sodales quam tristique in. In et ultrices diam. Integer rutrum lectus at enim convallis egestas. Donec a condimentum nulla, eget gravida tortor. In felis quam, ullamcorper quis porta quis, feugiat in felis.');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('197801147878','Carl Hamilton','1234','Teacher','2000-06-04','Male','Carl.Hamilton@Newton.org','0738449845','Sweden','Java Development','http://www.kingmagazine.se/bilder/imagecreate.php?id=489627&w=325&h=3200&c=YTowOnt9&s=0&k=07454bb51c57622ecd7c2917f45dc692759e2e24','Duo Reges: constructio interrete. Gloriosa ostentatio in constituendo summo bono. Nunc de hominis summo bono quaeritur; Itaque eos id agere, ut a se dolores, morbos, debilitates repellant.\n\nContineo me ab exemplis. Audeo dicere, inquit. Sed residamus, inquit, si placet. Non laboro, inquit, de nomine. Hoc dixerit potius Ennius: Nimium boni est, cui nihil est mali. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Scrupulum, inquam, abeunti; Polemoni et iam ante Aristoteli ea prima visa sunt, quae paulo ante dixi. Quae quidem sapientes sequuntur duce natura tamquam videntes; Inquit, dasne adolescenti veniam? Hoc loco tenere se Triarius non potuit.');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('198804045678','Isabelle Larsson','1234','Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199204011234','Alexandra Karlsson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199306177898','Andreas Persson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199410026789','Hanna Jepsson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199411146787','Alexande Lundgren',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199412093456','Rasmus Karlsson','1234','Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199502253456','Hampus Persson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 
 

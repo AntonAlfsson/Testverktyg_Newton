@@ -12,6 +12,7 @@ class teacherprofile extends Base {
                 //$('.stud').empty();
                 $(function(){
                     list.display('.stud');
+                    console.log(list);
                 });
             });
            
@@ -19,6 +20,31 @@ class teacherprofile extends Base {
         }
         
     }
+    
+    getStart(){
+        if(this.startDate == null){
+            return 'Info missing';
+        }else{
+            return this.startDate.substring(0,this.startDate.indexOf('T'));
+        } 
+    }
+    
+    getDepart(){
+        if(this.department == null){
+            return 'Info missing';
+        }else{
+            return this.department;
+        }
+    }
+    
+    dOb(){
+        // 198909144274
+        var el = this.pNr.substring(0, 4) + '-' + this.pNr.substring(4, 6) + '-' + this.pNr.substring(6, 8);
+        console.log(el);
+        return el;
+    }
+    
+    
     
     readOneByPnrFromDb(pNr, callback){
         this.db.oneByPnr([pNr], (data)=>{
