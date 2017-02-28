@@ -81,6 +81,13 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `Name` VARCHAR(45) NOT NULL,
   `lösen` VARCHAR(45) NULL DEFAULT NULL,
   `roll` VARCHAR(45) NOT NULL,
+  `startDate` DATE NULL DEFAULT NULL,
+  `gender` VARCHAR(45) NULL DEFAULT NULL,
+  `eMail` VARCHAR(45) NULL DEFAULT NULL,
+  `phoneNr` VARCHAR(45) NULL DEFAULT NULL,
+  `country` VARCHAR(45) NULL DEFAULT NULL,
+  `department` VARCHAR(45) NULL DEFAULT NULL,
+  `img` MEDIUMTEXT NULL,
   PRIMARY KEY (`pNr`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -119,7 +126,6 @@ INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
   `Person_pNr` VARCHAR(12) NOT NULL,
   `Test_idTest` INT(11) NOT NULL,
-  PRIMARY KEY (`Person_pNr`, `Test_idTest`),
   INDEX `fk_Person_has_Test_Test1_idx` (`Test_idTest` ASC),
   INDEX `fk_Person_has_Test_Person1_idx` (`Person_pNr` ASC),
   CONSTRAINT `fk_Person_has_Test_Person1`
