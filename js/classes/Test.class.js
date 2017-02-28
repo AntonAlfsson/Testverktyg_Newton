@@ -13,5 +13,13 @@ class Test extends Base {
     super(propertyValues)
 
   }
-  
+
+      /*static get sqlQueries(){
+
+    return {
+        newTest: `
+        INSERT Test SET ?
+`
+    }
+  } */
 }
