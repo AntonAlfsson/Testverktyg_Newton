@@ -12,10 +12,12 @@ class Student extends Base {
     }
     
     getTestList(){
-        var studentTests = new TestList();
+        var studentTests = new studentTestList();
         studentTests.studentTest(this.pNr, () => {
-            console.log(studentTests);
-            });
+            var el = '#'+this.pNr;
+            $(el).empty();
+            studentTests.display(el);
+        });
     }
     
     static get sqlQueries(){

@@ -32,6 +32,8 @@ window.load = `
     Question.class.js
     QuestionOption.class.js
     navbar.class.js
+    studentList.class.js
+    Student.class.js
     start.class.js
     Test.class.js
     TestList.class.js
@@ -42,8 +44,8 @@ window.load = `
     studentprofile.class.js
     PersonList.class.js
     dataGenerator.class.js
-    studentList.class.js
-    Student.class.js
+    studentTestList.class.js
+    studentTest.class.js
 
     
   templates/
@@ -59,5 +61,6 @@ window.load = `
     test.html
     Person.html
     Student.html
+    studentTest.html
 
 `;
