@@ -44,6 +44,51 @@ class teacherprofile extends Base {
         return el;
     }
     
+    getGender(){
+        if(this.gender == null){
+            return 'Info missing';
+        }else{
+            return this.gender;
+        }
+    }
+    
+    getEmail(){
+        if(this.eMail == null){
+            return 'Info@Newton.org';
+        }else{
+            return this.eMail;
+        }
+    }
+    
+    getCountry(){
+        if(this.country == null){return 'Info missing'; }
+        else{return this.country; }
+    }
+    
+    getPhone(){
+        if(this.phoneNr == null){
+            return '040-132 45'
+        }else{
+            return this.phoneNr;
+        }
+    }
+    
+    getImg(){
+        if(this.img == null){
+            return 'http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg';
+        }else{
+            return this.img;
+        }
+    }
+    
+    getBio(){
+        if(this.bio == null){
+            return 'Info missing';
+        }else{
+            return this.bio;
+        }
+    }
+    
     
     
     readOneByPnrFromDb(pNr, callback){
