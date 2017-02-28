@@ -1,7 +1,7 @@
-class PersonList extends List {
+class studentList extends List {
 
   constructor(items){
-    super(Person,items); 
+    super(Student,items); 
   }
 
   writeToDb(callback){
@@ -10,8 +10,8 @@ class PersonList extends List {
       co++;
       if(co == listLength){ callback(); }
     }
-    for(let Person of this){
-      Person.insertInDb(callbackEach);
+    for(let Student of this){
+      Student.insertInDb(callbackEach);
     }
   }
 
