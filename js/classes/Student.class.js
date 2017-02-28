@@ -15,7 +15,7 @@ class Student extends Base {
         var studentTests = new studentTestList();
         studentTests.studentTest(this.pNr, () => {
             var el = '#'+this.pNr;
-            $(el).empty();
+            $('.studBud').empty();
             studentTests.display(el);
         });
     }
