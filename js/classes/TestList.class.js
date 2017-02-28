@@ -29,13 +29,10 @@ class TestList extends List {
       `
       ,
       testsByPnr:`
-        Select * from test
-        where idTest = (
-        select Test_idTest from Person_has_Test
-        where Person_pNr = (
-        select pNr from person 
-        where pNr = ?))
-            `
+        select*from Test 
+        join Person_has_Test on idTest=Test_idTest 
+        join Person on Person_pNr=pNr 
+        where pNr=?            `
     }
   }
 
