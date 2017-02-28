@@ -11,6 +11,10 @@ class Student extends Base {
         super(propertyValues);
     }
     
+    getTestList(){
+        var studentTests = new TestList();
+    }
+    
     static get sqlQueries(){
 
     return {

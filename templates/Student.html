@@ -1,3 +1,3 @@
 Student.addTemplate('default', function(){return `
-<tr><td><input type="radio" name="myTextEditBox" value="${this.pNr}"></td><td>${this.pNr}</td><td>${this.Name.substr(0, this.Name.indexOf(' '))}</td><td>${this.Name.substr(this.Name.indexOf(' '), this.Name.length)}</td><td>default@mail.com</td></tr>
+<tr><td><input type="radio" name="myTextEditBox" value="${this.pNr}" data-change="getTestList"></td><td>${this.pNr}</td><td>${this.Name.substr(0, this.Name.indexOf(' '))}</td><td>${this.Name.substr(this.Name.indexOf(' '), this.Name.length)}</td><td>default@mail.com</td></tr>
 `});
