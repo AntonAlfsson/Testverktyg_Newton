@@ -119,7 +119,6 @@ INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
   `Person_pNr` VARCHAR(12) NOT NULL,
   `Test_idTest` INT(11) NOT NULL,
-  PRIMARY KEY (`Person_pNr`, `Test_idTest`),
   INDEX `fk_Person_has_Test_Test1_idx` (`Test_idTest` ASC),
   INDEX `fk_Person_has_Test_Person1_idx` (`Person_pNr` ASC),
   CONSTRAINT `fk_Person_has_Test_Person1`
