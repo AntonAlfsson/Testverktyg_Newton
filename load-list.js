@@ -42,6 +42,8 @@ window.load = `
     studentprofile.class.js
     PersonList.class.js
     dataGenerator.class.js
+    studentList.class.js
+    Student.class.js
 
     
   templates/
@@ -56,5 +58,6 @@ window.load = `
     studentprofile.html
     test.html
     Person.html
+    Student.html
 
 `;
