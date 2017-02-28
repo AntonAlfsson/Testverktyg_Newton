@@ -17,8 +17,7 @@ class teacherprofile extends Base {
             });
            
           this.readOneByPnrFromDb(propertyValues.pNr, callback);
-        }
-        
+        }  
     }
     
     getStart(){
