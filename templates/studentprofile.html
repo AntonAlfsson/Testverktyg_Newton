@@ -16,7 +16,7 @@ studentprofile.addTemplate('default', function(){return `
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title teacherName">Mulan Student</h3>
+        <h3 class="panel-title teacherName">${this.Name}</h3>
       </div>
   
         <div class="panel-body">
@@ -104,29 +104,8 @@ studentprofile.addTemplate('default', function(){return `
 
           <tbody class="test-list">
               <tr>
-                  <td>Intro Test</td>
-                  <td>3 mars</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
-              <tr>
-                  <td>HTML5</td>
-                  <td>25 april</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
-              <tr>
-                  <td>Java</td>
-                  <td>25 januari</td>
-                  <td>3 mars</td>
-                  <td>
-                      <button type="button" class="btn btn-xs">Starta test</button>
-                  </td>
-              </tr>
+              ${this.tests.display()}          
+              </tr>             
           </tbody>
       </table>
       </div>

@@ -21,33 +21,56 @@ USE `testverktyg` ;
 -- Table `testverktyg`.`Student`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Student` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `klass` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
+  `Person_pNr` VARCHAR(12) NOT NULL,
+  INDEX `fk_Student_Person1_idx` (`Person_pNr` ASC),
+  PRIMARY KEY (`Person_pNr`),
+  CONSTRAINT `fk_Student_Person1`
+    FOREIGN KEY (`Person_pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Student` (`id`,`klass`) VALUES (1,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (2,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (3,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (4,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (5,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (6,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (7,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (8,'Sysjm1');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','198804045678');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','199204011234');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','199306177898');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199410026789');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199411146787');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199412093456');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199502253456');
 
 
 -- -----------------------------------------------------
--- Table `testverktyg`.`Teacher`
+-- Table `testverktyg`.`Person_has_Person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher` (
-  `idTeacher` INT(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idTeacher`))
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Person` (
+  `Person_pNr` VARCHAR(12) NOT NULL,
+  `Person_pNr1` VARCHAR(12) NOT NULL,
+  PRIMARY KEY (`Person_pNr`, `Person_pNr1`),
+  INDEX `fk_Person_has_Person_Person2_idx` (`Person_pNr1` ASC),
+  INDEX `fk_Person_has_Person_Person1_idx` (`Person_pNr` ASC),
+  CONSTRAINT `fk_Person_has_Person_Person1`
+    FOREIGN KEY (`Person_pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Person_has_Person_Person2`
+    FOREIGN KEY (`Person_pNr1`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Teacher` (`idTeacher`) VALUES (1);
-INSERT INTO `Teacher` (`idTeacher`) VALUES (2);
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','198804045678');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199204011234');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199306177898');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199410026789');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199411146787');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199412093456');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199502253456');
 
 
 -- -----------------------------------------------------
@@ -57,33 +80,20 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `pNr` VARCHAR(12) NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `lösen` VARCHAR(45) NULL DEFAULT NULL,
-  `Student_id` INT(11) NULL,
-  `Teacher_idTeacher` INT(11) NULL,
-  PRIMARY KEY (`pNr`),
-  INDEX `fk_Person_Student1_idx` (`Student_id` ASC),
-  INDEX `fk_Person_Teacher1_idx` (`Teacher_idTeacher` ASC),
-  CONSTRAINT `fk_Person_Student1`
-    FOREIGN KEY (`Student_id`)
-    REFERENCES `testverktyg`.`Student` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Person_Teacher1`
-    FOREIGN KEY (`Teacher_idTeacher`)
-    REFERENCES `testverktyg`.`Teacher` (`idTeacher`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `roll` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`pNr`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('196412083434','Johanna Andersson',NULL,NULL,1);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('197801147878','Carl Hamilton','1234',NULL,2);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('198804045678','Isabelle Larsson','1234',2,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199204011234','Alexandra Karlsson',NULL,7,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199306177898','Andreas Persson',NULL,6,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199410026789','Hanna Jepsson',NULL,4,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199411146787','Alexande Lundgren',NULL,5,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199412093456','Rasmus Karlsson','1234',1,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199502253456','Hampus Persson',NULL,3,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('196412083434','Johanna Andersson', NULL,'Teacher');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('197801147878','Carl Hamilton','1234','Teacher');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('198804045678','Isabelle Larsson','1234','Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199204011234','Alexandra Karlsson',NULL,'Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199306177898','Andreas Persson',NULL,'Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199410026789','Hanna Jepsson',NULL,'Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199411146787','Alexande Lundgren',NULL,'Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199412093456','Rasmus Karlsson','1234','Student');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`) VALUES ('199502253456','Hampus Persson',NULL,'Student');
 
 
 
@@ -214,34 +224,8 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `testverktyg`.`Teacher_has_Student`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher_has_Student` (
-  `Teacher_idTeacher` INT(11) NOT NULL,
-  `Student_id` INT(11) NOT NULL,
-  PRIMARY KEY (`Teacher_idTeacher`, `Student_id`),
-  INDEX `fk_Teacher_has_Student_Student1_idx` (`Student_id` ASC),
-  INDEX `fk_Teacher_has_Student_Teacher1_idx` (`Teacher_idTeacher` ASC),
-  CONSTRAINT `fk_Teacher_has_Student_Student1`
-    FOREIGN KEY (`Student_id`)
-    REFERENCES `testverktyg`.`Student` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Teacher_has_Student_Teacher1`
-    FOREIGN KEY (`Teacher_idTeacher`)
-    REFERENCES `testverktyg`.`Teacher` (`idTeacher`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,1);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,2);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,3);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,4);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,5);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,6);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,7);
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

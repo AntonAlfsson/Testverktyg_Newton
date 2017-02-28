@@ -1,7 +1,7 @@
 class PersonList extends List {
 
   constructor(items){
-    super(Person,items);  
+    super(Person,items); 
   }
 
   writeToDb(callback){
@@ -18,41 +18,40 @@ class PersonList extends List {
   readAllFromDb(callback){
     this.db.readAll((data)=>{
       this.push.apply(this,data);
-        //this.getAllByName();
       callback();
     });
   }
- 
-/*
- getAllByName(){ // metod för att hämta namn och roll i array i ordnigng lärare - elev 
-        
-        this.db.allByName({  
-        },(data)=>{
-            $('.inloggning').empty();
-           for(var i = 0; i < data.length; i++){
-            if(data[i].roll == 'Student'){
-            $('.inloggning').append('<li><a href="/Fragor">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }else{
-               $('.inloggning').append('<li><a href="/teacherprofile">' + data[i].roll + ' ' + data[i].Name + '</a></li>'); 
-            }
-           }     
-        });
+    teacherStudent(pNr, callback){
+        this.db.teacherStudent([pNr], (data)=>{
+            this.push.apply(this,data);
+            callback && callback(this);
+    });
+  }
+    
+    setPnr(pnr){
+        this.pNr=pnr;
     }
-    */
+
     
 
-  static get sqlQueries(){
-    return {
-    allStudents:`
-        select pNr, Name, roll, klass from Person
+      static get sqlQueries(){
+        return {
+        allStudents:`
+            select pNr, Name, roll, klass from Person
+        `,
+        allByName: `
+            select Name, roll from Person
+            order by roll
+        `,
+          readAll: `
+            SELECT * FROM Person
+          `,
+            readAllStudentsFromDb: `
+            SELECT*FROM Person JOIN Student ON pNr=Person_pNr JOIN Teacher_has_Student ON Person_pNr=Student_Person_pNr AND Teacher_Person_pNr='${this.pNr}'
     `,
-    allByName: `
-        select Name, roll from Person
-        order by roll
-    `,
-      readAll: `
-        SELECT * FROM Person
-      `
+            teacherStudent:`
+            select*from Person inner join Person_has_Person on pNr=Person_pNr1 and Person_pNr=?
+`
     }
   }
 
