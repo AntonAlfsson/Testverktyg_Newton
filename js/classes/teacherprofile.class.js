@@ -5,14 +5,11 @@ class teacherprofile extends Base {
         
         var list = new studentList();
         
-        console.log('teacherprofile propertyValues', propertyValues);
-        
         if(propertyValues.pNr){
             list.teacherStudent(propertyValues.pNr, () => {
                 //$('.stud').empty();
                 $(function(){
                     list.display('.stud');
-                    console.log(list);
                 });
             });
            
@@ -39,7 +36,6 @@ class teacherprofile extends Base {
     dOb(){
         // 198909144274
         var el = this.pNr.substring(0, 4) + '-' + this.pNr.substring(4, 6) + '-' + this.pNr.substring(6, 8);
-        console.log(el);
         return el;
     }
     

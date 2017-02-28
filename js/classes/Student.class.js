@@ -9,14 +9,12 @@ class Student extends Base {
      
     constructor(propertyValues){
         super(propertyValues);
-        this.getTestList();
     }
     
     getTestList(){
         var studentTests = new TestList();
-        
         studentTests.studentTest(this.pNr, () => {
-                    console.log('hej', studentTests);
+            console.log(studentTests);
             });
     }
     
