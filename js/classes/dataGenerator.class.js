@@ -10,7 +10,7 @@ class dataGenerator extends Base {
         var list = new PersonList();
         
         list.readAllFromDb(()=>{ // läser in personer från db
-            console.log('Read from db', list);
+           // console.log('Read from db', list);
             
             var theNavbar = new navbar({
             personList: list

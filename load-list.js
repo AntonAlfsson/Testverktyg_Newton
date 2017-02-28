@@ -11,6 +11,8 @@ window.load = `
     bootstrap.min.js
     diffDom.js
 
+  js/main.js
+
   js/classes/base-and-utility-classes/
     jQuery-dom-events.class.js
     generic-dom-event-handler.class.js
@@ -32,6 +34,7 @@ window.load = `
     navbar.class.js
     start.class.js
     Test.class.js
+    TestList.class.js
     testresultat.class.js
     Person.class.js
     test-data-generator.class.js
@@ -39,19 +42,10 @@ window.load = `
     studentprofile.class.js
     PersonList.class.js
     dataGenerator.class.js
+    studentList.class.js
+    Student.class.js
 
-
-  js/classes/example/
-    organism.class.js
-    pet.class.js
-    pet-owner.class.js
-    pet-list.class.js
-    pet-owner-list.class.js
-    pet-owner-view.class.js
     
-
-
-
   templates/
     bootstrap-size.html
     navbar.html
@@ -62,9 +56,8 @@ window.load = `
     testresultat.html
     teacherprofile.html
     studentprofile.html
+    test.html
     Person.html
-
-
-  js/main.js
+    Student.html
 
 `;

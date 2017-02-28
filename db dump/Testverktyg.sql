@@ -21,33 +21,56 @@ USE `testverktyg` ;
 -- Table `testverktyg`.`Student`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Student` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `klass` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
+  `Person_pNr` VARCHAR(12) NOT NULL,
+  INDEX `fk_Student_Person1_idx` (`Person_pNr` ASC),
+  PRIMARY KEY (`Person_pNr`),
+  CONSTRAINT `fk_Student_Person1`
+    FOREIGN KEY (`Person_pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Student` (`id`,`klass`) VALUES (1,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (2,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (3,'Sysjm2');
-INSERT INTO `Student` (`id`,`klass`) VALUES (4,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (5,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (6,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (7,'Sysjm1');
-INSERT INTO `Student` (`id`,`klass`) VALUES (8,'Sysjm1');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','198804045678');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','199204011234');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm2','199306177898');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199410026789');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199411146787');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199412093456');
+INSERT INTO `Student` (`klass`,`Person_pNr`) VALUES ('Sysjm1','199502253456');
 
 
 -- -----------------------------------------------------
--- Table `testverktyg`.`Teacher`
+-- Table `testverktyg`.`Person_has_Person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher` (
-  `idTeacher` INT(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idTeacher`))
+CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Person` (
+  `Person_pNr` VARCHAR(12) NOT NULL,
+  `Person_pNr1` VARCHAR(12) NOT NULL,
+  PRIMARY KEY (`Person_pNr`, `Person_pNr1`),
+  INDEX `fk_Person_has_Person_Person2_idx` (`Person_pNr1` ASC),
+  INDEX `fk_Person_has_Person_Person1_idx` (`Person_pNr` ASC),
+  CONSTRAINT `fk_Person_has_Person_Person1`
+    FOREIGN KEY (`Person_pNr`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Person_has_Person_Person2`
+    FOREIGN KEY (`Person_pNr1`)
+    REFERENCES `testverktyg`.`Person` (`pNr`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Teacher` (`idTeacher`) VALUES (1);
-INSERT INTO `Teacher` (`idTeacher`) VALUES (2);
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','198804045678');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199204011234');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199306177898');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199410026789');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199411146787');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199412093456');
+INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199502253456');
 
 
 -- -----------------------------------------------------
@@ -57,33 +80,28 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person` (
   `pNr` VARCHAR(12) NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `lösen` VARCHAR(45) NULL DEFAULT NULL,
-  `Student_id` INT(11) NULL,
-  `Teacher_idTeacher` INT(11) NULL,
-  PRIMARY KEY (`pNr`),
-  INDEX `fk_Person_Student1_idx` (`Student_id` ASC),
-  INDEX `fk_Person_Teacher1_idx` (`Teacher_idTeacher` ASC),
-  CONSTRAINT `fk_Person_Student1`
-    FOREIGN KEY (`Student_id`)
-    REFERENCES `testverktyg`.`Student` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Person_Teacher1`
-    FOREIGN KEY (`Teacher_idTeacher`)
-    REFERENCES `testverktyg`.`Teacher` (`idTeacher`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `roll` VARCHAR(45) NOT NULL,
+  `startDate` DATE NULL DEFAULT NULL,
+  `gender` VARCHAR(45) NULL DEFAULT NULL,
+  `eMail` VARCHAR(45) NULL DEFAULT NULL,
+  `phoneNr` VARCHAR(45) NULL DEFAULT NULL,
+  `country` VARCHAR(45) NULL DEFAULT NULL,
+  `department` VARCHAR(45) NULL DEFAULT NULL,
+  `img` MEDIUMTEXT NULL,
+  `bio` LONGTEXT NULL,
+  PRIMARY KEY (`pNr`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('196412083434','Johanna Andersson',NULL,NULL,1);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('197801147878','Carl Hamilton','1234',NULL,2);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('198804045678','Isabelle Larsson','1234',2,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199204011234','Alexandra Karlsson',NULL,7,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199306177898','Andreas Persson',NULL,6,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199410026789','Hanna Jepsson',NULL,4,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199411146787','Alexande Lundgren',NULL,5,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199412093456','Rasmus Karlsson','1234',1,NULL);
-INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`Student_id`,`Teacher_idTeacher`) VALUES ('199502253456','Hampus Persson',NULL,3,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('196412083434','Johanna Andersson',NULL,'Teacher','2010-12-08','Female','Johanna.Andersson@Newton.org','0728777633','Sweden','Java Development','http://www.mat.univie.ac.at/~jmichor/images/Portrait_Michor.jpg','Maecenas dictum dictum eros, et fringilla quam viverra ac. Ut pharetra sapien augue, eget blandit arcu auctor quis. Nullam ultricies dapibus justo, et sodales quam tristique in. In et ultrices diam. Integer rutrum lectus at enim convallis egestas. Donec a condimentum nulla, eget gravida tortor. In felis quam, ullamcorper quis porta quis, feugiat in felis.');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('197801147878','Carl Hamilton','1234','Teacher','2000-06-04','Male','Carl.Hamilton@Newton.org','0738449845','Sweden','Java Development','http://www.kingmagazine.se/bilder/imagecreate.php?id=489627&w=325&h=3200&c=YTowOnt9&s=0&k=07454bb51c57622ecd7c2917f45dc692759e2e24','Duo Reges: constructio interrete. Gloriosa ostentatio in constituendo summo bono. Nunc de hominis summo bono quaeritur; Itaque eos id agere, ut a se dolores, morbos, debilitates repellant.\n\nContineo me ab exemplis. Audeo dicere, inquit. Sed residamus, inquit, si placet. Non laboro, inquit, de nomine. Hoc dixerit potius Ennius: Nimium boni est, cui nihil est mali. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Scrupulum, inquam, abeunti; Polemoni et iam ante Aristoteli ea prima visa sunt, quae paulo ante dixi. Quae quidem sapientes sequuntur duce natura tamquam videntes; Inquit, dasne adolescenti veniam? Hoc loco tenere se Triarius non potuit.');
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('198804045678','Isabelle Larsson','1234','Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199204011234','Alexandra Karlsson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199306177898','Andreas Persson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199410026789','Hanna Jepsson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199411146787','Alexande Lundgren',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199412093456','Rasmus Karlsson','1234','Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,`phoneNr`,`country`,`department`,`img`,`bio`) VALUES ('199502253456','Hampus Persson',NULL,'Student',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 
 
@@ -109,7 +127,6 @@ INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
   `Person_pNr` VARCHAR(12) NOT NULL,
   `Test_idTest` INT(11) NOT NULL,
-  PRIMARY KEY (`Person_pNr`, `Test_idTest`),
   INDEX `fk_Person_has_Test_Test1_idx` (`Test_idTest` ASC),
   INDEX `fk_Person_has_Test_Person1_idx` (`Person_pNr` ASC),
   CONSTRAINT `fk_Person_has_Test_Person1`
@@ -214,34 +231,8 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `testverktyg`.`Teacher_has_Student`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `testverktyg`.`Teacher_has_Student` (
-  `Teacher_idTeacher` INT(11) NOT NULL,
-  `Student_id` INT(11) NOT NULL,
-  PRIMARY KEY (`Teacher_idTeacher`, `Student_id`),
-  INDEX `fk_Teacher_has_Student_Student1_idx` (`Student_id` ASC),
-  INDEX `fk_Teacher_has_Student_Teacher1_idx` (`Teacher_idTeacher` ASC),
-  CONSTRAINT `fk_Teacher_has_Student_Student1`
-    FOREIGN KEY (`Student_id`)
-    REFERENCES `testverktyg`.`Student` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Teacher_has_Student_Teacher1`
-    FOREIGN KEY (`Teacher_idTeacher`)
-    REFERENCES `testverktyg`.`Teacher` (`idTeacher`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,1);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,2);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,3);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,4);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,5);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (2,6);
-INSERT INTO `Teacher_has_Student` (`Teacher_idTeacher`,`Student_id`) VALUES (1,7);
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
