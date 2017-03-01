@@ -2,7 +2,7 @@ class QuestionList extends List {
 
   constructor(propertyValues, callback){
     super(Question);
-    this.testQuestions(propertyValues.Test_idTest, callback);
+    this.Question(propertyValues.Test_idTest, callback);
 
   }
 
