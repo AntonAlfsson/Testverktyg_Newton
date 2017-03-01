@@ -12,7 +12,7 @@ class Test extends Base {
     constructor(propertyValues){
       super(propertyValues)
       console.log(propertyValues);
-      this.id = propertyValues.idTest;
+      this.idTest = propertyValues.idTest;
       this.pNr = propertyValues.Person_pNr;
   }
 

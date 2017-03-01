@@ -55,6 +55,7 @@ window.load = `
     footer.html
     modal.html
     Fragor.html
+    question.html
     start.html
     testresultat.html
     teacherprofile.html
