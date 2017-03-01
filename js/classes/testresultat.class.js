@@ -2,11 +2,20 @@ class testresultat extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
-        console.log('hej');
+        
         if(propertyValues.pNr){
-            this.pNr = propertyValues.pNr;
-            this.testId = propertyValues.id;
+            
+            this.Person_pNr = propertyValues.pNr;
             this.getName(callback);
+            
+            if(propertyValues.id){
+                this.idTest = propertyValues.id;
+                var selectedTest = new Test(this.idTest, this.Person_pNr);
+                
+                selectedTest.getTest( ()=>{
+                    console.log('selectedTest', selectedTest);
+                });
+            }
         }
     }
     
@@ -17,6 +26,7 @@ class testresultat extends Base {
             callback && callback(this);
     });
   }
+    
     
     
     static get sqlQueries(){
