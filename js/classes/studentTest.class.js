@@ -1,4 +1,4 @@
-class Test extends Base {
+class studentTest extends Base {
     
     static defaultPropertyValues(){
     return {
@@ -10,7 +10,9 @@ class Test extends Base {
   }
 
     constructor(propertyValues){
-    super(propertyValues)
+    super(propertyValues);
+    this.id = propertyValues.idTest;
+    this.pNr = propertyValues.Person_pNr;
 
   }
 

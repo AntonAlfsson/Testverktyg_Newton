@@ -11,6 +11,15 @@ class Student extends Base {
         super(propertyValues);
     }
     
+    getTestList(){
+        var studentTests = new studentTestList();
+        studentTests.studentTest(this.pNr, () => {
+            var el = '#'+this.pNr;
+            $('.studBud').empty();
+            studentTests.display(el);
+        });
+    }
+    
     static get sqlQueries(){
 
     return {

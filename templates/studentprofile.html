@@ -29,32 +29,32 @@ studentprofile.addTemplate('default', function(){return `
               <table class="table table-user-information">
                   <tbody>
                     <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
+                        <td>Område</td>
+                        <td>Programmering</td>
                     </tr>
                     <tr>
-                        <td>Enrollement date:</td>
-                        <td>06/23/2013</td>
+                        <td>Kurs</td>
+                        <td>Java</td>
                     </tr>
                     <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
+                        <td>Startdatum</td>
+                        <td>2016-08-15</td>
                     </tr>
                     <tr>
-                        <td>Gender</td>
-                        <td>Male</td>
+                        <td>Födelsedatum</td>
+                        <td>1988-01-24</td>
                     </tr>
                     <tr>
-                        <td>Home Address</td>
-                        <td>Sweden</td>
+                        <td>Adress</td>
+                        <td>Sverige</td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td><a href="mailto:info@support.com">info@support.com</a></td>
                     </tr>
                     <tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890</td>
+                        <td>Telefon</td>
+                        <td>0701-23 45 56</td>
                     </tr>
                   </tbody>
               </table>
@@ -102,10 +102,8 @@ studentprofile.addTemplate('default', function(){return `
               </tr>
           </thead>
 
-          <tbody class="test-list">
-              <tr>
-              ${this.tests.display()}          
-              </tr>             
+          <tbody class="testlist"> <!--HÄR VILL VI LADDA IN TESTEN-->
+                
           </tbody>
       </table>
       </div>

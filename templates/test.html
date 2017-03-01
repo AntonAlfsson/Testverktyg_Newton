@@ -1,9 +1,10 @@
 Test.addTemplate('default',function(){return `
-  	<td>$(this.Title)</td>
-	<td>$(this.Start)</td>
-	<td>$(this.Slut)</td>
-	<td>
-        <button type="button" class="btn btn-xs">Starta test</button>
-    </td>
-
+  	<tr><input>
+  		<td>${this.Title}</td>
+		<td>${this.start}</td>
+		<td>${this.stop}</td>
+		<td>
+        	<button type="button" class="btn btn-xs">Starta test</button>
+    	</td>
+    </tr>
 `});

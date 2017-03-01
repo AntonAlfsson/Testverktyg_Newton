@@ -18,7 +18,6 @@ class App {
         this.navbar = theNavbar;
         this.footer = new footer();    
         this.startPage = new start();
-        this.testresultat = new testresultat();
         this.Fragor = new Fragor();
         
         
@@ -28,19 +27,16 @@ class App {
         
         var router = new Router({
           '/': ()=>{ this.showPage(this.startPage); },
-          '/Teacher': ()=> { this.showPage(this.teacherprofile); },
           
           '/Teacher/:pNr': (params)=> { 
-              var page = new teacherprofile(params, this.showPage);
-          },
-          
-          '/Student': ()=> { this.showPage(this.studentprofile); },
+              var page = new teacherprofile(params, this.showPage); },
             
           '/Student/:pNr': (params)=> { 
-              var page = new studentprofile(params, this.showPage);
-          },
+              var page = new studentprofile(params, this.showPage); },
             
-          '/testresultat': ()=> { this.showPage(this.testresultat); },
+          '/testresultat/:pNr/:id': (params)=> {
+              var page = new testresultat(params, this.showPage); },
+            
           '/Fragor': ()=> { this.showPage(this.Fragor); }
         });
 

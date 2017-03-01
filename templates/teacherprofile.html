@@ -6,7 +6,6 @@ teacherprofile.addTemplate('default', function(){return `
 
         <A href="edit.html" >Logout</A>
        <br>
-<p class=" text-info">Feb 5,2017,03:00 pm </p>
       </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
 
@@ -17,7 +16,7 @@ teacherprofile.addTemplate('default', function(){return `
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="${this.img}" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="${this.getImg()}" class="img-circle img-responsive"></div>
 
 
                 <div class= "col-md-9 col-lg-9">
@@ -33,26 +32,26 @@ teacherprofile.addTemplate('default', function(){return `
                       </tr>
                       <tr>
                         <td>Date of Birth</td>
-                        <td>${this.pNr.substring(0,8)}</td>
+                        <td>${this.dOb()}</td>
                       </tr>
 
                          <tr>
                              <tr>
                         <td>Gender</td>
-                        <td>${this.gender}</td>
+                        <td>${this.getGender()}</td>
                       </tr>
                         <tr>
                         <td>Home Address</td>
-                        <td>${this.country}</td>
+                        <td>${this.getCountry()}</td>
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td><a href="${this.eMail}">${this.eMail}</a></td>
+                        <td><a href="mailto:${this.getEmail()}?Subject=Hello%20again" target="_top">${this.getEmail()}</a></td>
                     </tr>
                         <tr>
 
                         <td>Phone Number</td>
-                        <td>${this.phoneNr}</td>
+                        <td>${this.getPhone()}</td>
 
                       </tr>
 
@@ -69,12 +68,15 @@ teacherprofile.addTemplate('default', function(){return `
     <h3>Profile information</h3>
 
 
-            <p>${this.bio}</p>
+            <p>${this.getBio()}</p>
 
 
 </div>
 </div>
 </div>
+
+
+
 
 <div class="container">
 <div class = "row">
@@ -88,19 +90,6 @@ teacherprofile.addTemplate('default', function(){return `
   <button type="button" class="btn btn-default">Delete Student</button>
   <button type="button" class="btn btn-default">Student Profile</button>
 </div>
-</div>
-
-<div class = "col-lg-6">
-<h2 > Tests</h2>
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Add Test</button>
-  <button type="button" class="btn btn-default">Delete Test</button>
-  <button type="button" class="btn btn-default">Test Profile</button>
-
-</div>
-</div>
-<div class="row">
-	<div class="col-lg-6">
 <table class="table table-condensed">
         <thead>
             <tr>
@@ -116,9 +105,19 @@ teacherprofile.addTemplate('default', function(){return `
         <tbody class="stud"> <!-- FÖRSÖKER LADDA IN STUDENTER -->
             
     </table>
-        </div>
+</div>
 
-        <div class="col-lg-6">
+    
+    
+<div class = "col-lg-6">
+<h2 > Tests</h2>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Add Test</button>
+  <button type="button" class="btn btn-default">Delete Test</button>
+  <button type="button" class="btn btn-default">Test Profile</button>
+
+</div>
+  
 <table class="table table-condensed">
         <thead>
             <tr>
@@ -131,37 +130,13 @@ teacherprofile.addTemplate('default', function(){return `
             </tr>
         </thead>
 
-        <tbody>
-            <tr>
-            	<td>
-            		<input type="checkbox" name="myTextEditBox" value="checked"/>
-            	</td>
-                <td>1</td>
-                <td>Intro Test</td>
-                <td>Anna Fock</td>
-                <td>af@mail.com</td>
-            </tr>
-            <tr>
-                <td>
-                	<input type="checkbox" name="myTextEditBox" value="checked"/>
-                </td>
-                <td>2</td>
-                <td>Math 1</td>
-                <td>Anton Olsson</td>
-                <td>ao@mail.com</td>
-            </tr>
-            <tr>
-            	<td>
-            		<input type="checkbox" name="myTextEditBox" value="checked"/>
-            	</td>
-                <td>3</td>
-                <td>Math 2</td>
-                <td>Jon Svensson</td>
-                <td>js@mail.com</td>
-            </tr>
+        <tbody class="studTest">
+          
         </tbody>
-    </table>
-        </div>
+    </table>    
+    
+    
+</div>
 
     </div></div>
 `});
