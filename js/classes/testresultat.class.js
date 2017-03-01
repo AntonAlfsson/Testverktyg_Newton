@@ -3,7 +3,7 @@ class testresultat extends Base {
     constructor(propertyValues, callback){
         super(propertyValues);
         
-        if(propertyValues.pNr != null){
+        if(propertyValues.pNr){
             this.pNr = propertyValues.pNr;
             this.testId = propertyValues.id;
             this.getName( () => {

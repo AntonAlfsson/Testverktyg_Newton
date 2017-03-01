@@ -34,7 +34,6 @@ class teacherprofile extends Base {
     }
     
     dOb(){
-        // 198909144274
         var el = this.pNr.substring(0, 4) + '-' + this.pNr.substring(4, 6) + '-' + this.pNr.substring(6, 8);
         return el;
     }
