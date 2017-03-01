@@ -10,16 +10,10 @@ class Test extends Base {
   }
 
     constructor(propertyValues){
-    super(propertyValues)
-
+      super(propertyValues)
+      console.log(propertyValues);
+      this.id = propertyValues.idTest;
+      this.pNr = propertyValues.Person_pNr;
   }
 
-      /*static get sqlQueries(){
-
-    return {
-        newTest: `
-        INSERT Test SET ?
-`
-    }
-  } */
 }
