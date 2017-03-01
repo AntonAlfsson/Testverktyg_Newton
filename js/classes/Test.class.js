@@ -28,6 +28,14 @@ class Test extends Base {
         });
     }
     
+    getQuestions(callback){
+        this.questions = new QuestionList(this.id, ()=>{
+            questions.testQuestions( ()=>{
+                console.log(questions); 
+            });
+        });
+    }
+    
     
     
     static get sqlQueries(){

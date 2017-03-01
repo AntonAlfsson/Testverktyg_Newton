@@ -12,7 +12,7 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
-    //this.load(propertyValues.id, callback);
+    this.option = new QuestionOptionList(propertyValues.idQuestion, callback);  
   }
 
   load(id, callback){

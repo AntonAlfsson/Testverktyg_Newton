@@ -2,8 +2,9 @@ class QuestionList extends List {
 
   constructor(propertyValues, callback){
     super(Question);
-    this.testQuestions(propertyValues.Test_idTest, callback);
-
+      
+    this.testId = propertyValues;
+    this.testQuestions(callback);  
   }
 
   readAllFromDb(callback){
@@ -13,8 +14,8 @@ class QuestionList extends List {
     });
   }
 
-  testQuestions(Test_idTest, callback){
-        this.db.questionsByIdTest([Test_idTest], (data)=>{
+  testQuestions(callback){
+        this.db.questionsByIdTest([this.testId], (data)=>{
             this.push.apply(this,data);
             callback && callback(this);
     });
@@ -30,7 +31,8 @@ class QuestionList extends List {
       questionsByIdTest:`
         select * from Question
         join Test on idTest=Test_idTest
-        where idTest=?            `
+        where idTest = ?
+        `
     }
   }
 
