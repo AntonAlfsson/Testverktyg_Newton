@@ -3,7 +3,8 @@ Test.addTemplate('default',function(){return `
   		<td>${this.Title}</td>
 		<td>${this.start}</td>
 		<td>${this.stop}</td>
-		<td><button type="button" class="btn btn-xs" onclick="window.location.href='/Fraga/${this.pNr}/${this.id}'">Starta testltat</button>
+		<td>
+			<button type="button" class="btn btn-xs" onclick="window.location.href='/Fraga/${this.pNr}/${this.id}'">Starta test</button>
 		</td>
     </tr>
 `});
