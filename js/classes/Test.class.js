@@ -26,7 +26,7 @@ class Test extends Base {
             this.Slut = data[0].stop;
             callback && callback(this);
         });
-    }
+    }  
     
     getQuestions(callback){
         this.questions = new QuestionList(this.id, ()=>{
