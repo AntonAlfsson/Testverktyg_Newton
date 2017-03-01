@@ -1,7 +1,7 @@
-class TestList extends List {
+class studentTestList extends List {
 
   constructor(items){
-    super(Test, items);
+    super(studentTest, items);
   }
 
   readAllFromDb(callback){
@@ -29,7 +29,7 @@ class TestList extends List {
       `
       ,
       testsByPnr:`
-        select idTest, Title, start, stop from Test
+        select * from Test
 join Person_has_Test on idTest=Test_idTest
 join Person on Person_pNr=pNr
 where pNr=?            `

@@ -40,7 +40,9 @@ class App {
               var page = new studentprofile(params, this.showPage);
           },
             
-          '/testresultat': ()=> { this.showPage(this.testresultat); },
+          '/testresultat/pNr/id': (params)=> {             var page = new testresultat(params, this.showPage); 
+          },
+            
           '/Fragor': ()=> { this.showPage(this.Fragor); }
         });
 

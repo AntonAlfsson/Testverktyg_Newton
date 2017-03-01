@@ -9,15 +9,15 @@ class Student extends Base {
      
     constructor(propertyValues){
         super(propertyValues);
-        this.getTestList();
     }
     
     getTestList(){
-        var studentTests = new TestList();
-        
+        var studentTests = new studentTestList();
         studentTests.studentTest(this.pNr, () => {
-                    console.log('hej', studentTests);
-            });
+            var el = '#'+this.pNr;
+            $('.studBud').empty();
+            studentTests.display(el);
+        });
     }
     
     static get sqlQueries(){
