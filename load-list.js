@@ -30,6 +30,7 @@ window.load = `
     footer.class.js
     Fragor.class.js
     Question.class.js
+    questionList.class.js
     QuestionOption.class.js
     navbar.class.js
     studentList.class.js
@@ -46,6 +47,7 @@ window.load = `
     dataGenerator.class.js
     studentTestList.class.js
     studentTest.class.js
+    questionOption-list.js
 
     
   templates/
@@ -54,6 +56,7 @@ window.load = `
     footer.html
     modal.html
     Fragor.html
+    question.html
     start.html
     testresultat.html
     teacherprofile.html

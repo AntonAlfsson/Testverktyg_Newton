@@ -2,11 +2,24 @@ class testresultat extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
-        console.log('hej');
+        
         if(propertyValues.pNr){
+            
             this.pNr = propertyValues.pNr;
-            this.testId = propertyValues.id;
             this.getName(callback);
+            
+            this.idTest = propertyValues.id;
+            this.getTitle(callback);
+            
+            var test = new Test(this.idTest, ()=>{
+                console.log(test);
+            });
+            
+            //var testQuestions = new QuestionList(this.idTest, ()=>{
+           //     console.log(testQuestions);
+            //});
+            
+            
         }
     }
     
@@ -18,12 +31,23 @@ class testresultat extends Base {
     });
   }
     
+    getTitle(callback){
+        this.db.getTitle([this.idTest], (data)=>{
+           this.title = data[0].Title;
+            callback && callback(this);
+        });
+    }
+    
+    
     
     static get sqlQueries(){
 
     return {
         getPerson: `
         SELECT Name FROM Person WHERE pNr = ?
+        `,
+        getTitle: `
+        SELECT Title FROM Test WHERE idTest = ?
         `
     }
   }
