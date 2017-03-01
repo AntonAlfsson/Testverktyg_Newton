@@ -11,15 +11,20 @@ class Test extends Base {
     
     constructor(propertyValues, callback){
       super(propertyValues);
-        this.id = propertyValues.idTest;
-        this.getTest( ()=>{
+    
+        if(propertyValues.idTest){
             this.testQuestions = new QuestionList(this.id, callback);
-        });  
-      
+        }else{
+            this.getTest(propertyValues, ()=>{
+                this.testQuestions = new QuestionList(this.id, callback);
+            });
+        }
+       
   }
     
-    getTest(callback){
-        this.db.getTest([this.id], (data)=>{
+    getTest(id, callback){
+        this.db.getTest([id], (data)=>{
+            console.log('data', this.id);
             this.id = data[0].idTest;
             this.Title = data[0].Title;
             this.Start = data[0].start;
