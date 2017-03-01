@@ -118,6 +118,8 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03-03 00:00:00','2017-03-23 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (2,'Java','2016-06-03 00:00:00','2017-01-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (3,'Js','2017-01-01 00:00:00','2017-06-01 00:00:00');
 
 
 
@@ -228,6 +230,10 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Response` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (1,'The diameter equals 3 476 km','198804045678',1);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (2,'11','198804045678',2);
+
 
 
 -- -----------------------------------------------------
