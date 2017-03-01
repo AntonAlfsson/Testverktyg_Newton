@@ -154,7 +154,7 @@ INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('199306177898
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Question` (
   `idQuestion` INT(11) NOT NULL AUTO_INCREMENT,
-  `Title` VARCHAR(45) NOT NULL,
+  `Question_Title` VARCHAR(45) NOT NULL,
   `Question` MEDIUMTEXT NOT NULL,
   `HTML-element` MEDIUMTEXT NULL DEFAULT NULL,
   `img` MEDIUMTEXT NULL DEFAULT NULL,
@@ -171,10 +171,10 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (1,'Question 1','What is the diameter of the moon?',NULL,NULL,'mp',1);
-INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Quesiton 2','What is 4+5?',NULL,NULL,'mp',1);
-INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
-INSERT INTO `Question` (`idQuestion`,`Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Quesiton 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (1,'Question 1','What is the diameter of the moon?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Quesiton 2','What is 4+5?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Quesiton 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
 
 
 

@@ -5,15 +5,19 @@ class testresultat extends Base {
         
         if(propertyValues.pNr){
             
-            this.Person_pNr = propertyValues.pNr;
+            this.pNr = propertyValues.pNr;
             this.getName(callback);
             
             this.idTest = propertyValues.id;
             this.getTitle(callback);
             
-            var testQuestions = new QuestionList(this.idTest, ()=>{
-                console.log(testQuestions);
+            var test = new Test(this.idTest, ()=>{
+                console.log(test);
             });
+            
+            //var testQuestions = new QuestionList(this.idTest, ()=>{
+           //     console.log(testQuestions);
+            //});
             
             
         }
