@@ -9,13 +9,13 @@ class Test extends Base {
     }
   }
     
-    constructor(propertyValues){
+    constructor(propertyValues, callback){
       super(propertyValues);
-        
-      if(propertyValues.Person_pNr){
         this.id = propertyValues.idTest;
-        this.pNr = propertyValues.Person_pNr;
-      }
+        this.getTest( ()=>{
+            this.testQuestions = new QuestionList(this.id, callback);
+        });  
+      
   }
     
     getTest(callback){
@@ -27,6 +27,16 @@ class Test extends Base {
             callback && callback(this);
         });
     }  
+    
+    getQuestions(callback){
+        this.questions = new QuestionList(this.id, ()=>{
+            questions.testQuestions( ()=>{
+                console.log(questions); 
+            });
+        });
+    }
+    
+    
     
     static get sqlQueries(){
         return {

@@ -47,6 +47,7 @@ window.load = `
     dataGenerator.class.js
     studentTestList.class.js
     studentTest.class.js
+    questionOption-list.js
 
     
   templates/
