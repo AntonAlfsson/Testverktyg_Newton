@@ -18,7 +18,6 @@ class App {
         this.navbar = theNavbar;
         this.footer = new footer();    
         this.startPage = new start();
-        this.Fragor = new Fragor();
         
         
         this.navbar.display('body');
@@ -37,11 +36,8 @@ class App {
           '/testresultat/:pNr/:id': (params)=> {
               var page = new testresultat(params, this.showPage); },
             
-          '/Fragor/:Test_idTest': (params)=> { 
-            new QuestionList(params, this.showPage); 
-
-            //'/Fragor': ()=> { this.showPage(this.Fragor); 
-            }
+          '/Fragor/:idTest': (params)=> { 
+            var page = new Fragor(params, this.showPage); }
 
           
         });

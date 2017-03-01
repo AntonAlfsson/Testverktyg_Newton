@@ -1,13 +1,21 @@
 class Fragor extends Base {
 
-	static defaultPropertyValues(){
-    return {
-    }
-  }
-    
-    constructor(propertyValues){
-        super(propertyValues);
-        /*this.question = propertyValues.idQuestion;
-        this.id = propertyValues.idTest;*/
-    }
+	constructor(propertyValues, callback){
+		super(propertyValues);
+
+		console.log(propertyValues.idTest);
+
+		var test = new Test(propertyValues.idTest, ()=> {
+			console.log(test);
+		});
+
+	
+
+		
+
+		
+
+	}
 }
+
+
