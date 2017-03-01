@@ -3,7 +3,7 @@ class Question extends Base {
   static defaultPropertyValues(){
     return {
       idQuestion: 0,
-      Title: '',
+      Question_Title: '',
       Question: 0,
       type: '',
       Test_idTest: 0
@@ -12,6 +12,7 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
+      console.log('propertyValues', propertyValues);
     this.option = new QuestionOptionList(propertyValues.idQuestion, callback);  
   }
 

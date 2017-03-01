@@ -16,6 +16,7 @@ class QuestionList extends List {
 
   testQuestions(callback){
     this.db.questionsByIdTest([this.testId], (data)=>{
+        console.log('question', data);
         this.push.apply(this,data);
         callback && callback(this);
     });

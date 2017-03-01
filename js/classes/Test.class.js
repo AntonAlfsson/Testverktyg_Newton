@@ -33,6 +33,10 @@ class Test extends Base {
         });
     }  
     
+    getQuestionList(){
+        return this.testQuestions;
+    }
+    
     getQuestions(callback){
         this.questions = new QuestionList(this.id, ()=>{
             questions.testQuestions( ()=>{

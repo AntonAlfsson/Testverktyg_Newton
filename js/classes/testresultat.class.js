@@ -12,7 +12,7 @@ class testresultat extends Base {
             this.getTitle(callback);
             
             var test = new Test(this.idTest, ()=>{
-                console.log(test);
+                test.testQuestions.display('.fragor');
             });
             
             //var testQuestions = new QuestionList(this.idTest, ()=>{
