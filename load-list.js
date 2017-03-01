@@ -30,6 +30,7 @@ window.load = `
     footer.class.js
     Fragor.class.js
     Question.class.js
+    questionList.class.js
     QuestionOption.class.js
     navbar.class.js
     studentList.class.js
