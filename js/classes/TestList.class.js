@@ -4,12 +4,6 @@ class TestList extends List {
     super(Test, items);
   }
 
-  readAllFromDb(callback){
-    this.db.readAll((data)=>{
-      this.push.apply(this,data);
-      callback();
-    });
-  }
 
   studentTest(pNr, callback){
         this.db.testsByPnr([pNr], (data)=>{
