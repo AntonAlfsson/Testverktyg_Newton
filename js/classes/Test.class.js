@@ -1,27 +1,49 @@
 class Test extends Base {
     
-    constructor(){
-        super();
-        this.getAllByTitle();
-    }
-
-    static get sqlQueries(){
-
+    static defaultPropertyValues(){
     return {
-      all: `
-        select * from Test 
-      `,
-      byTitle: `
-        select * from Test
-        where Title = ?
-      `,
-      newTest: `
-        INSERT INTO Test SET ?
-      `,
-      allByStart: `
-        select Test, start from Test
-        order by start
-    `
+      id: '1',
+      Title: 'Provets namn',
+      Start: '',
+      Slut: '',
     }
   }
+    
+    constructor(propertyValues){
+      super(propertyValues);
+        
+      if(propertyValues.Person_pNr){
+        this.id = propertyValues.idTest;
+        this.pNr = propertyValues.Person_pNr;
+      }
+  }
+    
+    getTest(callback){
+        this.db.getTest([this.id], (data)=>{
+            this.id = data[0].idTest;
+            this.Title = data[0].Title;
+            this.Start = data[0].start;
+            this.Slut = data[0].stop;
+            callback && callback(this);
+        });
+    }
+    
+    getQuestions(callback){
+        this.questions = new QuestionList(this.id, ()=>{
+            questions.testQuestions( ()=>{
+                console.log(questions); 
+            });
+        });
+    }
+    
+    
+    
+    static get sqlQueries(){
+        return {
+        getTest:`
+            SELECT * FROM Test WHERE idTest=?
+        `
+    }
+  }
+
 }

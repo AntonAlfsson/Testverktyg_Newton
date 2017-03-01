@@ -1,7 +1,7 @@
 window.load = `
 
   css/libs/
-    cerulean.bootstrap.min.css
+    sandstone.bootstrap.min.css
     bootstrap-tricks.css
 
   css/main.css
@@ -10,6 +10,8 @@ window.load = `
     jquery.js
     bootstrap.min.js
     diffDom.js
+
+  js/main.js
 
   js/classes/base-and-utility-classes/
     jQuery-dom-events.class.js
@@ -20,35 +22,48 @@ window.load = `
     base.class.js
     list.class.js
     router.class.js
-  
+
   js/classes/
     bootstrap-size.js
     modal.class.js
-    organism.class.js  
-    pet.class.js
-    pet-owner.class.js
-    pet-list.class.js
-    pet-owner-list.class.js
-    pet-owner-view.class.js
-    test-data-generator.class.js
     app.class.js
     footer.class.js
     Fragor.class.js
+    Question.class.js
+    questionList.class.js
+    QuestionOption.class.js
     navbar.class.js
+    studentList.class.js
+    Student.class.js
     start.class.js
+    Test.class.js
+    TestList.class.js
     testresultat.class.js
     Person.class.js
+    test-data-generator.class.js
+    teacherprofile.class.js
+    studentprofile.class.js
+    PersonList.class.js
+    dataGenerator.class.js
+    studentTestList.class.js
+    studentTest.class.js
+    questionOption-list.js
 
+    
   templates/
     bootstrap-size.html
-    modal.html
-    footer.html
-    Fragor.html
     navbar.html
+    footer.html
+    modal.html
+    Fragor.html
+    question.html
     start.html
     testresultat.html
-
-
-  js/main.js
+    teacherprofile.html
+    studentprofile.html
+    test.html
+    Person.html
+    Student.html
+    studentTest.html
 
 `;

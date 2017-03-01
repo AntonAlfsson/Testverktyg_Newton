@@ -1,0 +1,10 @@
+Test.addTemplate('default',function(){return `
+  	<tr><input>
+  		<td>${this.Title}</td>
+		<td>${this.start}</td>
+		<td>${this.stop}</td>
+		<td>
+			<button type="button" class="btn btn-xs" onclick="window.location.href='/Fragor/${this.id}'">Starta test</button>
+		</td>
+    </tr>
+`});

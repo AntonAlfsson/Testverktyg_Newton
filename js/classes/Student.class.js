@@ -1,4 +1,4 @@
-class Person extends Base {
+class Student extends Base {
     
     static defaultPropertyValues(){
     return {
@@ -11,18 +11,13 @@ class Person extends Base {
         super(propertyValues);
     }
     
-    insertInDb(callback){
-        this.db.newPerson({
-        pNr: this.pNr,
-        Name: this.Name,
-        roll: this.roll,
-        lösen: this.lösen,
-        klass: this.klass
-    },callback);
-  }
-    
-    get name(){
-        return this.Name;
+    getTestList(){
+        var studentTests = new studentTestList();
+        studentTests.studentTest(this.pNr, () => {
+            var el = '#'+this.pNr;
+            $('.studBud').empty();
+            studentTests.display(el);
+        });
     }
     
     static get sqlQueries(){
