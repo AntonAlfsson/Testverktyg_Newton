@@ -65,5 +65,6 @@ window.load = `
     Person.html
     Student.html
     studentTest.html
+    questionoption.html
 
 `;

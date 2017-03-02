@@ -1,8 +1,13 @@
 testresultat.addTemplate('default', function(){return `
 <div class="container">
-    <h1>${this.Name}s provresultat för prov ${this.title}</h1>
-	
-    <ul class=fragor></ul>
+    <div class="page-header">
+        <h1>${this.Name}s provresultat för prov ${this.title}</h1>
+	</div>
+	<div class="container quest">
+        
+
+
+	</div>
 
 	<div class="alert alert-success" role="alert">Du klarade provet! Resultat 25/30.</div>
 	<div class="alert alert-danger" role="alert">Du karade inte provet. Resultat 11/30.</div>

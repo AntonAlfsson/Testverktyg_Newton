@@ -12,9 +12,12 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
-      console.log('propertyValues', propertyValues);
-    this.option = new QuestionOptionList(propertyValues.idQuestion, callback);  
+    this.idQuestion = propertyValues.idQuestion;
+    var options = new QuestionOptionList(propertyValues.idQuestion, ()=>{
+        options.display('#'+this.idQuestion);
+    });
   }
+    
 
   load(id, callback){
     this.db.readAll([Test_idTest], (data)=>{
