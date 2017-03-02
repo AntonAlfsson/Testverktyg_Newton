@@ -11,15 +11,11 @@ class testresultat extends Base {
             this.idTest = propertyValues.id;
             this.getTitle(callback);
             
-            var test = new Test(this.idTest, ()=>{
-                console.log(test);
-            });
-            
-            //var testQuestions = new QuestionList(this.idTest, ()=>{
-           //     console.log(testQuestions);
-            //});
-            
-            
+            this.test = new Test(this.idTest, ()=>{
+                this.questlist = new QuestionList(this.idTest, ()=>{
+                    this.questlist.display('.quest');
+                });
+            });     
         }
     }
     

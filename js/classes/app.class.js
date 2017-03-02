@@ -25,6 +25,7 @@ class App {
         new BootstrapSize().display('body');
         
         var router = new Router({
+            
           '/': ()=>{ this.showPage(this.startPage); },
           
           '/Teacher/:pNr': (params)=> { 
@@ -33,13 +34,12 @@ class App {
           '/Student/:pNr': (params)=> { 
               var page = new studentprofile(params, this.showPage); },
             
-          '/testresultat/:pNr/:id': (params)=> {
-              var page = new testresultat(params, this.showPage); },
-            
           '/Fragor/:idTest': (params)=> { 
-            var page = new Fragor(params, this.showPage); }
-
-          
+              var page = new Fragor(params, this.showPage); },
+            
+          '/testresultat/:pNr/:id': (params)=> {
+              var page = new testresultat(params, this.showPage); }
+      
         });
 
 }

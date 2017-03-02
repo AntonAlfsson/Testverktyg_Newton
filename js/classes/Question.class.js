@@ -3,7 +3,7 @@ class Question extends Base {
   static defaultPropertyValues(){
     return {
       idQuestion: 0,
-      Title: '',
+      Question_Title: '',
       Question: 0,
       type: '',
       Test_idTest: 0
@@ -12,8 +12,12 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
-    this.option = new QuestionOptionList(propertyValues.idQuestion, callback);  
+    this.idQuestion = propertyValues.idQuestion;
+    var options = new QuestionOptionList(propertyValues.idQuestion, ()=>{
+        options.display('#'+this.idQuestion);
+    });
   }
+    
 
   load(id, callback){
     this.db.readAll([Test_idTest], (data)=>{

@@ -1,10 +1,8 @@
 Question.addTemplate('default',function(){return `
   <div class="container">
-    <div class="jumbotron ">
-        <h1 class="question-head" id="question-title">${this.Title}</h1>
+    <div class="jumbotron">
+        <h1 class="question-head" id="question-title">${this.Question_Title}</h1>
         <p class="question">${this.Question}</p>
-
-
-
-     </div>
+        <ul id="${this.idQuestion}"></ul>
+      </div></div>
 `});

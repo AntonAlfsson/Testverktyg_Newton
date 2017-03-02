@@ -1,16 +1,9 @@
 class QuestionOption extends Base {
      
-    constructor(propertyValues){
+    constructor(propertyValues, callback){
         super(propertyValues);
+        
+        this.option = propertyValues.QuestionOption;
     }
-    
-  
-    static get sqlQueries(){
 
-    return {
-        newPerson: `
-        INSERT Person SET ?
-`
-    }
-  }
 }

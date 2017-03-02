@@ -24,7 +24,6 @@ class Test extends Base {
     
     getTest(id, callback){
         this.db.getTest([id], (data)=>{
-            console.log('data', this.id);
             this.id = data[0].idTest;
             this.Title = data[0].Title;
             this.Start = data[0].start;
@@ -32,6 +31,10 @@ class Test extends Base {
             callback && callback(this);
         });
     }  
+    
+    getQuestionList(){
+        return this.testQuestions;
+    }
     
     getQuestions(callback){
         this.questions = new QuestionList(this.id, ()=>{
