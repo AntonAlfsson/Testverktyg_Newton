@@ -1,5 +1,5 @@
 class Test extends Base {
-    
+   /* 
     static defaultPropertyValues(){
     return {
       id: '1',
@@ -8,16 +8,16 @@ class Test extends Base {
       Slut: '',
     }
   }
-    
+ */   
     constructor(propertyValues, callback){
       super(propertyValues);
-    
-        if(propertyValues.idTest){
-            this.testQuestions = new QuestionList(this.id, callback);
-        }else{
-            this.getTest(propertyValues, ()=>{
-                this.testQuestions = new QuestionList(this.id, callback);
+        
+        if(propertyValues.pNr){
+            this.getTest(propertyValues.id, ()=>{
+                this.testQuestions = new QuestionList(propertyValues, callback);
             });
+        }else{
+            this.testQuestions = new QuestionList(this.id, callback);
         }
        
   }

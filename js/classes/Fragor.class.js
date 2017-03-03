@@ -1,13 +1,9 @@
 class Fragor extends Base {
 
-	constructor(propertyValues, callback){
+	constructor(propertyValues){
 		super(propertyValues);
 
-		//console.log(propertyValues.idTest);
-
-		//var test = new Test(propertyValues.idTest, ()=> {
-			//console.log(test);
-		//});
+		console.log(propertyValues);
 	
 
 	}

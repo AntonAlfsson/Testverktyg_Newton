@@ -28,7 +28,7 @@ window.load = `
     modal.class.js
     app.class.js
     footer.class.js
-    Fragor.class.js
+    fragor.class.js
     Question.class.js
     questionList.class.js
     QuestionOption.class.js
@@ -40,11 +40,9 @@ window.load = `
     TestList.class.js
     testresultat.class.js
     Person.class.js
-    test-data-generator.class.js
     teacherprofile.class.js
     studentprofile.class.js
     PersonList.class.js
-    dataGenerator.class.js
     studentTestList.class.js
     studentTest.class.js
     questionOption-list.js

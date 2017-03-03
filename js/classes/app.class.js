@@ -34,11 +34,14 @@ class App {
           '/Student/:pNr': (params)=> { 
               var page = new studentprofile(params, this.showPage); },
             
-          '/Fragor/:idTest': (params)=> { 
-              var page = new Fragor(params, this.showPage); },
-            
           '/testresultat/:pNr/:id': (params)=> {
-              var page = new testresultat(params, this.showPage); }
+              var page = new testresultat(params, this.showPage); },
+            
+          '/Fragor/:idTest': (params)=> {
+                var page = new Fragor(params, this.showPage); },
+            
+          '/TheBigTest/:id': (params)=> {
+              var page = new TheBigTest(params, this.showPage); }
       
         });
 
