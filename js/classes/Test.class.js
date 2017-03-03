@@ -8,6 +8,7 @@ class Test extends Base {
                 this.testQuestions = new QuestionList(propertyValues, callback);
             });
         }else{
+            this.pNr = propertyValues.Person_pNr;
             this.testQuestions = new QuestionList(propertyValues, callback);
         }
        

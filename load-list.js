@@ -46,6 +46,7 @@ window.load = `
     studentTest.class.js
     questionOption-list.js
     TestSida.class.js
+    testQuestionOption.class.js
 
 
   templates/
@@ -64,5 +65,5 @@ window.load = `
     studentTest.html
     questionoption.html
     TestSida.html
-
+    testQuestionOption.html
 `;

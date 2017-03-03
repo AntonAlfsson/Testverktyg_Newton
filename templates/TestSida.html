@@ -1,6 +1,7 @@
 TestSida.addTemplate('default', function(){return `
 <div class="container">
-    <h1>${this.title}</h1>
-    ${this.questionList.display()};
+    <h1 class="titleTest">${this.title}</h1>
+    <div class="questions"></div>
+    <div class="container"><div class="jumbotron"><a class="btn btn-default" href="/testresultat/${this.pNr}/${this.id}" data-click="submit">Submit</a></div></div>
 </div>
 `});

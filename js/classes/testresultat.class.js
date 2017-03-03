@@ -21,6 +21,7 @@ class testresultat extends Base {
                 for(let i = 0; i < this.numberOfQuestions; i++){
                     
                     this.getRightAnswer(this.test.testQuestions[i].idQuestion, ()=>{});
+                    
                     this.getResponse(this.test.testQuestions[i].idQuestion, ()=>{
                            if(this.an === this.re){
                                this.score += 1;
@@ -67,7 +68,7 @@ class testresultat extends Base {
     }
     
     getResponse(id, callback){
-        this.db.getResponse([id], (data)=>{
+        this.db.getResponse([id, this.pNr], (data)=>{
            this.re = data[0].response;
             callback && callback(this);
         });
@@ -96,6 +97,7 @@ class testresultat extends Base {
         getResponse: `
         SELECT response FROM Response
         where Question_idQuestion = ?
+        and Person_pNr=?
         `
     }
   }

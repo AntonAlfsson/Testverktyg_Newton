@@ -18,6 +18,9 @@ class QuestionList extends List {
         if(this.testId.pNr){
         for(let i = 0; i < data.length; i++){
             data[i].pNr = this.testId.pNr;
+            if(this.testId.typeTest){
+                data[i].typeTest = this.testId.typeTest;
+            }
         }
         }
         this.push.apply(this,data);

@@ -37,8 +37,7 @@ class App {
           '/testresultat/:pNr/:id': (params)=> {
               var page = new testresultat(params, this.showPage); },
 
-          '/TestSida/:id': (params)=> {
-              console.log("HEPP");
+          '/TestSida/:pNr/:id': (params)=> {
               var page = new TestSida(params, this.showPage); }
         });
 
