@@ -1,0 +1,10 @@
+pNr,Name,lösen,Student_id,Teacher_idTeacher
+196412083434,"Johanna Andersson",NULL,NULL,1
+197801147878,"Carl Hamilton",1234,NULL,2
+198804045678,"Isabelle Larsson",1234,2,NULL
+199204011234,"Alexandra Karlsson",NULL,7,NULL
+199306177898,"Andreas Persson",NULL,6,NULL
+199410026789,"Hanna Jepsson",NULL,4,NULL
+199411146787,"Alexande Lundgren",NULL,5,NULL
+199412093456,"Rasmus Karlsson",1234,1,NULL
+199502253456,"Hampus Persson",NULL,3,NULL

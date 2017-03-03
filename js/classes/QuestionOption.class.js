@@ -1,41 +1,52 @@
 class QuestionOption extends Base {
-    
-    constructor(){
-        super();
-        this.getAllByQuestionOption();
+     
+    constructor(propertyValues, callback){
+        super(propertyValues);
+        this.data = propertyValues;
+        
+        
+        
+        if(this.data.pNr){
+            
+            this.getPersonResponse( ()=>{
+                
+                if(this.response != undefined){
+                    
+                    if(this.response === this.data.QuestionOption && this.data.trueFalse == 2){
+                        $('#'+this.data.Question_idQuestion+this.data.idQuestionOption).append(' <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>');
+                    }else if(this.response === this.data.QuestionOption && this.data.trueFalse == 1){
+                        $('#'+this.data.Question_idQuestion+this.data.idQuestionOption).append(' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>');
+                    }else if(this.data.trueFalse == 2){
+                         $('#'+this.data.Question_idQuestion+this.data.idQuestionOption).append(' <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>');
+                    }
+                }
+            });
+        }
+        
+        
+        if(this.data.trueFalse == 2){
+            $('#'+this.data.Question_idQuestion+this.data.idQuestionOption).append(' <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>');
+        }
     }
-
-    getAllByQuestionOption(){ // metod för att hämta QuestionOptions från tabellen QuestionOption
-          
-          this.db.all({  
-          },(data)=>{
-            $('#option1').html('' + data[0].QuestionOption);
-            $('#option2').html('' + data[1].QuestionOption);  
-            $('#option3').html('' + data[2].QuestionOption);  
-                        
-          });
-
-   
-
-      }
-
-    static get sqlQueries(){
-
-    return {
-      all: `
-        select * from QuestionOption
-      `,
-
-      byQuestionOption: `
-        select QuestionOption from QuestionOption
-      `,
-      bytrueFalse: `
-        select * from QuestionOption
-        where trueFalse = ?
-      `,
-      newOption: `
-        INSERT INTO QuestionOption SET ?
-      `
+    
+    getPersonResponse(callback){
+        this.db.getResponse([this.data.Question_idQuestion, this.data.pNr], (data)=>{
+            if(data[0]){
+                this.response = data[0].response;
+            }
+            callback && callback(this);
+        });
+    }
+    
+    
+    
+    
+    
+        static get sqlQueries(){
+        return {
+          getResponse: `
+            SELECT response FROM Response WHERE Question_idQuestion = ? and Person_pNr = ?
+          `
     }
   }
 }

@@ -1,0 +1,114 @@
+studentprofile.addTemplate('default', function(){return `
+<div class="container">
+  
+  <!--Edit profile Logout -->
+  <div class="row">
+    <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+      <A href="edit.html" >Edit Profile</A>
+
+      <A href="edit.html" >Logout</A>
+      <br>
+      <p class=" text-info">Feb 5,2017,03:00 pm </p>
+    </div>
+  </div>
+
+  <!--Profilbox -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title teacherName">${this.Name}</h3>
+      </div>
+  
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://static.comicvine.com/uploads/original/6/60392/1716995-mulan.jpg" class="img-circle img-responsive">
+            </div>
+          
+        
+            <div class= "col-md-9 col-lg-9">
+              <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                        <td>Område</td>
+                        <td>Programmering</td>
+                    </tr>
+                    <tr>
+                        <td>Kurs</td>
+                        <td>Java</td>
+                    </tr>
+                    <tr>
+                        <td>Startdatum</td>
+                        <td>2016-08-15</td>
+                    </tr>
+                    <tr>
+                        <td>Födelsedatum</td>
+                        <td>1988-01-24</td>
+                    </tr>
+                    <tr>
+                        <td>Adress</td>
+                        <td>Sverige</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td>0701-23 45 56</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <!--Högerkolumn -->
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
+    <h3>Information till studenter</h3>
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Nytt om Java-kursen</h4>
+            <p class="list-group-item-text">Vi har ändrat det mesta i sista stund. Starta om alla dina system och kontakta admin...</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Anmäl dig till nästa tenta</h4>
+            <p class="list-group-item-text">Senast det här datumet måste du ha anmält dig till nästa tenta.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Gratis fika varje dag</h4>
+            <p class="list-group-item-text">Kom till köket och fika hur mycket när du vill! Gäller alla studenter i SYSJM2.</p>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+<!--Lista över studentents prov-->
+  <div class="container">
+  <div class = "row">
+  <div class = "col-lg-12">
+
+      <div class="panel panel-default">
+      <div class="panel-heading">Dina prov</div>
+        <table class="table table-condensed table-hover" data-link="row">
+          <thead>
+              <tr>
+                  <th>Prov</th>
+                  <th>Starttid</th>
+                  <th>Sluttid</th>
+                  <th></th>
+              </tr>
+          </thead>
+
+        <tbody class="testlist"> <!--HÄR VILL VI LADDA IN TESTEN-->
+                
+          </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+`});

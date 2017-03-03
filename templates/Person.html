@@ -1,6 +1,4 @@
 Person.addTemplate('default', function(){return `
 
-<tr><td><input type="radio" name="myTextEditBox"></td><td>${this.pNr}</td><td>${this.Name.substr(0, this.Name.indexOf(' '))}</td><td>${this.Name.substr(this.Name.indexOf(' '), this.Name.length)}</td><td>default@mail.com</td></tr>
-
-
+<li><a href="/${this.roll}/${this.pNr}" class="userDrop">${this.roll} ${this.Name}</a></li>
 `});

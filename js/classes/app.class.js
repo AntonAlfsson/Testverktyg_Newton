@@ -2,38 +2,50 @@ class App {
 
   constructor(){
       
-      
-      
-      new dataGenerator((teacherprofile)=>{
-      this.start(teacherprofile);
-      });
-  
-  } 
-    
-    start(teacherprofile){
+        var list = new PersonList();
         
-        this.navbar = new navbar();
+        list.readAllFromDb(()=>{ // läser in personer från db
+            var theNavbar = new navbar({
+                personList: list
+            });
+            this.start(theNavbar);
+        });
+      
+  }
+    
+    start(theNavbar){
+        
+        this.navbar = theNavbar;
         this.footer = new footer();    
         this.startPage = new start();
-        this.testresultat = new testresultat();
-        this.Fragor = new Fragor();
-        this.teacherprofile = teacherprofile;
+        
         
         this.navbar.display('body');
         this.footer.display('body');
         new BootstrapSize().display('body');
         
         var router = new Router({
+            
           '/': ()=>{ this.showPage(this.startPage); },
-          '/teacherprofile': ()=> { this.showPage(this.teacherprofile); },
-          '/Fragor': ()=> { this.showPage(this.Fragor); },
-          '/testresultat': ()=> { this.showPage(this.testresultat); }
-        });
+          
+          '/Teacher/:pNr': (params)=> { 
+              var page = new teacherprofile(params, this.showPage); },
+            
+          '/Student/:pNr': (params)=> { 
+              var page = new studentprofile(params, this.showPage); },
+            
+          '/testresultat/:pNr/:id': (params)=> {
+              var page = new testresultat(params, this.showPage); },
+            
+          '/TestSida/:id': (params)=> {
+              var page = new TestSida(params, this.showPage); },
+            
+          '/TestSida/:idTest': (params)=> {
+              var page = new TestSida(params, this.showPage); }
       
+        });
 
-    
 }
-    
       showPage(page){
         $('.page-content').empty();
         page.display('.page-content');
