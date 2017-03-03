@@ -2,15 +2,19 @@ class QuestionOptionList extends List {
 
   constructor(propertyValues, callback){
     super(QuestionOption); 
-      
     this.questionId = propertyValues;
-    this.readQuestionOptions(callback);  
+    this.readQuestionOptions(callback);
   }
 
 
 
   readQuestionOptions(callback){
-    this.db.readOptions([this.questionId], (data)=>{
+    this.db.readOptions([this.questionId.idQuestion], (data)=>{
+    if(this.questionId.pNr){
+        for(let i = 0; i < data.length; i++){
+            data[i].pNr = this.questionId.pNr;
+        }
+    }
       this.push.apply(this,data);
       callback && callback(this);
     });
@@ -22,7 +26,7 @@ class QuestionOptionList extends List {
       static get sqlQueries(){
         return {
           readOptions: `
-            SELECT * FROM questionoption WHERE Question_idQuestion = ?
+            SELECT * FROM QuestionOption WHERE Question_idQuestion = ?
           `
     }
   }

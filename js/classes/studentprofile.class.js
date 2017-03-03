@@ -4,8 +4,6 @@ class studentprofile extends Base {
         super(propertyValues);
 
         var list = new TestList();
-        
-        console.log('studentprofile propertyValues', propertyValues);
 
         
         if(propertyValues.pNr){
@@ -17,7 +15,6 @@ class studentprofile extends Base {
                 //$('.stud').empty();
                 $(function(){
                     list.display('.testlist');
-                    console.log(list);
                 });
             });    
         }

@@ -28,7 +28,6 @@ window.load = `
     modal.class.js
     app.class.js
     footer.class.js
-    Fragor.class.js
     Question.class.js
     questionList.class.js
     QuestionOption.class.js
@@ -40,14 +39,13 @@ window.load = `
     TestList.class.js
     testresultat.class.js
     Person.class.js
-    test-data-generator.class.js
     teacherprofile.class.js
     studentprofile.class.js
     PersonList.class.js
-    dataGenerator.class.js
     studentTestList.class.js
     studentTest.class.js
     questionOption-list.js
+    TestSida.class.js
 
     
   templates/
@@ -55,7 +53,6 @@ window.load = `
     navbar.html
     footer.html
     modal.html
-    Fragor.html
     question.html
     start.html
     testresultat.html
@@ -66,5 +63,6 @@ window.load = `
     Student.html
     studentTest.html
     questionoption.html
+    TestSida.html
 
 `;

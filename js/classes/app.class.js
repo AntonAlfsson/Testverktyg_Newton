@@ -34,20 +34,18 @@ class App {
           '/Student/:pNr': (params)=> { 
               var page = new studentprofile(params, this.showPage); },
             
-          '/Fragor/:idTest': (params)=> { 
-              var page = new Fragor(params, this.showPage); },
-            
           '/testresultat/:pNr/:id': (params)=> {
-              var page = new testresultat(params, this.showPage); }
+              var page = new testresultat(params, this.showPage); },
+            
+          '/TestSida/:id': (params)=> {
+              var page = new TestSida(params, this.showPage); },
+            
+          '/TestSida/:idTest': (params)=> {
+              var page = new TestSida(params, this.showPage); }
       
         });
 
 }
-    
-
-    
-    
-    
       showPage(page){
         $('.page-content').empty();
         page.display('.page-content');
