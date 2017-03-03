@@ -26,6 +26,10 @@ class TestSida extends Base {
 
       }
     
+    submit(){
+        this.db.testDone([this.id, this.pNr]);
+    }
+    
     getTitle(callback){
         this.db.getTitle([this.id], (data)=>{
            this.title = data[0].Title;
@@ -38,6 +42,9 @@ class TestSida extends Base {
     return {
         getTitle: `
         SELECT Title FROM Test WHERE idTest = ?
+        `,
+        testDone:`
+        UPDATE Person_has_Test SET doneNotDone='2' WHERE Test_idTest=? AND Person_pNr=?
         `
     }
   }

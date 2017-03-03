@@ -64,13 +64,13 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Person` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','198804045678');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199204011234');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('196412083434','199306177898');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199410026789');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199411146787');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199412093456');
-INSERT INTO `Person_has_Person`(`Person_pNr`, `Person_pNr1`) VALUES ('197801147878','199502253456');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','198804045678');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199204011234');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199306177898');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199410026789');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199411146787');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199412093456');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199502253456');
 
 
 -- -----------------------------------------------------
@@ -105,6 +105,7 @@ INSERT INTO `Person` (`pNr`,`Name`,`lösen`,`roll`,`startDate`,`gender`,`eMail`,
 
 
 
+
 -- -----------------------------------------------------
 -- Table `testverktyg`.`Test`
 -- -----------------------------------------------------
@@ -129,6 +130,7 @@ INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (3,'Js','2017-01-01 
 CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
   `Person_pNr` VARCHAR(12) NOT NULL,
   `Test_idTest` INT(11) NOT NULL,
+  `doneNotDone` TINYINT NOT NULL,
   INDEX `fk_Person_has_Test_Test1_idx` (`Test_idTest` ASC),
   INDEX `fk_Person_has_Test_Person1_idx` (`Person_pNr` ASC),
   CONSTRAINT `fk_Person_has_Test_Person1`
@@ -144,9 +146,10 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Person_has_Test` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('198804045678',1);
-INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('199204011234',1);
-INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`) VALUES ('199306177898',1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',1,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('199204011234',1,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('199306177898',1,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',2,1);
 
 
 -- -----------------------------------------------------
@@ -175,6 +178,7 @@ INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Quesiton 2','What is 4+5?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Quesiton 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (5,'Question 1','What is the capital of Island?',NULL,NULL,'mp',2);
 
 
 
@@ -209,6 +213,9 @@ INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Q
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (10,'Australia',2,4);
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (11,'Russia',1,4);
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (12,'USA',1,4);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (13,'Reykjavik',2,5);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (14,'Helsinki',1,5);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (15,'Stockholm',1,5);
 
 
 
@@ -233,6 +240,13 @@ DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (1,'The diameter equals 3 476 km','198804045678',1);
 INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (2,'11','198804045678',2);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (3,'8','198804045678',3);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (4,'USA','198804045678',4);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (5,'Reykjavik','198804045678',5);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (9,'The diameter equals 3 476 km','199204011234',1);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (10,'9','199204011234',2);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (11,'8','199204011234',3);
+INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (12,'Australia','199204011234',4);
 
 
 

@@ -23,10 +23,8 @@ class testresultat extends Base {
                     this.getRightAnswer(this.test.testQuestions[i].idQuestion, ()=>{});
                     
                     this.getResponse(this.test.testQuestions[i].idQuestion, ()=>{
-                        console.log('an ', this.an, ' re: ', this.re);
                            if(this.an === this.re){
                                this.score += 1;
-                               console.log('hej');
                             }
                         
                             if(i == this.numberOfQuestions-1){

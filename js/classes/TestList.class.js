@@ -23,10 +23,8 @@ class TestList extends List {
       `
       ,
       testsByPnr:`
-        select * from Test
-        join Person_has_Test on idTest=Test_idTest
-        join Person on Person_pNr=pNr
-        where pNr=?            `
+        SELECT * FROM Test JOIN Person_has_Test ON idTest=Test_idTest WHERE Person_pNr=? AND doneNotDone='1'
+        `
     }
   }
 
