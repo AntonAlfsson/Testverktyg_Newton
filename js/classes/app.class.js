@@ -37,20 +37,15 @@ class App {
           '/testresultat/:pNr/:id': (params)=> {
               var page = new testresultat(params, this.showPage); },
             
-          '/Fragor/:idTest': (params)=> {
-                var page = new Fragor(params, this.showPage); },
+          '/TestSida/:id': (params)=> {
+              var page = new TestSida(params, this.showPage); },
             
-          '/TheBigTest/:id': (params)=> {
-              var page = new TheBigTest(params, this.showPage); }
+          '/TestSida/:idTest': (params)=> {
+              var page = new TestSida(params, this.showPage); }
       
         });
 
 }
-    
-
-    
-    
-    
       showPage(page){
         $('.page-content').empty();
         page.display('.page-content');

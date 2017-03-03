@@ -1,7 +1,7 @@
 class TestList extends List {
 
-  constructor(items){
-    super(Test, items);
+  constructor(propertyValues){
+    super(Test, propertyValues);
   }
 
 

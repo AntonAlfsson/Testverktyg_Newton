@@ -1,23 +1,14 @@
 class Test extends Base {
-   /* 
-    static defaultPropertyValues(){
-    return {
-      id: '1',
-      Title: 'Provets namn',
-      Start: '',
-      Slut: '',
-    }
-  }
- */   
+    
     constructor(propertyValues, callback){
       super(propertyValues);
         
-        if(propertyValues.pNr){
+        if(!propertyValues.Title){
             this.getTest(propertyValues.id, ()=>{
                 this.testQuestions = new QuestionList(propertyValues, callback);
             });
         }else{
-            this.testQuestions = new QuestionList(this.id, callback);
+            this.testQuestions = new QuestionList(propertyValues, callback);
         }
        
   }
