@@ -1,7 +1,11 @@
 class QuestionOptionList extends List {
 
   constructor(propertyValues, callback){
-    super(QuestionOption); 
+    if(propertyValues.typeTest){
+        super(testQuestionOption);
+    }else{
+        super(QuestionOption);    
+    }
     this.questionId = propertyValues;
     this.readQuestionOptions(callback);
   }

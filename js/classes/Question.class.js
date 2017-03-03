@@ -12,7 +12,6 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
-    this.idQuestion = propertyValues.idQuestion;
     var options = new QuestionOptionList(propertyValues, ()=>{
         options.display('#'+this.idQuestion);
     });
