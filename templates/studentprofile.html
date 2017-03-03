@@ -1,6 +1,6 @@
 studentprofile.addTemplate('default', function(){return `
 <div class="container">
-  
+
   <!--Edit profile Logout -->
   <div class="row">
     <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
@@ -8,7 +8,6 @@ studentprofile.addTemplate('default', function(){return `
 
       <A href="edit.html" >Logout</A>
       <br>
-      <p class=" text-info">Feb 5,2017,03:00 pm </p>
     </div>
   </div>
 
@@ -18,13 +17,13 @@ studentprofile.addTemplate('default', function(){return `
       <div class="panel-heading">
         <h3 class="panel-title teacherName">${this.Name}</h3>
       </div>
-  
+
         <div class="panel-body">
           <div class="row">
             <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://static.comicvine.com/uploads/original/6/60392/1716995-mulan.jpg" class="img-circle img-responsive">
             </div>
-          
-        
+
+
             <div class= "col-md-9 col-lg-9">
               <table class="table table-user-information">
                   <tbody>
@@ -59,7 +58,7 @@ studentprofile.addTemplate('default', function(){return `
                   </tbody>
               </table>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -88,7 +87,7 @@ studentprofile.addTemplate('default', function(){return `
 <!--Lista över studentents prov-->
   <div class="container">
   <div class = "row">
-  <div class = "col-lg-12">
+  <div class = "col-lg-12 col-xs-12">
 
       <div class="panel panel-default">
       <div class="panel-heading">Dina prov</div>
@@ -103,12 +102,12 @@ studentprofile.addTemplate('default', function(){return `
           </thead>
 
         <tbody class="testlist"> <!--HÄR VILL VI LADDA IN TESTEN-->
-                
+
           </tbody>
       </table>
       </div>
     </div>
   </div>
 </div>
- 
+
 `});

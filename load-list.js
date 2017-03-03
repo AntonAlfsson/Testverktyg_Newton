@@ -47,7 +47,7 @@ window.load = `
     questionOption-list.js
     TestSida.class.js
 
-    
+
   templates/
     bootstrap-size.html
     navbar.html
