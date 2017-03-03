@@ -1,5 +1,6 @@
 TestSida.addTemplate('default', function(){return `
 <div class="container">
-    <h1>Hej</h1>
+    <h1>${this.title}</h1>
+    ${this.questionList.display()};
 </div>
 `});
