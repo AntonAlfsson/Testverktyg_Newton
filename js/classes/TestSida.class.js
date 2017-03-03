@@ -27,7 +27,7 @@ class TestSida extends Base {
       }
     
     submit(){
-        this.db.testDone([this.id, this.pNr]);
+           this.db.testDone([this.id, this.pNr]); 
     }
     
     getTitle(callback){
