@@ -6,19 +6,41 @@ class TestSida extends Base {
         // We call super (the Base class)
         // and it copies the property id to this.id
         super(propertyValues);
+        this.getTitle(callback);
+        propertyValues.typeTest = 1;
+        
+        this.questionList = new QuestionList(propertyValues, ()=>{
+            this.questionList.display('.questions');
+        });
+        
         // Just a test - a title for our test
         // get it from the database later???
-        this.title='Fin titel';
         // Call QUestionList for an instance
-        new QuestionList(propertyValues,(q)=>{
+       /* new testQuestionList(propertyValues.id,(q)=>{
           // Questionlist sends an instance of itself
           // we pick it up as "q" in this arrowfunction(Arrowfunction is actually a callback)
           this.questionList = q;
           // And finally we send this instance of "testsida" to the display in app.js
           callback(this);
-        } );
+        } );*/
 
       }
+    
+    getTitle(callback){
+        this.db.getTitle([this.id], (data)=>{
+           this.title = data[0].Title;
+            callback && callback(this);
+        });
+    }
+    
+    
+    static get sqlQueries(){
+    return {
+        getTitle: `
+        SELECT Title FROM Test WHERE idTest = ?
+        `
+    }
+  }
 
 
 }

@@ -7,7 +7,7 @@ class TestList extends List {
 
   studentTest(pNr, callback){
         this.db.testsByPnr([pNr], (data)=>{
-            this.push.apply(this,data);
+            this.push.apply(this,data); 
             callback && callback(this);
     });
   }
