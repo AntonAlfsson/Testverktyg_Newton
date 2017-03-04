@@ -1,14 +1,3 @@
 QuestionOption.addTemplate('default',function(){return `
-  	<div class="row">
-            <form>
-             <div class="col-lg-4">
-                  <div class="input-group">
-                       <div class="checkbox">
-                           <label><input type="radio" id="checkbox1" name="option" value="option"> 
-                           <span class="questionoption">${this.QuestionOption}</span></label>
-                        </div>
-                  </div>
-             </div>
-        </form>
-    </div>    
+<li><h4 id="${this.data.Question_idQuestion}${this.data.idQuestionOption}">${this.data.QuestionOption}</h4></li>  
 `});

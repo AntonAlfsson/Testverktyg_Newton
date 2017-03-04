@@ -1,30 +1,21 @@
 class Test extends Base {
     
-    static defaultPropertyValues(){
-    return {
-      id: '1',
-      Title: 'Provets namn',
-      Start: '',
-      Slut: '',
-    }
-  }
-    
     constructor(propertyValues, callback){
       super(propertyValues);
-    
-        if(propertyValues.idTest){
-            this.testQuestions = new QuestionList(this.id, callback);
-        }else{
-            this.getTest(propertyValues, ()=>{
-                this.testQuestions = new QuestionList(this.id, callback);
+        
+        if(!propertyValues.Title){
+            this.getTest(propertyValues.id, ()=>{
+                this.testQuestions = new QuestionList(propertyValues, callback);
             });
+        }else{
+            this.pNr = propertyValues.Person_pNr;
+            this.testQuestions = new QuestionList(propertyValues, callback);
         }
        
   }
     
     getTest(id, callback){
         this.db.getTest([id], (data)=>{
-            console.log('data', this.id);
             this.id = data[0].idTest;
             this.Title = data[0].Title;
             this.Start = data[0].start;
@@ -32,6 +23,10 @@ class Test extends Base {
             callback && callback(this);
         });
     }  
+    
+    getQuestionList(){
+        return this.testQuestions;
+    }
     
     getQuestions(callback){
         this.questions = new QuestionList(this.id, ()=>{

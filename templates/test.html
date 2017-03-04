@@ -1,10 +1,3 @@
 Test.addTemplate('default',function(){return `
-  	<tr><input value=" ">
-  		<td>${this.Title}</td>
-		<td>${this.start}</td>
-		<td>${this.stop}</td>
-		<td>
-			<a class="btn btn-xs" href="/Fragor/${this.idTest}">Starta prov</a>
-		</td>
-    </tr>
+  	<tr><td>${this.Title}</td><td>${this.start}</td><td>${this.stop}</td><td><a class="btn btn-xs" href="/TestSida/${this.pNr}/${this.idTest}">Starta test</a></td></tr>
 `});

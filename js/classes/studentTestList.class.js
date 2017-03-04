@@ -30,9 +30,10 @@ class studentTestList extends List {
       ,
       testsByPnr:`
         select * from Test
-join Person_has_Test on idTest=Test_idTest
-join Person on Person_pNr=pNr
-where pNr=?            `
+        join Person_has_Test on idTest=Test_idTest
+        join Person on Person_pNr=pNr
+        where pNr=? 
+        `
     }
   }
 

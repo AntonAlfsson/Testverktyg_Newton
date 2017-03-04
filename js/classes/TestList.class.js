@@ -1,13 +1,13 @@
 class TestList extends List {
 
-  constructor(items){
-    super(Test, items);
+  constructor(propertyValues){
+    super(Test, propertyValues);
   }
 
 
   studentTest(pNr, callback){
         this.db.testsByPnr([pNr], (data)=>{
-            this.push.apply(this,data);
+            this.push.apply(this,data); 
             callback && callback(this);
     });
   }
@@ -23,10 +23,8 @@ class TestList extends List {
       `
       ,
       testsByPnr:`
-        select * from Test
-        join Person_has_Test on idTest=Test_idTest
-        join Person on Person_pNr=pNr
-        where pNr=?            `
+        SELECT * FROM Test JOIN Person_has_Test ON idTest=Test_idTest WHERE Person_pNr=? AND doneNotDone='1'
+        `
     }
   }
 

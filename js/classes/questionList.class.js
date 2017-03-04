@@ -2,9 +2,8 @@ class QuestionList extends List {
 
   constructor(propertyValues, callback){
     super(Question);
-      
     this.testId = propertyValues;
-    this.testQuestions(callback);  
+    this.testQuestions(callback);
   }
 
   readAllFromDb(callback){
@@ -15,7 +14,15 @@ class QuestionList extends List {
   }
 
   testQuestions(callback){
-    this.db.questionsByIdTest([this.testId], (data)=>{
+    this.db.questionsByIdTest([this.testId.id], (data)=>{
+        if(this.testId.pNr){
+        for(let i = 0; i < data.length; i++){
+            data[i].pNr = this.testId.pNr;
+            if(this.testId.typeTest){
+                data[i].typeTest = this.testId.typeTest;
+            }
+        }
+        }
         this.push.apply(this,data);
         callback && callback(this);
     });

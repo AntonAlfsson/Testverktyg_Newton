@@ -7,7 +7,6 @@ class teacherprofile extends Base {
         
         if(propertyValues.pNr){
             list.teacherStudent(propertyValues.pNr, () => {
-                //$('.stud').empty();
                 $(function(){
                     list.display('.stud');
                 });
