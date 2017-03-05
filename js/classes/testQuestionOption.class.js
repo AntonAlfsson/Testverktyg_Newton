@@ -6,6 +6,9 @@ class testQuestionOption extends Base {
     }
     
     setResponse(){
+        $('.'+this.Question_idQuestion).find('span').remove();
+        $('#'+this.props.Question_idQuestion+this.props.idQuestionOption).append(' <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>');
+        
         this.db.getResponse([this.props.pNr, this.props.Question_idQuestion], (data)=>{
             if(data[0] == undefined){
                 this.db.setResponse([this.props.QuestionOption, this.props.pNr, this.props.Question_idQuestion]);

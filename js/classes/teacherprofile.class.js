@@ -2,8 +2,8 @@ class teacherprofile extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
-        
-        var list = new studentList();
+        propertyValues.type = 'student';
+        var list = new PersonList(propertyValues);
         
         if(propertyValues.pNr){
             list.teacherStudent(propertyValues.pNr, () => {
