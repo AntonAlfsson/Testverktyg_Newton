@@ -12,8 +12,10 @@ class Student extends Base {
     }
     
     getTestList(){
-        var studentTests = new studentTestList();
-        studentTests.studentTest(this.pNr, () => {
+        var propertyValues = {};
+        propertyValues.type = 'teacher';
+        var studentTests = new TestList(propertyValues);
+        studentTests.teacherTest(this.pNr, () => {
             var el = '#'+this.pNr;
             $('.studBud').empty();
             studentTests.display(el);

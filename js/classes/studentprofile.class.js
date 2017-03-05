@@ -2,8 +2,11 @@ class studentprofile extends Base {
     
     constructor(propertyValues, callback){
         super(propertyValues);
+        
+        var el = {};
+        el.type = 'student';
 
-        var list = new TestList();
+        var list = new TestList(el);
 
         
         if(propertyValues.pNr){
