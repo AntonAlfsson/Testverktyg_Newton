@@ -175,9 +175,9 @@ AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (1,'Question 1','What is the diameter of the moon?',NULL,NULL,'mp',1);
-INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Quesiton 2','What is 4+5?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (2,'Question 2','What is 4+5?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
-INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Quesiton 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Question 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (5,'Question 1','What is the capital of Island?',NULL,NULL,'mp',2);
 
 
