@@ -32,7 +32,6 @@ window.load = `
     questionList.class.js
     QuestionOption.class.js
     navbar.class.js
-    studentList.class.js
     Student.class.js
     start.class.js
     Test.class.js

@@ -2,7 +2,9 @@ class App {
 
   constructor(){
 
-        var list = new PersonList();
+        var propertyValues = {};
+        propertyValues.type = 'all';
+        var list = new PersonList(propertyValues);
 
         list.readAllFromDb(()=>{ // läser in personer från db
             var theNavbar = new navbar({

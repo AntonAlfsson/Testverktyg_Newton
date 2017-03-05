@@ -1,18 +1,12 @@
 class PersonList extends List {
 
-  constructor(items){
-    super(Person,items); 
-  }
-
-  writeToDb(callback){
-    var co = 0, listLength = this.length;
-    function callbackEach(res){
-      co++;
-      if(co == listLength){ callback(); }
-    }
-    for(let Person of this){
-      Person.insertInDb(callbackEach);
-    }
+  constructor(propertyValues){
+      if(propertyValues.type == 'all'){
+          super(Person);
+      }else{
+          super(Student);
+      }
+     
   }
 
   readAllFromDb(callback){
@@ -46,9 +40,6 @@ class PersonList extends List {
           readAll: `
             SELECT * FROM Person
           `,
-            readAllStudentsFromDb: `
-            SELECT*FROM Person JOIN Student ON pNr=Person_pNr JOIN Teacher_has_Student ON Person_pNr=Student_Person_pNr AND Teacher_Person_pNr='${this.pNr}'
-    `,
             teacherStudent:`
             select*from Person inner join Person_has_Person on pNr=Person_pNr1 and Person_pNr=?
 `
