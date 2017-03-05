@@ -41,7 +41,6 @@ window.load = `
     teacherprofile.class.js
     studentprofile.class.js
     PersonList.class.js
-    studentTestList.class.js
     studentTest.class.js
     questionOption-list.js
     TestSida.class.js
