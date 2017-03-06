@@ -6,13 +6,14 @@ class TestSida extends Base {
         // We call super (the Base class)
         // and it copies the property id to this.id
         super(propertyValues);
+        this.timer();
+        
         this.getTitle(callback);
         propertyValues.typeTest = 1;
         
         
         this.questionList = new QuestionList(propertyValues, ()=>{
             this.questionList.display('.questions');
-            this.timer();
         });
         
         // Just a test - a title for our test

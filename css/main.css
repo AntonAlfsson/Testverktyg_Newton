@@ -25,7 +25,7 @@ a{
     border: none;
 }
 
-.testList{
+.optionlist{
     background-color: inherit;
 }
 
@@ -56,6 +56,10 @@ a{
     font-size: 8vw;
     font-family: monospace;
     text-decoration: underline;
+}
+
+.testnotdone{
+ font-weight: bold;
 }
 
 footer {
@@ -91,7 +95,23 @@ element. Går att justera senare om nödvändigt. */
     opacity: 0.9;
   }
 
+  .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
 }
+
+/* För desktop small */
+@media (min-width:768px) and (max-width:991px){
+
+    .img-responsive {
+    max-width: 30%;
+    height: auto;
+  }
+}
+
 
 /*För desktop vy.*/
 @media screen and (min-width: 1365px) and (min-height: 767px) {
