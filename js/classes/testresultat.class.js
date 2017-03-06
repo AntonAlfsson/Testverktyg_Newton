@@ -30,7 +30,6 @@ class testresultat extends Base {
                             if(i == this.numberOfQuestions-1){
                                 var s = this.score/this.numberOfQuestions;
                                 s *= 100;
-                                console.log(s);
                                 if(s >= 90){
                                     this.el = 'Resultat MVG - ' + this.score + '/' + this.numberOfQuestions;
                                 }else if(s >= 75){

@@ -10,9 +10,8 @@ class Test extends Base {
         }else{
             this.pNr = propertyValues.Person_pNr;
             this.testQuestions = new QuestionList(propertyValues, callback);
+            this.timeConfig();
         }
-        
-        this.timeConfig();
        
   }
     
