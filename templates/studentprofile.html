@@ -5,11 +5,10 @@ studentprofile.addTemplate('default', function(){return `
   <div class="row">
     <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
       <A href="edit.html" >Edit Profile</A>
-
       <A href="edit.html" >Logout</A>
       <br>
     </div>
-  </div>
+
 
   <!--Profilbox -->
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
@@ -20,7 +19,7 @@ studentprofile.addTemplate('default', function(){return `
 
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-3 col-lg-3" align="center"> <img alt="User Pic" src="http://static.comicvine.com/uploads/original/6/60392/1716995-mulan.jpg" class="img-circle img-responsive"> 
+            <div class="col-md-3 col-lg-3" align="center"> <img alt="User Pic" src="http://static.comicvine.com/uploads/original/6/60392/1716995-mulan.jpg" class="img-circle img-responsive">
             </div>
 
 
@@ -28,32 +27,32 @@ studentprofile.addTemplate('default', function(){return `
               <table class="table table-user-information">
                   <tbody>
                     <tr>
-                        <td>Område</td>
-                        <td>Programmering</td>
+                        <td>Department:</td>
+                        <td>${this.getDepart()}</td>
                     </tr>
                     <tr>
-                        <td>Kurs</td>
+                        <td>Course:</td>
                         <td>Java</td>
                     </tr>
                     <tr>
-                        <td>Startdatum</td>
-                        <td>2016-08-15</td>
+                        <td>Enrollment date:</td>
+                        <td>${this.getStart()}</td>
                     </tr>
                     <tr>
-                        <td>Födelsedatum</td>
-                        <td>1988-01-24</td>
+                        <td>Date of birth:</td>
+                        <td>${this.dOb()}</td>
                     </tr>
                     <tr>
-                        <td>Adress</td>
-                        <td>Sverige</td>
+                        <td>Home Address:</td>
+                        <td>${this.getCountry()}</td>
                     </tr>
                     <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                        <td>Email:</td>
+                        <td><a href="mailto:${this.getEmail()}?Subject=Hello%20again" target="_top">${this.getEmail()}</a></td>
                     </tr>
                     <tr>
-                        <td>Telefon</td>
-                        <td>0701-23 45 56</td>
+                        <td>Phone number:</td>
+                        <td>${this.getPhone()}</td>
                     </tr>
                   </tbody>
               </table>
@@ -62,9 +61,10 @@ studentprofile.addTemplate('default', function(){return `
         </div>
       </div>
     </div>
+  </div>
 
     <!--Högerkolumn -->
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad studenInfoDiv">
     <h3>Information till studenter</h3>
         <div class="list-group">
           <a href="#" class="list-group-item">
@@ -81,30 +81,30 @@ studentprofile.addTemplate('default', function(){return `
           </a>
         </div>
     </div>
-  </div>
 
 
 <!--Lista över studentents prov-->
-  <div class="container">
   <div class = "row">
   <div class = "col-lg-12 col-xs-12">
 
       <div class="panel panel-default">
       <div class="panel-heading">Dina prov</div>
-        <table class="table table-condensed table-hover" data-link="row">
-          <thead>
-              <tr>
-                  <th>Prov</th>
-                  <th>Starttid</th>
-                  <th>Sluttid</th>
-                  <th></th>
-              </tr>
-          </thead>
+        <div class="panel panel-default table-responsive">
+          <table class="table table-condensed table-hover" data-link="row">
+            <thead>
+                <tr>
+                    <th>Prov</th>
+                    <th>Starttid</th>
+                    <th>Sluttid</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-        <tbody class="testlist"> <!--HÄR LADDAR VI IN TESTEN FRÅN DATABASEN->
+            <tbody class="testlist"> <!--HÄR LADDAR VI IN TESTEN FRÅN DATABASEN-->
 
-          </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
