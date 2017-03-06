@@ -1,24 +1,19 @@
 teacherprofile.addTemplate('default', function(){return `
 <div class="container">
-<div class="container">
-      <div class="row">
-      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-           <A href="edit.html" >Edit Profile</A>
+  <div class="row">
+    <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+      <A href="edit.html" >Edit Profile</A>
+      <A href="edit.html" >Logout</A>
+    </div>
 
-        <A href="edit.html" >Logout</A>
-       <br>
-      </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
-
-
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title teacherName">${this.Name}</h3>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="${this.getImg()}" class="img-circle img-responsive"></div>
-
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title teacherName">${this.Name}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="${this.getImg()}" class="img-circle img-responsive"></div>
 
                 <div class= "col-md-9 col-lg-9">
                   <table class="table table-user-information">
@@ -32,85 +27,69 @@ teacherprofile.addTemplate('default', function(){return `
                         <td>${this.getStart()}</td>
                       </tr>
                       <tr>
-                        <td>Date of Birth</td>
+                        <td>Date of Birth:</td>
                         <td>${this.dOb()}</td>
                       </tr>
-
-                         <tr>
-                             <tr>
+                      <tr>
                         <td>Gender</td>
                         <td>${this.getGender()}</td>
                       </tr>
-                        <tr>
-                        <td>Home Address</td>
+                      <tr>
+                        <td>Home Address:</td>
                         <td>${this.getCountry()}</td>
                       </tr>
                       <tr>
-                        <td>Email</td>
+                        <td>Email:</td>
                         <td><a href="mailto:${this.getEmail()}?Subject=Hello%20again" target="_top">${this.getEmail()}</a></td>
-                    </tr>
-                        <tr>
-
-                        <td>Phone Number</td>
-                        <td>${this.getPhone()}</td>
-
                       </tr>
-
+                      <tr>
+                        <td>Phone number:</td>
+                        <td>${this.getPhone()}</td>
+                      </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
-    <h3>Profile information</h3>
-
-
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
+          <h3>Profile information</h3>
             <p>${this.getBio()}</p>
+        </div>
+      </div>
 
 
-</div>
-</div>
-</div>
-<div class="container">
-<div class = "row">
-
-<div class = "col-lg-6">
-<h2 class="display"> Students</h2>
-
-
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group">
-    <button type="button" class="btn btn-default studentB">Add Student</button>
-  </div>
-  <div class="btn-group">
-    <button type="button" class="btn btn-default studentB">Delete Student</button>
-  </div>
-  <div class="btn-group">
-    <button type="button" class="btn btn-default studentB">Student Profile</button>
-  </div>
-</div>
-    <div class="panel panel-default table-responsive">
-<table class="table">
-        <thead>
-            <tr>
-                <th>Select</th>
-                <th>Number</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-
-    <tbody class="stud"></tbody> <!-- FÖRSÖKER LADDA IN STUDENTER -->
-
-    </table>
-    </div>
-</div>
-</div>
-</div>
-</div>
+      <div class = "row">
+        <div class = "col-lg-6">
+          <h2 class="display"> Students</h2>
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default studentB">Add Student</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default studentB">Delete Student</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default studentB">Student Profile</button>
+              </div>
+            </div>
+            <div class="panel panel-default table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Select</th>
+                    <th>Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody class="stud"></tbody> <!-- FÖRSÖKER LADDA IN STUDENTER -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 `});
