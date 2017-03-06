@@ -1,0 +1,115 @@
+idQuestionOption,QuestionOption,trueFalse,Question_idQuestion
+1,"The moon is full",1,1
+2,"The diameter equals 3 476 km",2,1
+3,"It's not possible to know",1,1
+4,9,2,2
+5,11,2,2
+6,22,1,2
+7,3,1,3
+8,0,1,3
+9,8,2,3
+10,Australia,2,4
+11,Russia,1,4
+12,USA,1,4
+13,Reykjavik,2,5
+14,Helsinki,1,5
+15,Stockholm,1,5
+16,"Nulla tellus.",1,6
+17,"Vestibulum rutrum rutrum neque.",1,6
+18,"Aliquam augue quam, sollicitudin vitae.",2,6
+19,"Suspendisse accumsan tortor quis turpis.",1,7
+20,"Vestibulum ante ipsum primis in.",1,7
+21,"Donec ut mauris eget massa tempor convallis.",2,7
+22,"Nulla suscipit ligula in lacus.",2,8
+23,"Nam congue, risus semper porta .",1,8
+24,"Etiam vel augue.",1,8
+25,"Pellentesque viverra pede ac diam.",2,9
+26,"Donec ut dolor.",1,9
+27,"Nulla ut erat id mauris vulputate elementum.",1,9
+28,"Morbi non quam nec dui luctus rutrum.",1,10
+29,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",2,10
+30,"Phasellus id sapien in sapien iaculis congue.",1,10
+31,"Morbi quis tortor id nulla ultrices aliquet.",1,11
+32,"Duis ac nibh.",2,11
+33,"Aenean sit amet justo.",1,11
+34,"Sed sagittis.",1,12
+35,"Aenean sit amet justo.",1,12
+36,"Donec ut dolor.",2,12
+37,"Pellentesque viverra pede ac diam.",1,13
+38,"Aliquam quis turpis eget elit sodales scelerisque.",1,13
+39,"In quis justo.",2,13
+40,"Vestibulum ante ipsum primis in faucibus orci.",1,14
+41,"Maecenas tincidunt lacus at velit.",1,14
+42,"Vivamus tortor.",2,14
+43,"Quisque ut erat.",1,15
+44,"In eleifend quam a odio.",1,15
+45,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",2,15
+46,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl.",1,16
+47,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",2,16
+48,"Praesent lectus.",1,16
+49,"Duis mattis egestas metus.",1,17
+50,"Quisque id justo sit amet sapien dignissim vestibulum.",2,17
+51,"Proin eu mi.",1,17
+52,"Donec vitae nisi.",2,18
+53,"Vestibulum ac est lacinia nisi venenatis tristique.",1,18
+54,"Suspendisse accumsan tortor quis turpis.",1,18
+55,"Curabitur at ipsum ac tellus semper interdum.",1,19
+56,"Aliquam sit amet diam in magna bibendum imperdiet.",1,19
+57,"Etiam pretium iaculis justo.",2,19
+58,"Maecenas tristique, est et tempus semper, est quam pharetra magna.",1,20
+59,"Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",1,20
+60,"Nunc nisl.",2,20
+61,"Cras in purus eu magna vulputate luctus.",1,21
+62,"Sed vel enim sit amet nunc viverra dapibus.",1,21
+63,"Suspendisse potenti.",2,21
+64,"Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",1,22
+65,"Nam congue, risus semper porta volutpat.",1,22
+66,"Praesent blandit.",2,22
+67,"Morbi ut odio.",1,23
+68,"Sed sagittis.",2,23
+69,"Sed sagittis.",1,23
+70,"Integer a nibh.",1,24
+71,"Etiam vel augue.",1,24
+72,"Nullam porttitor lacus at turpis.",2,24
+73,"Duis bibendum, felis sed interdum venenatis.",1,25
+74,"Integer aliquet, massa.",2,25
+75,"Vestibulum rutrum rutrum neque.",1,25
+76,"Curabitur convallis.",1,26
+77,"Mauris ullamcorper purus sit amet nulla.",1,26
+78,"Nunc purus.",2,26
+79,"Vestibulum ante ipsum primis in faucibus.",1,27
+80,"In quis justo.",2,27
+81,"Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",1,27
+82,"In eleifend quam a odio.",1,28
+83,"Vivamus tortor.",1,28
+84,"Nullam porttitor lacus at turpis.",2,28
+85,"Morbi quis tortor id nulla ultrices aliquet.",1,29
+86,"Duis consequat dui nec nisi volutpat eleifend.",1,29
+87,"Nullam varius.",2,29
+88,"Vivamus in felis eu sapien cursus vestibulum.",2,30
+89,"Donec dapibus.",1,30
+90,"Maecenas ut massa quis augue luctus tincidunt.",1,30
+91,"Fusce posuere felis sed lacus.",1,31
+92,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",1,31
+93,"Duis bibendum.",2,31
+94,"Duis mattis egestas metus.",1,32
+95,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",1,32
+96,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",2,32
+97,"Integer aliquet, massa id lobortis convallis, tortor risus.",1,33
+98,"Sed vel enim sit amet nunc viverra dapibus.",1,33
+99,"Proin interdum mauris non ligula pellentesque ultrices.",2,33
+100,"Vestibulum ante ipsum primis i.",1,34
+101,"Sed accumsan felis.",2,34
+102,"Nulla suscipit ligula in lacus.",1,34
+103,"Nulla tellus.",1,35
+104,"In hac habitasse platea dictumst.",1,35
+105,"In hac habitasse platea dictumst.",1,35
+106,"Nunc purus.",2,36
+107,"Duis ac nibh.",1,36
+108,"Suspendisse accumsan tortor quis turpis.",1,36
+109,"Donec ut dolor.",1,37
+110,"Duis consequat dui nec nisi volutpat eleifend.",1,37
+111,"Nulla ac enim.",2,37
+112,"Mauris sit amet eros.",1,38
+113,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",2,38
+114,"Aenean auctor gravida sem.",2,38
