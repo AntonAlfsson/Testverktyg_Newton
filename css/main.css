@@ -62,6 +62,10 @@ a{
  font-weight: bold;
 }
 
+.studenInfoDiv{
+  padding-left: 0;
+}
+
 footer {
   position:absolute;
     bottom:0px;
@@ -99,6 +103,10 @@ element. Går att justera senare om nödvändigt. */
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  .studenInfoDiv{
+    padding-right: 0;
   }
 
 }
