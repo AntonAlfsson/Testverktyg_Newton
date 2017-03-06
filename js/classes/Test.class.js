@@ -11,6 +11,8 @@ class Test extends Base {
             this.pNr = propertyValues.Person_pNr;
             this.testQuestions = new QuestionList(propertyValues, callback);
         }
+        
+        this.timeConfig();
        
   }
     
@@ -22,7 +24,8 @@ class Test extends Base {
             this.Slut = data[0].stop;
             callback && callback(this);
         });
-    }  
+    }
+    
     
     getQuestionList(){
         return this.testQuestions;
@@ -34,6 +37,16 @@ class Test extends Base {
                 console.log(questions); 
             });
         });
+    }
+    
+    timeConfig(){
+        var t = this.start.replace("T", " ");
+        t = t.substring(0, t.length-8);
+        this.start = t;
+        
+        var s = this.stop.replace("T", " ");
+        s = s.substring(0, s.length-8);
+        this.stop = s;
     }
     
     

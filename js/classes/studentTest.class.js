@@ -10,10 +10,9 @@ class studentTest extends Base {
   }
 
     constructor(propertyValues){
-    super(propertyValues);
-    this.id = propertyValues.idTest;
-    this.pNr = propertyValues.Person_pNr;
-
+        super(propertyValues);
+        this.id = propertyValues.idTest;
+        this.pNr = propertyValues.Person_pNr;
   }
 
 }

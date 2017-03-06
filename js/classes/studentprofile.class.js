@@ -21,7 +21,6 @@ class studentprofile extends Base {
           testlist.studentTest(propertyValues.pNr, () => {
                 $(function(){                
                     testlist.display('.testlist');
-                    console.log(testlist);
                 });
             });    
 
@@ -29,7 +28,6 @@ class studentprofile extends Base {
           testdonelist.teacherTest(propertyValues.pNr, () => {
                 $(function(){                
                     testdonelist.display('.testlist');
-                    console.log(testdonelist);
                 });
             });                         
         }
