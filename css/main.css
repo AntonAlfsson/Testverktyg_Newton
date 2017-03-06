@@ -25,7 +25,7 @@ a{
     border: none;
 }
 
-.testList{
+.optionlist{
     background-color: inherit;
 }
 
@@ -58,7 +58,9 @@ a{
     text-decoration: underline;
 }
 
-
+.testnotdone{
+ font-weight: bold;
+}
 
 footer {
   position:absolute;
