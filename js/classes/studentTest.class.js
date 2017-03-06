@@ -16,12 +16,4 @@ class studentTest extends Base {
 
   }
 
-      /*static get sqlQueries(){
-
-    return {
-        newTest: `
-        INSERT Test SET ?
-`
-    }
-  } */
 }

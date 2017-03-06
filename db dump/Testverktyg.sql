@@ -238,16 +238,6 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Response` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (1,'The diameter equals 3 476 km','198804045678',1);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (2,'11','198804045678',2);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (3,'8','198804045678',3);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (4,'USA','198804045678',4);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (5,'Reykjavik','198804045678',5);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (9,'The diameter equals 3 476 km','199204011234',1);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (10,'9','199204011234',2);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (11,'8','199204011234',3);
-INSERT INTO `Response` (`idResponse`,`response`,`Person_pNr`,`Question_idQuestion`) VALUES (12,'Australia','199204011234',4);
-
 
 
 -- -----------------------------------------------------
