@@ -24,7 +24,6 @@ class App {
 
         this.navbar.display('body');
         this.footer.display('body');
-        new BootstrapSize().display('body');
 
         var router = new Router({
 
