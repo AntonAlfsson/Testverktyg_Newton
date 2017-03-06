@@ -2,6 +2,10 @@ TestSida.addTemplate('default', function(){return `
 <div class="container">
     <h1 class="titleTest">${this.title}</h1>
     <div class="questions"></div>
-    <div class="container"><div class="jumbotron sub"><p><a class="btn btn-default" href="/testresultat/${this.pNr}/${this.id}" data-click="submit">Submit test</a> When submitting the test it will be closed for further changes!</p></div></div>
+    <div class="container-fluid">
+      <div class="jumbotron sub">
+        <p><a class="btn btn-default" href="/testresultat/${this.pNr}/${this.id}" data-click="submit">Submit test</a> When submitting the test it will be closed for further changes!</p>
+      </div>
+    </div>
 </div>
 `});

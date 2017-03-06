@@ -64,8 +64,6 @@ footer {
     left: 0px;
     height:40px;
     width:100%;
-
-
 }
 
 h5 {
@@ -96,6 +94,6 @@ element. Går att justera senare om nödvändigt. */
 }
 
 /*För desktop vy.*/
-@media screen and (max-width: 1365px) and (max-height: 767px) {
+@media screen and (min-width: 1365px) and (min-height: 767px) {
 
 }
