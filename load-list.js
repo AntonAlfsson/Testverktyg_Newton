@@ -35,6 +35,7 @@ window.load = `
     Student.class.js
     start.class.js
     Test.class.js
+    TestDone.class.js
     TestList.class.js
     testresultat.class.js
     Person.class.js
@@ -58,6 +59,7 @@ window.load = `
     teacherprofile.html
     studentprofile.html
     test.html
+    testdone.html
     Person.html
     Student.html
     studentTest.html

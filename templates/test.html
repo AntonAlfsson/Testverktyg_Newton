@@ -1,3 +1,3 @@
 Test.addTemplate('default',function(){return `
-  	<tr><td>${this.Title}</td><td>${this.start}</td><td>${this.stop}</td><td><a class="btn btn-xs" href="/TestSida/${this.pNr}/${this.idTest}">Starta test</a></td></tr>
+  	<tr class="testnotdone"><td>${this.Title}</td><td>${this.start}</td><td>${this.stop}</td><td><a class="btn btn-xs testnotdone" href="/TestSida/${this.pNr}/${this.idTest}">Starta test</a></td></tr>
 `});

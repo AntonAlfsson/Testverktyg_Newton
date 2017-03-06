@@ -28,7 +28,18 @@ class testresultat extends Base {
                             }
                         
                             if(i == this.numberOfQuestions-1){
-                                this.el = 'Resultat ' + this.score + '/' + this.numberOfQuestions;
+                                var s = this.score/this.numberOfQuestions;
+                                s *= 100;
+                                if(s >= 90){
+                                    this.el = 'Resultat MVG - ' + this.score + '/' + this.numberOfQuestions;
+                                }else if(s >= 75){
+                                    this.el = 'Resultat VG - ' + this.score + '/' + this.numberOfQuestions;
+                                }else if(s >= 60){
+                                    this.el = 'Resultat G - ' + this.score + '/' + this.numberOfQuestions;
+                                }else{
+                                    this.el = 'Resultat IG - ' + this.score + '/' + this.numberOfQuestions;
+                                }
+                                
                                 $('.result').append(this.el);
                             }
                     });
@@ -69,7 +80,11 @@ class testresultat extends Base {
     
     getResponse(id, callback){
         this.db.getResponse([id, this.pNr], (data)=>{
-           this.re = data[0].response;
+            if(!data[0]){
+                this.re = 'undefined';
+            }else{
+                this.re = data[0].response;  
+            }
             callback && callback(this);
         });
     }

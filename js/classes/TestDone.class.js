@@ -1,17 +1,13 @@
-class Test extends Base {
+class TestDone extends Base {
     
     constructor(propertyValues, callback){
       super(propertyValues);
+      
+        this.pNr = propertyValues.Person_pNr;
+        this.testQuestions = new QuestionList(propertyValues, callback);
         
-        if(!propertyValues.Title){
-            this.getTest(propertyValues.id, ()=>{
-                this.testQuestions = new QuestionList(propertyValues, callback);
-            });
-        }else{
-            this.pNr = propertyValues.Person_pNr;
-            this.testQuestions = new QuestionList(propertyValues, callback);
-            this.timeConfig();
-        }
+        this.timeConfig();
+        
        
   }
     
@@ -23,20 +19,7 @@ class Test extends Base {
             this.Slut = data[0].stop;
             callback && callback(this);
         });
-    }
-    
-    
-    getQuestionList(){
-        return this.testQuestions;
-    }
-    
-    getQuestions(callback){
-        this.questions = new QuestionList(this.id, ()=>{
-            questions.testQuestions( ()=>{
-                console.log(questions); 
-            });
-        });
-    }
+    } 
     
     timeConfig(){
         var t = this.start.replace("T", " ");
@@ -47,7 +30,6 @@ class Test extends Base {
         s = s.substring(0, s.length-8);
         this.stop = s;
     }
-    
     
     
     static get sqlQueries(){
