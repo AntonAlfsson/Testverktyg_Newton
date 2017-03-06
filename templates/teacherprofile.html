@@ -82,12 +82,19 @@ teacherprofile.addTemplate('default', function(){return `
 <h2 class="display"> Students</h2>
 
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Add Student</button>
-  <button type="button" class="btn btn-default">Delete Student</button>
-  <button type="button" class="btn btn-default">Student Profile</button>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default studentB">Add Student</button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default studentB">Delete Student</button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default studentB">Student Profile</button>
+  </div>
 </div>
-<table class="table table-condensed">
+    <div class="panel panel-default table-responsive">
+<table class="table">
         <thead>
             <tr>
                 <th>Select</th>
@@ -95,13 +102,13 @@ teacherprofile.addTemplate('default', function(){return `
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
-
             </tr>
         </thead>
 
-        <tbody class="stud"> <!-- FÖRSÖKER LADDA IN STUDENTER -->
-            
+    <tbody class="stud"></tbody> <!-- FÖRSÖKER LADDA IN STUDENTER -->
+
     </table>
+    </div>
 </div>
 </div>
 </div>

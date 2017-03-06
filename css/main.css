@@ -6,16 +6,64 @@ html {
 }
 
 body {
-  /* Sätt lika hög höjd här */
-  margin-bottom: 60px;
+    background-image: url('body4.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat:
+}
+
+.panel, .jumbotron{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+a{
+    color: #222222;
+}
+
+.list-group-item{
+    border: none;
+}
+
+.testList{
+    background-color: inherit;
+}
+
+.panel-info>.panel-heading {
+    background-color: #222222;
+    border-color: #222222;
+}
+
+.starter{
+    margin-top: 15%;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.sub{
+    text-align: center;
+}
+
+.opo{
+    text-align: center;
+}
+
+.container{
+    margin-bottom: 40px;
+}
+
+.question-head{
+    font-size: 8vw;
+    font-family: monospace;
+    text-decoration: underline;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Som här */
-  height: 60px;
+  position:absolute;
+    bottom:0px;
+    left: 0px;
+    height:40px;
+    width:100%;
 
 
 }
@@ -40,7 +88,10 @@ element. Går att justera senare om nödvändigt. */
     margin-top: 13% !important;
   }
 
-
+  .studentB {
+    font-size: 12px !important;
+    opacity: 0.9;
+  }
 
 }
 
