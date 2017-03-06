@@ -12,8 +12,17 @@ class Question extends Base {
 
   constructor(propertyValues, callback){
     super(propertyValues);
+      
+    if(!Question.nr){
+        Question.nr = 1000000;
+        this.nr = Question.nr;
+    }else{
+        Question.nr++;
+        this.nr = Question.nr;
+    }
+      
     var options = new QuestionOptionList(propertyValues, ()=>{
-        options.display('#'+this.idQuestion);
+        options.display('#'+this.nr);
     });
   }
     

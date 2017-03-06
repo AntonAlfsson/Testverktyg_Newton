@@ -28,7 +28,19 @@ class testresultat extends Base {
                             }
                         
                             if(i == this.numberOfQuestions-1){
-                                this.el = 'Resultat ' + this.score + '/' + this.numberOfQuestions;
+                                var s = this.score/this.numberOfQuestions;
+                                s *= 100;
+                                console.log(s);
+                                if(s >= 90){
+                                    this.el = 'Resultat MVG - ' + this.score + '/' + this.numberOfQuestions;
+                                }else if(s >= 75){
+                                    this.el = 'Resultat VG - ' + this.score + '/' + this.numberOfQuestions;
+                                }else if(s >= 60){
+                                    this.el = 'Resultat G - ' + this.score + '/' + this.numberOfQuestions;
+                                }else{
+                                    this.el = 'Resultat IG - ' + this.score + '/' + this.numberOfQuestions;
+                                }
+                                
                                 $('.result').append(this.el);
                             }
                     });
