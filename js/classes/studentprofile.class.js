@@ -16,8 +16,7 @@ class studentprofile extends Base {
         if(propertyValues.pNr){
           //Läser in studentens namn till profilsidan
           this.readOneByPnrFromDb(propertyValues.pNr, callback);
-              
-              
+
           //Skapar lista med studentens ej besvarade test   
           testlist.studentTest(propertyValues.pNr, () => {
                 $(function(){                
@@ -27,7 +26,7 @@ class studentprofile extends Base {
             });    
 
           //Skapar lista med studentens besvarade test
-          testdonelist.studentTest(propertyValues.pNr, () => {
+          testdonelist.teacherTest(propertyValues.pNr, () => {
                 $(function(){                
                     testdonelist.display('.testlist');
                     console.log(testdonelist);
