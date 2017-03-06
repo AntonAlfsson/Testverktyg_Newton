@@ -1,9 +1,16 @@
 class TestList extends List {
 
   constructor(propertyValues){
+    //Om det som skickas in är av typen teacher, skapa objekt av typen studentTest
       if(propertyValues.type == 'teacher'){
           super(studentTest);
-      }else{
+      }     
+      //Om det som skickas in är av typen testdone, skapa objekt av typen testdone
+      else if(propertyValues.type == 'testdone'){
+        super(TestDone);
+      }
+      //Annars, skapa objekt av typen test
+      else{
           super(Test);
       }
   }
@@ -32,6 +39,7 @@ class TestList extends List {
       readAll: `
         SELECT * FROM Test
       `,
+      //Söker test baserat på om studenten har svarat på testet eller inte (1 = ej besvarat 2 = besvarat)
       testsByPnr:`
         SELECT * FROM Test JOIN Person_has_Test ON idTest=Test_idTest WHERE Person_pNr=? AND doneNotDone='1'
         `,
