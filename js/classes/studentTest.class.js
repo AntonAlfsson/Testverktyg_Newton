@@ -19,18 +19,15 @@ class studentTest extends Base {
             
             if(this.doneNotDone == 1){
                 this.titleStatus = this.Title + ' - ' + 'Not done';
-                console.log(this.titleStatus);
             }
             else{
                 this.titleStatus = this.Title + ' - ' + 'Result';
-                console.log(this.titleStatus);
             }
         });
   }
     
     done(callback){
        this.db.done([this.id, this.pNr], (data)=>{
-           console.log(data);
             this.doneNotDone = data[0].doneNotDone;
             callback && callback(this);
         });
