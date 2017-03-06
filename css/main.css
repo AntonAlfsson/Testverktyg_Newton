@@ -58,14 +58,14 @@ a{
     text-decoration: underline;
 }
 
+
+
 footer {
   position:absolute;
     bottom:0px;
     left: 0px;
     height:40px;
     width:100%;
-
-
 }
 
 h5 {
@@ -93,9 +93,25 @@ element. Går att justera senare om nödvändigt. */
     opacity: 0.9;
   }
 
+  .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
 }
 
+/* För desktop small */
+@media (min-width:768px) and (max-width:991px){
+
+    .img-responsive {
+    max-width: 30%;
+    height: auto;
+  }
+}
+
+
 /*För desktop vy.*/
-@media screen and (max-width: 1365px) and (max-height: 767px) {
+@media screen and (min-width: 1365px) and (min-height: 767px) {
 
 }
