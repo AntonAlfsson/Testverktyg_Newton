@@ -69,7 +69,11 @@ class testresultat extends Base {
     
     getResponse(id, callback){
         this.db.getResponse([id, this.pNr], (data)=>{
-           this.re = data[0].response;
+            if(!data[0]){
+                this.re = 'undefined';
+            }else{
+                this.re = data[0].response;  
+            }
             callback && callback(this);
         });
     }
