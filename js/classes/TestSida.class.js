@@ -84,7 +84,6 @@ class TestSida extends Base {
     
     getStopDate(callback){
         this.db.getStopDate([this.id], (data)=>{
-            console.log(data);
             var c = data[0].stop;
             var ce = c.substring(0, c.indexOf('T')) + c.substring(c.indexOf('T'), c.indexOf('Z') - 4);
             c = ce.replace("T", " ");  
