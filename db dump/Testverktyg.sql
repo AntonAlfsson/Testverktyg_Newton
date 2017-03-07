@@ -67,8 +67,11 @@ DEFAULT CHARACTER SET = utf8;
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','198804045678');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199204011234');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199306177898');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199410026789');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199410026789');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199411146787');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199411146787');
+INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('196412083434','199412093456');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199412093456');
 INSERT INTO `Person_has_Person` (`Person_pNr`,`Person_pNr1`) VALUES ('197801147878','199502253456');
 
@@ -118,9 +121,29 @@ CREATE TABLE IF NOT EXISTS `testverktyg`.`Test` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03-03 00:00:00','2017-03-23 00:00:00');
-INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (2,'Java','2016-06-03 00:00:00','2017-01-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (1,'Math A','2017-03-03 00:00:00','2017-03-07 13:30:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (2,'Java','2016-06-03 00:00:00','2017-04-01 00:00:00');
 INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (3,'Js','2017-01-01 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (4,'Solution','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (5,'User-facing','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (6,'Background','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (7,'Virtual','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (8,'Discrete','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (9,'User-friendly','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (10,'Didactic','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (11,'Executive','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (12,'Structure','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (13,'Multi-layered','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (14,'Tertiary','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (15,'Parallelism','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (16,'Protocol','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (17,'Collaboration','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (18,'Dynamic','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (19,'Focused','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (20,'Hybrid','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (21,'Distributed','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (22,'Self-enabling','2016-06-03 00:00:00','2017-06-01 00:00:00');
+INSERT INTO `Test` (`idTest`,`Title`,`start`,`stop`) VALUES (23,'clear-thinking','2016-06-03 00:00:00','2017-06-01 00:00:00');
 
 
 
@@ -150,6 +173,14 @@ INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES 
 INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('199204011234',1,1);
 INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('199306177898',1,1);
 INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',2,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',3,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',4,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',5,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',6,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',7,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',8,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',9,1);
+INSERT INTO `Person_has_Test` (`Person_pNr`,`Test_idTest`,`doneNotDone`) VALUES ('198804045678',10,1);
 
 
 -- -----------------------------------------------------
@@ -179,6 +210,39 @@ INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (3,'Question 3','What 10-2?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (4,'Question 4','Where is Nicole Kidman from?',NULL,NULL,'mp',1);
 INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (5,'Question 1','What is the capital of Island?',NULL,NULL,'mp',2);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (6,'Cost Accountant','Focused needs-based approach?','','','',2);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (7,'Programmer Analyst IV','Operative logistical database?','','','',16);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (8,'Recruiter','Centralized national budgetary management?','','','',19);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (9,'Question 5','What is 5*2?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (10,'Question 6','What is 10/2?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (11,'Question 7','What is 2+2?',NULL,NULL,'mp',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (12,'Senior Quality Engineer','Grass-roots client-driven contingency?','','','',16);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (13,'Help Desk Technician','Persevering incremental protocol?','','','',21);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (14,'Teacher','Multi-tiered responsive model?','','','',10);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (15,'Product Engineer','Face to face multimedia open system?','','','',10);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (16,'Community Outreach Specialist','Compatible static info-mediaries?','','','',1);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (17,'Food Chemist','Advanced client-server local area network?','','','',19);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (18,'Staff Scientist','Progressive static task-force?','','','',13);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (19,'Product Engineer','Assimilated contextually-based knowledge base?','','','',15);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (20,'Assistant Media Planner','Focused intermediate extranet?','','','',14);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (21,'Recruiter','Total motivating attitude?','','','',9);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (22,'Structural Analysis Engineer','Object-based hybrid architecture?','','','',19);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (23,'Analyst Programmer','Horizontal high-level capability?','','','',9);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (24,'Recruiter','Down-sized fault-tolerant extranet?','','','',17);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (25,'Editor','Programmable bottom-line core?','','','',17);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (26,'Financial Analyst','Organic didactic info-mediaries?','','','',2);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (27,'Web Developer I','Multi-lateral heuristic infrastructure?','','','',7);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (28,'Executive Secretary','Distributed radical flexibility?','','','',21);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (29,'Clinical Specialist','Adaptive asymmetric hierarchy?','','','',7);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (30,'Sales Representative','Optimized multi-state moderator?','','','',13);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (31,'Teacher','Intuitive interactive architecture?','','','',9);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (32,'Occupational Therapist','Intuitive multi-tasking moratorium?','','','',14);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (33,'Analog Circuit Design manager','Persevering scalable algorithm?','','','',17);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (34,'Recruiting Manager','Persevering multi-tasking utilisation?','','','',16);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (35,'Database Administrator I','Sharable coherent help-desk?','','','',2);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (36,'Sales Representative','Managed intangible matrix?','','','',23);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (37,'Electrical Engineer','Optional responsive concept?','','','',4);
+INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,`img`,`type`,`Test_idTest`) VALUES (38,'Design Engineer','Multi-lateral zero tolerance hierarchy?','','','',22);
 
 
 
@@ -187,7 +251,7 @@ INSERT INTO `Question` (`idQuestion`,`Question_Title`,`Question`,`HTML-element`,
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testverktyg`.`QuestionOption` (
   `idQuestionOption` INT(11) NOT NULL AUTO_INCREMENT,
-  `QuestionOption` VARCHAR(45) NOT NULL,
+  `QuestionOption` VARCHAR(100) NOT NULL,
   `trueFalse` TINYINT(1) NOT NULL,
   `Question_idQuestion` INT(11) NOT NULL,
   PRIMARY KEY (`idQuestionOption`),
@@ -216,6 +280,105 @@ INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Q
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (13,'Reykjavik',2,5);
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (14,'Helsinki',1,5);
 INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (15,'Stockholm',1,5);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (16,'10',2,6);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (17,'5',2,7);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (18,'4',2,8);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (19,'5',1,6);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (20,'15',1,6);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (21,'10',1,7);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (22,'11',1,7);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (23,'2',1,8);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (24,'6',1,8);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (25,'Pellentesque viverra pede ac diam.',2,9);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (26,'Donec ut dolor.',1,9);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (27,'Nulla ut erat id mauris vulputate elementum.',1,9);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (28,'Morbi non quam nec dui luctus rutrum.',1,10);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (29,'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',2,10);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (30,'Phasellus id sapien in sapien iaculis congue.',1,10);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (31,'Morbi quis tortor id nulla ultrices aliquet.',1,11);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (32,'Duis ac nibh.',2,11);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (33,'Aenean sit amet justo.',1,11);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (34,'Sed sagittis.',1,12);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (35,'Aenean sit amet justo.',1,12);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (36,'Donec ut dolor.',2,12);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (37,'Pellentesque viverra pede ac diam.',1,13);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (38,'Aliquam quis turpis eget elit sodales scelerisque.',1,13);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (39,'In quis justo.',2,13);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (40,'Vestibulum ante ipsum primis in faucibus orci.',1,14);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (41,'Maecenas tincidunt lacus at velit.',1,14);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (42,'Vivamus tortor.',2,14);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (43,'Quisque ut erat.',1,15);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (44,'In eleifend quam a odio.',1,15);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (45,'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.',2,15);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (46,'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl.',1,16);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (47,'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',2,16);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (48,'Praesent lectus.',1,16);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (49,'Duis mattis egestas metus.',1,17);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (50,'Quisque id justo sit amet sapien dignissim vestibulum.',2,17);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (51,'Proin eu mi.',1,17);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (52,'Donec vitae nisi.',2,18);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (53,'Vestibulum ac est lacinia nisi venenatis tristique.',1,18);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (54,'Suspendisse accumsan tortor quis turpis.',1,18);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (55,'Curabitur at ipsum ac tellus semper interdum.',1,19);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (56,'Aliquam sit amet diam in magna bibendum imperdiet.',1,19);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (57,'Etiam pretium iaculis justo.',2,19);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (58,'Maecenas tristique, est et tempus semper, est quam pharetra magna.',1,20);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (59,'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',1,20);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (60,'Nunc nisl.',2,20);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (61,'Cras in purus eu magna vulputate luctus.',1,21);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (62,'Sed vel enim sit amet nunc viverra dapibus.',1,21);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (63,'Suspendisse potenti.',2,21);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (64,'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.',1,22);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (65,'Nam congue, risus semper porta volutpat.',1,22);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (66,'Praesent blandit.',2,22);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (67,'Morbi ut odio.',1,23);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (68,'Sed sagittis.',2,23);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (69,'Sed sagittis.',1,23);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (70,'Integer a nibh.',1,24);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (71,'Etiam vel augue.',1,24);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (72,'Nullam porttitor lacus at turpis.',2,24);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (73,'Duis bibendum, felis sed interdum venenatis.',1,25);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (74,'Integer aliquet, massa.',2,25);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (75,'Vestibulum rutrum rutrum neque.',1,25);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (76,'Curabitur convallis.',1,26);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (77,'Mauris ullamcorper purus sit amet nulla.',1,26);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (78,'Nunc purus.',2,26);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (79,'Vestibulum ante ipsum primis in faucibus.',1,27);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (80,'In quis justo.',2,27);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (81,'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',1,27);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (82,'In eleifend quam a odio.',1,28);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (83,'Vivamus tortor.',1,28);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (84,'Nullam porttitor lacus at turpis.',2,28);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (85,'Morbi quis tortor id nulla ultrices aliquet.',1,29);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (86,'Duis consequat dui nec nisi volutpat eleifend.',1,29);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (87,'Nullam varius.',2,29);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (88,'Vivamus in felis eu sapien cursus vestibulum.',2,30);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (89,'Donec dapibus.',1,30);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (90,'Maecenas ut massa quis augue luctus tincidunt.',1,30);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (91,'Fusce posuere felis sed lacus.',1,31);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (92,'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',1,31);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (93,'Duis bibendum.',2,31);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (94,'Duis mattis egestas metus.',1,32);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (95,'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',1,32);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (96,'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',2,32);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (97,'Integer aliquet, massa id lobortis convallis, tortor risus.',1,33);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (98,'Sed vel enim sit amet nunc viverra dapibus.',1,33);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (99,'Proin interdum mauris non ligula pellentesque ultrices.',2,33);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (100,'Vestibulum ante ipsum primis i.',1,34);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (101,'Sed accumsan felis.',2,34);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (102,'Nulla suscipit ligula in lacus.',1,34);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (103,'Nulla tellus.',1,35);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (104,'In hac habitasse platea dictumst.',1,35);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (105,'In hac habitasse platea dictumst.',1,35);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (106,'Nunc purus.',2,36);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (107,'Duis ac nibh.',1,36);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (108,'Suspendisse accumsan tortor quis turpis.',1,36);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (109,'Donec ut dolor.',1,37);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (110,'Duis consequat dui nec nisi volutpat eleifend.',1,37);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (111,'Nulla ac enim.',2,37);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (112,'Mauris sit amet eros.',1,38);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (113,'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',2,38);
+INSERT INTO `QuestionOption` (`idQuestionOption`,`QuestionOption`,`trueFalse`,`Question_idQuestion`) VALUES (114,'Aenean auctor gravida sem.',2,38);
 
 
 
