@@ -7,9 +7,7 @@ class teacherprofile extends Base {
         
         if(propertyValues.pNr){
             list.teacherStudent(propertyValues.pNr, () => {
-                $(function(){
-                    list.display('.stud');
-                });
+                setTimeout(function(){list.display('.stud')}, 50);
             });
            
           this.readOneByPnrFromDb(propertyValues.pNr, callback);
