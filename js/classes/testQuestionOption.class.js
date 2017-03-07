@@ -3,6 +3,16 @@ class testQuestionOption extends Base {
     constructor(propertyValues, callback){
         super(propertyValues);
         this.props = propertyValues;
+        
+        this.getPersonResponse( ()=>{
+                
+                if(this.response != undefined){
+                    
+                    if(this.response === this.QuestionOption){
+                        $('#'+this.props.Question_idQuestion+this.props.idQuestionOption).append(' <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>');
+                    }
+                }
+            });
     }
     
     setResponse(){
@@ -15,6 +25,15 @@ class testQuestionOption extends Base {
             }else{
                 this.db.updateResponse([this.props.QuestionOption, this.props.Question_idQuestion, this.props.pNr]);
             } 
+        });
+    }
+    
+        getPersonResponse(callback){
+        this.db.getResponse([this.props.pNr, this.props.Question_idQuestion], (data)=>{
+            if(data[0]){
+                this.response = data[0].response;
+            }
+            callback && callback(this);
         });
     }
     
